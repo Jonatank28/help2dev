@@ -130,7 +130,7 @@ const CardGenerate = () => {
               >
                 <div>
                   {!copy ? (
-                    <LuCopy className="z-10 active:animate-out active:bg-destructive" />
+                    <LuCopy className="z-10 active:animate-out" />
                   ) : (
                     <FaCheck className="z-10 text-green-600" />
                   )}
