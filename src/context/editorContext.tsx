@@ -13,20 +13,6 @@ interface ThemeContextType {
   setFormattedJson: (value: string) => void
 }
 
-// Custom Hook for Local Storage
-function useLocalStorage(key: string, defaultValue: any) {
-  const [value, setValue] = useState(() => {
-    const saved = localStorage.getItem(key)
-    return saved ? JSON.parse(saved) : defaultValue
-  })
-
-  useEffect(() => {
-    localStorage.setItem(key, JSON.stringify(value))
-  }, [key, value])
-
-  return [value, setValue]
-}
-
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
 const EditorProvider = ({ children }: { children: React.ReactNode }) => {
@@ -39,31 +25,49 @@ const EditorProvider = ({ children }: { children: React.ReactNode }) => {
   const [jsonInput, setJsonInput] = useState('')
   const [formattedJson, setFormattedJson] = useState('')
 
-  const [themeStorage, setThemeStorage] = useLocalStorage('@help2dev', {
-    theme: {},
-  })
-
   const onChangeThemeEditor = (value: string) => {
+    const getStorage = localStorage.getItem('@help2dev')
     if (defaultThemes.includes(value)) {
-      setThemeStorage((prev: any) => ({
-        ...prev,
-        theme: {
-          ...prev.theme,
-          [theme as string]: value,
-        },
-      }))
-      setThemeSelected(value)
+      let temp
+      // Parse the stored data into an object (assuming it's JSON-formatted)
+      try {
+        temp = JSON.parse(getStorage || '{}') || {} // Handle potential parsing errors
+        if (theme === 'dark') {
+          // localStorage.setItem('@themeDarkEditor', value)
+
+          // Update the theme property within the parsed object
+          temp.theme = {
+            ...temp.theme, // Spread existing theme properties (if any)
+            dark: value, // Add the new 'dark' property with the desired value
+          }
+          localStorage.setItem('@help2dev', JSON.stringify(temp))
+        } else {
+          temp.theme = {
+            ...temp.theme, // Spread existing theme properties (if any)
+            light: value, // Add the new 'dark' property with the desired value
+          }
+        }
+        localStorage
+        setThemeSelected(value)
+      } catch (error) {
+        console.error('Error parsing localStorage data:', error)
+        temp = {}
+      }
     }
   }
 
   useEffect(() => {
-    const storedTheme = themeStorage.theme[theme as string] ?? null
-    if (!storedTheme) {
+    const getStorage =
+      JSON.parse(localStorage.getItem('@help2dev') || '{}') || {}
+    const defaltTheme = getStorage.theme
+      ? getStorage.theme[theme as string] ?? null
+      : null
+    if (!defaltTheme) {
       setThemeSelected(theme === 'dark' ? 'dracula' : 'chrome')
     } else {
-      setThemeSelected(storedTheme)
+      setThemeSelected(defaltTheme)
     }
-  }, [theme, themeStorage])
+  }, [theme])
 
   useEffect(() => {
     if (pathName !== '/json-formatter') {
