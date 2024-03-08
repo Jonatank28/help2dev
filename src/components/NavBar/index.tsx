@@ -18,7 +18,11 @@ const NavBar = () => {
         >
           <Link href="/" className="font-bold">
             <div className="flex items-center gap-2">
-              {/* <GiJasonMask size={30} /> */}
+              <img
+                src="./logo.png"
+                alt="logo help2dev"
+                className="bg-transparent"
+              />
               <p className="tracking-tighter font-bold text-lg">Help2dev</p>
             </div>
           </Link>

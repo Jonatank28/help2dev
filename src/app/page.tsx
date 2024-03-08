@@ -44,7 +44,7 @@ export default function Component() {
         <nav className="flex gap-4 sm:gap-6">
           <p className="text-xs">
             © {new Date().getFullYear()}{' '}
-            <span className="font-bold text-sm">The Jason</span> All rights
+            <span className="font-bold text-sm">Help2dev</span> All rights
             reserved.
           </p>
         </nav>
