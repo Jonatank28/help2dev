@@ -12,19 +12,16 @@ import {
 } from '@/components/ui/select'
 
 import { ufs } from '@/data/ufs'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { Button } from '@/components/ui/button'
 import { LuCopy } from 'react-icons/lu'
 import { FaCheck } from 'react-icons/fa6'
 
 const CardGenerate = () => {
-  const storage = JSON.parse(localStorage.getItem('@help2dev') || '{}')
   const [cpf, setCpf] = useState('')
-  const [uf, setUf] = useState(storage.generateCpf?.uf || 'indifferent')
-  const [generatePoint, setGeneratePoint] = useState(
-    storage.generateCpf?.generatePoint || 'true'
-  )
+  const [uf, setUf] = useState('')
+  const [generatePoint, setGeneratePoint] = useState('')
   const [copy, setCopy] = useState(false)
 
   // generate cpf
@@ -77,6 +74,7 @@ const CardGenerate = () => {
 
   // change uf and save in local storage
   const changeUf = (e: string) => {
+    const storage = JSON.parse(localStorage.getItem('@help2dev') || '{}')
     setUf(e)
     const tempUf = {
       ...storage,
@@ -90,6 +88,7 @@ const CardGenerate = () => {
 
   // change generate point and save in local storage
   const changeGeneratePoint = (value: string) => {
+    const storage = JSON.parse(localStorage.getItem('@help2dev') || '{}')
     const tempGeneratePoint = {
       ...storage,
       generateCpf: {
@@ -101,78 +100,87 @@ const CardGenerate = () => {
     setGeneratePoint(value)
   }
 
+  useEffect(() => {
+    const storage = JSON.parse(localStorage.getItem('@help2dev') || '{}')
+    setUf(storage.generateCpf?.uf || 'indifferent')
+    setGeneratePoint(storage.generateCpf?.generatePoint || 'true')
+  }, [])
+
   return (
-    <Card className="mb-[200px] w-[400px]">
-      <CardHeader>Generate CPF</CardHeader>
-      <CardContent>
-        <div className="flex gap-4">
-          <RadioGroup
-            defaultValue={generatePoint}
-            onValueChange={(value: string) => changeGeneratePoint(value)}
-          >
-            <label className="text-xs mt-[6px] opacity-40">
-              {' '}
-              Generate point?
-            </label>
-            <div className="flex items-center gap-6">
-              <div className="flex items-center gap-1">
-                <RadioGroupItem value="true" id="true" />
-                <label htmlFor="true">Sim</label>
-              </div>
-              <div className="flex items-center gap-1">
-                <RadioGroupItem value="false" id="false" />
-                <label htmlFor="false">Não</label>
-              </div>
-            </div>
-          </RadioGroup>
-          <div className="space-y-1">
-            <Label className="text-xs opacity-40">State of origin?</Label>
-            <Select value={uf} onValueChange={(e) => changeUf(e)}>
-              <SelectTrigger className="w-[180px]">
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent>
-                {ufs.map((uf) => {
-                  return (
-                    <SelectItem key={uf} value={uf}>
-                      {uf}
-                    </SelectItem>
-                  )
-                })}
-              </SelectContent>
-            </Select>
-          </div>
-        </div>
-        <div>
-          <Button
-            className="mt-6 w-full text-white active:animate-out flex items-center justify-center gap-2"
-            onClick={generateCpf}
-          >
-            <FaRedoAlt />
-            Generate CPF
-          </Button>
-          {!cpf ? (
-            <p className="text-xs mt-4 opacity-40">No generated CPF yet.</p>
-          ) : (
-            <div className="bg-secondary p-4 mt-4 rounded-[2px] relative ">
-              <div
-                className="absolute right-1 top-1 cursor-pointer hover:bg-background rounded-[2px] transition-colors p-2 z-20"
-                onClick={handleCopy}
-              >
-                <div>
-                  {!copy ? (
-                    <LuCopy className="z-10 active:animate-out" />
-                  ) : (
-                    <FaCheck className="z-10 text-green-600" />
-                  )}
+    generatePoint &&
+    uf && (
+      <Card className="mb-[200px] w-[400px]">
+        <CardHeader>Generate CPF</CardHeader>
+        <CardContent>
+          <div className="flex gap-4">
+            <RadioGroup
+              defaultValue={generatePoint}
+              onValueChange={(value: string) => changeGeneratePoint(value)}
+            >
+              <label className="text-xs mt-[6px] opacity-40">
+                {' '}
+                Generate point?
+              </label>
+              <div className="flex items-center gap-6">
+                <div className="flex items-center gap-1">
+                  <RadioGroupItem value="true" id="true" />
+                  <label htmlFor="true">Sim</label>
+                </div>
+                <div className="flex items-center gap-1">
+                  <RadioGroupItem value="false" id="false" />
+                  <label htmlFor="false">Não</label>
                 </div>
               </div>
-              <p className="text-sm opacity-80">CPF: {cpf}</p>
+            </RadioGroup>
+            <div className="space-y-1">
+              <Label className="text-xs opacity-40">State of origin?</Label>
+              <Select value={uf} onValueChange={(e) => changeUf(e)}>
+                <SelectTrigger className="w-[180px]">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  {ufs.map((uf) => {
+                    return (
+                      <SelectItem key={uf} value={uf}>
+                        {uf}
+                      </SelectItem>
+                    )
+                  })}
+                </SelectContent>
+              </Select>
             </div>
-          )}
-        </div>
-      </CardContent>
-    </Card>
+          </div>
+          <div>
+            <Button
+              className="mt-6 w-full text-white active:animate-out flex items-center justify-center gap-2"
+              onClick={generateCpf}
+            >
+              <FaRedoAlt />
+              Generate CPF
+            </Button>
+            {!cpf ? (
+              <p className="text-xs mt-4 opacity-40">No generated CPF yet.</p>
+            ) : (
+              <div className="bg-secondary p-4 mt-4 rounded-[2px] relative ">
+                <div
+                  className="absolute right-1 top-1 cursor-pointer hover:bg-background rounded-[2px] transition-colors p-2 z-20"
+                  onClick={handleCopy}
+                >
+                  <div>
+                    {!copy ? (
+                      <LuCopy className="z-10 active:animate-out" />
+                    ) : (
+                      <FaCheck className="z-10 text-green-600" />
+                    )}
+                  </div>
+                </div>
+                <p className="text-sm opacity-80">CPF: {cpf}</p>
+              </div>
+            )}
+          </div>
+        </CardContent>
+      </Card>
+    )
   )
 }
 
