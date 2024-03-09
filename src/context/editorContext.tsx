@@ -27,7 +27,7 @@ const EditorProvider = ({ children }: { children: React.ReactNode }) => {
 
   const onChangeThemeEditor = (value: string) => {
     const getStorage = localStorage.getItem('@help2dev')
-    if (defaultThemes.includes(value)) {
+    if (theme && defaultThemes.includes(value)) {
       let temp
       try {
         temp = JSON.parse(getStorage || '{}') || {}
