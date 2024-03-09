@@ -29,25 +29,28 @@ const EditorProvider = ({ children }: { children: React.ReactNode }) => {
     const getStorage = localStorage.getItem('@help2dev')
     if (defaultThemes.includes(value)) {
       let temp
-      // Parse the stored data into an object (assuming it's JSON-formatted)
       try {
-        temp = JSON.parse(getStorage || '{}') || {} // Handle potential parsing errors
+        temp = JSON.parse(getStorage || '{}') || {}
         if (theme === 'dark') {
-          // localStorage.setItem('@themeDarkEditor', value)
-
-          // Update the theme property within the parsed object
-          temp.theme = {
-            ...temp.theme, // Spread existing theme properties (if any)
-            dark: value, // Add the new 'dark' property with the desired value
+          temp.jsonFormatter = {
+            ...temp.jsonFormatter,
+            theme: {
+              ...temp.jsonFormatter.theme,
+              dark: value,
+            },
           }
+
           localStorage.setItem('@help2dev', JSON.stringify(temp))
         } else {
-          temp.theme = {
-            ...temp.theme, // Spread existing theme properties (if any)
-            light: value, // Add the new 'dark' property with the desired value
+          temp.jsonFormatter = {
+            ...temp.jsonFormatter,
+            theme: {
+              ...temp.jsonFormatter.theme,
+              light: value,
+            },
           }
+          localStorage.setItem('@help2dev', JSON.stringify(temp))
         }
-        localStorage
         setThemeSelected(value)
       } catch (error) {
         console.error('Error parsing localStorage data:', error)
@@ -59,8 +62,8 @@ const EditorProvider = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     const getStorage =
       JSON.parse(localStorage.getItem('@help2dev') || '{}') || {}
-    const defaltTheme = getStorage.theme
-      ? getStorage.theme[theme as string] ?? null
+    const defaltTheme = getStorage.jsonFormatter
+      ? getStorage.jsonFormatter.theme[theme as string] ?? null
       : null
     if (!defaltTheme) {
       setThemeSelected(theme === 'dark' ? 'dracula' : 'chrome')

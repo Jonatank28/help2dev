@@ -4,16 +4,19 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { FaRedoAlt } from 'react-icons/fa'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { Button } from '@/components/ui/button'
 import { LuCopy } from 'react-icons/lu'
 import { FaCheck } from 'react-icons/fa6'
 
 const CardGenerate = () => {
+  const storage = JSON.parse(localStorage.getItem('@help2dev') || '{}')
   const [cnpj, setCnpj] = useState('')
   const [copy, setCopy] = useState(false)
-  const [generatePoint, setGeneratePoint] = useState('true')
+  const [generatePoint, setGeneratePoint] = useState(
+    storage.generateCnpj?.generatePoint || 'true'
+  )
   const generateCnpj = () => {
     setCopy(false)
     const randomiza = (n: number) => Math.floor(Math.random() * n)
@@ -49,14 +52,27 @@ const CardGenerate = () => {
     setTimeout(() => setCopy(false), 2000)
   }
 
+  const changeGeneratePoint = (value: string) => {
+    const storage = JSON.parse(localStorage.getItem('@help2dev') || '{}')
+    const tempGeneratePoint = {
+      ...storage,
+      generateCnpj: {
+        ...storage.generateCnpj,
+        generatePoint: value,
+      },
+    }
+    localStorage.setItem('@help2dev', JSON.stringify(tempGeneratePoint))
+    setGeneratePoint(value)
+  }
+
   return (
     <Card className="mb-[200px] w-[400px]">
       <CardHeader>Generate CNPJ</CardHeader>
       <CardContent>
         <div className="flex gap-4">
           <RadioGroup
-            defaultValue="true"
-            onValueChange={(value: string) => setGeneratePoint(value)}
+            defaultValue={generatePoint}
+            onValueChange={(value: string) => changeGeneratePoint(value)}
           >
             <label className="text-xs mt-[6px] opacity-40">
               {' '}
