@@ -1,60 +1,98 @@
 'use client'
 
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
+import { Label } from '@/components/ui/label'
 import { FaRedoAlt } from 'react-icons/fa'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
 
+import { ufs } from '@/data/ufs'
 import { useEffect, useState } from 'react'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { Button } from '@/components/ui/button'
 import { LuCopy } from 'react-icons/lu'
 import { FaCheck } from 'react-icons/fa6'
 
-const CardGenerate = () => {
-  const [cnpj, setCnpj] = useState('')
-  const [copy, setCopy] = useState(false)
+const Content = () => {
+  const [cpf, setCpf] = useState('')
+  const [uf, setUf] = useState('')
   const [generatePoint, setGeneratePoint] = useState('')
+  const [copy, setCopy] = useState(false)
 
-  const generateCnpj = () => {
+  // generate cpf
+  const generateCpf = () => {
     setCopy(false)
     const randomiza = (n: number) => Math.floor(Math.random() * n)
-    const cnpj = []
+    const cpf = []
 
-    for (let i = 0; i < 12; i++) {
-      cnpj.push(randomiza(9))
+    if (uf !== 'indifferent') {
+      const ufIndex = ufs.indexOf(uf)
+      if (ufIndex !== -1) {
+        cpf.push(Math.floor(ufIndex / 10))
+        cpf.push(ufIndex % 10)
+      }
+      for (let i = 0; i < 7; i++) {
+        cpf.push(randomiza(9))
+      }
+    } else {
+      for (let i = 0; i < 9; i++) {
+        cpf.push(randomiza(9))
+      }
     }
 
-    let sum = cnpj.reduce((acc, val, i) => acc + val * (5 - (i % 4)), 0)
+    let sum = cpf.reduce((acc, val, i) => acc + val * (10 - i), 0)
     let rest = sum % 11
-    cnpj.push(rest < 2 ? 0 : 11 - rest)
+    cpf.push(rest < 2 ? 0 : 11 - rest)
 
-    sum = cnpj.reduce((acc, val, i) => acc + val * (6 - (i % 5)), 0)
+    sum = cpf.reduce((acc, val, i) => acc + val * (11 - i), 0)
     rest = sum % 11
-    cnpj.push(rest < 2 ? 0 : 11 - rest)
+    cpf.push(rest < 2 ? 0 : 11 - rest)
 
-    let cnpjFormatted = cnpj.join('')
+    let cpfFormatted = cpf.join('')
 
     if (generatePoint === 'true') {
-      cnpjFormatted = cnpjFormatted.replace(
-        /(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/,
-        '$1.$2.$3/$4-$5'
+      cpfFormatted = cpfFormatted.replace(
+        /(\d{3})(\d{3})(\d{3})(\d{2})/,
+        '$1.$2.$3-$4'
       )
     }
 
-    setCnpj(cnpjFormatted)
+    setCpf(cpfFormatted)
   }
 
+  // copy to clipboard
   const handleCopy = () => {
-    navigator.clipboard.writeText(cnpj)
+    navigator.clipboard.writeText(cpf)
     setCopy(true)
     setTimeout(() => setCopy(false), 2000)
   }
 
+  // change uf and save in local storage
+  const changeUf = (e: string) => {
+    const storage = JSON.parse(localStorage.getItem('@help2dev') || '{}')
+    setUf(e)
+    const tempUf = {
+      ...storage,
+      generateCpf: {
+        ...storage.generateCpf,
+        uf: e,
+      },
+    }
+    localStorage.setItem('@help2dev', JSON.stringify(tempUf))
+  }
+
+  // change generate point and save in local storage
   const changeGeneratePoint = (value: string) => {
     const storage = JSON.parse(localStorage.getItem('@help2dev') || '{}')
     const tempGeneratePoint = {
       ...storage,
-      generateCnpj: {
-        ...storage.generateCnpj,
+      generateCpf: {
+        ...storage.generateCpf,
         generatePoint: value,
       },
     }
@@ -64,13 +102,15 @@ const CardGenerate = () => {
 
   useEffect(() => {
     const storage = JSON.parse(localStorage.getItem('@help2dev') || '{}')
-    setGeneratePoint(String(storage.generateCnpj?.generatePoint) ?? 'true')
-  }, [generatePoint])
+    setUf(storage.generateCpf?.uf || 'indifferent')
+    setGeneratePoint(storage.generateCpf?.generatePoint || 'true')
+  }, [])
 
   return (
-    generatePoint && (
+    generatePoint &&
+    uf && (
       <Card className="mb-[200px] w-[400px]">
-        <CardHeader>Generate CNPJ</CardHeader>
+        <CardHeader>Generate CPF</CardHeader>
         <CardContent>
           <div className="flex gap-4">
             <RadioGroup
@@ -92,16 +132,33 @@ const CardGenerate = () => {
                 </div>
               </div>
             </RadioGroup>
+            <div className="space-y-1">
+              <Label className="text-xs opacity-40">State of origin?</Label>
+              <Select value={uf} onValueChange={(e) => changeUf(e)}>
+                <SelectTrigger className="w-[180px]">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  {ufs.map((uf) => {
+                    return (
+                      <SelectItem key={uf} value={uf}>
+                        {uf}
+                      </SelectItem>
+                    )
+                  })}
+                </SelectContent>
+              </Select>
+            </div>
           </div>
           <div>
             <Button
               className="mt-6 w-full text-white active:animate-out flex items-center justify-center gap-2"
-              onClick={generateCnpj}
+              onClick={generateCpf}
             >
               <FaRedoAlt />
-              Generate CNPJ
+              Generate CPF
             </Button>
-            {!cnpj ? (
+            {!cpf ? (
               <p className="text-xs mt-4 opacity-40">No generated CPF yet.</p>
             ) : (
               <div className="bg-secondary p-4 mt-4 rounded-[2px] relative ">
@@ -111,21 +168,20 @@ const CardGenerate = () => {
                 >
                   <div>
                     {!copy ? (
-                      <LuCopy className="z-10 active:animate-out active:bg-destructive" />
+                      <LuCopy className="z-10 active:animate-out" />
                     ) : (
                       <FaCheck className="z-10 text-green-600" />
                     )}
                   </div>
                 </div>
-                <p className="text-sm opacity-80">CNPJ: {cnpj}</p>
+                <p className="text-sm opacity-80">CPF: {cpf}</p>
               </div>
             )}
           </div>
         </CardContent>
       </Card>
     )
-    // '''
   )
 }
 
-export default CardGenerate
+export default Content

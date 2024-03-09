@@ -9,11 +9,13 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip'
 import FormFeedBack from './FormFeedBack'
+import { useLocale } from 'next-intl'
 
 const FeedBack = () => {
   const [showFeedback, setShowFeedback] = useState(false)
   const [openModal, setOpenModal] = useState(false)
   const pathName = usePathname()
+  const locale = useLocale()
 
   useEffect(() => {
     setShowFeedback(true)
@@ -25,7 +27,7 @@ const FeedBack = () => {
     return () => clearTimeout(timer)
   }, [pathName])
 
-  if (pathName == '/') return null
+  if (pathName == `/${locale}`) return null
 
   return (
     <>

@@ -6,9 +6,9 @@ import { useTheme } from 'next-themes'
 import AceEditor from 'react-ace'
 import 'ace-builds/src-noconflict/mode-json'
 import 'ace-builds/src-noconflict/ext-language_tools'
-import '../../../data/aceEditorImports'
-import { aceDarkThemes, aceLightThemes } from '../../../data/themes'
+import '../../../../data/aceEditorImports'
 import { useEditor } from '@/context/editorContext'
+import { aceDarkThemes, aceLightThemes } from '@/data/themes'
 
 const Content = () => {
   const { theme: themeRoot } = useTheme()

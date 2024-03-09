@@ -1,5 +1,5 @@
 import React from 'react'
-import CardGenerate from './components/CardGenerate'
+import Content from './components/Content'
 
 export const metadata = {
   title: 'Generate CPF',
@@ -12,7 +12,7 @@ export const metadata = {
 const PageGenerateCPF = () => {
   return (
     <main className="h-[calc(100vh-52px)] flex justify-center items-center">
-      <CardGenerate />
+      <Content />
     </main>
   )
 }

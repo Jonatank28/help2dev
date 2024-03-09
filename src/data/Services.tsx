@@ -1,4 +1,6 @@
-const Services = () => {
+'use server'
+
+const Services = async () => {
   const data = [
     {
       id: 1,
@@ -17,6 +19,12 @@ const Services = () => {
       name: 'CNPJ Generator',
       description: 'Generate a valid and random CNPJ.',
       href: '/generate-cnpj',
+    },
+    {
+      id: 4,
+      name: 'Loren Ipsum',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      href: '/lorem-ipsum',
     },
   ]
   return data

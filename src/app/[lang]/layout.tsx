@@ -2,6 +2,7 @@ import Providers from '@/components/Providers'
 import { cn } from '@/lib/utils'
 import '@/styles/globals.css'
 import { Inter as FontSans } from 'next/font/google'
+import { NextIntlClientProvider, useMessages } from 'next-intl'
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -18,18 +19,23 @@ export const metadata = {
 
 export default function RootLayout({
   children,
+  params: { locale },
 }: {
   children: React.ReactNode
+  params: { locale: string }
 }) {
+  const messages = useMessages()
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body
         className={cn(
           'min-h-screen font-sans antialiased scroll-smooth',
           fontSans.variable
         )}
       >
-        <Providers>{children}</Providers>
+        <NextIntlClientProvider messages={messages}>
+          <Providers>{children}</Providers>
+        </NextIntlClientProvider>
       </body>
     </html>
   )

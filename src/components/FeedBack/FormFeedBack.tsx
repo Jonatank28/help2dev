@@ -102,7 +102,6 @@ const FormFeedBack = ({ open, onClose }: Props) => {
         <AlertDialogHeader>
           <AlertDialogTitle>Tell me your experience</AlertDialogTitle>
           <AlertDialogDescription>
-            {/* Type */}
             <div className="mt-4 space-y-2">
               <Input
                 placeholder="Name"
