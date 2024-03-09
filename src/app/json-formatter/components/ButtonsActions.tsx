@@ -10,6 +10,8 @@ import { toast } from 'sonner'
 
 const ButtonsActions = () => {
   const { formattedJson, setFormattedJson, setJsonInput } = useEditor()
+
+  // copy code
   const handleCopyCode = () => {
     try {
       navigator.clipboard.writeText(formattedJson)
@@ -18,7 +20,7 @@ const ButtonsActions = () => {
       toast.error('Error copying')
     }
   }
-
+  // beautifies the code
   const handlePrettify = () => {
     try {
       const parsedJson = JSON.parse(formattedJson)
@@ -29,6 +31,7 @@ const ButtonsActions = () => {
     }
   }
 
+  // compact the code
   const handleMinify = () => {
     try {
       setFormattedJson(JSON.stringify(JSON.parse(formattedJson)))

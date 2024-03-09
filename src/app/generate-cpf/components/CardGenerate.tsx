@@ -19,11 +19,15 @@ import { LuCopy } from 'react-icons/lu'
 import { FaCheck } from 'react-icons/fa6'
 
 const CardGenerate = () => {
+  const storage = JSON.parse(localStorage.getItem('@help2dev') || '{}')
   const [cpf, setCpf] = useState('')
-  const [uf, setUf] = useState('indifferent')
-  const [generatePoint, setGeneratePoint] = useState('true')
+  const [uf, setUf] = useState(storage.generateCpf?.uf || 'indifferent')
+  const [generatePoint, setGeneratePoint] = useState(
+    storage.generateCpf?.generatePoint || 'true'
+  )
   const [copy, setCopy] = useState(false)
 
+  // generate cpf
   const generateCpf = () => {
     setCopy(false)
     const randomiza = (n: number) => Math.floor(Math.random() * n)
@@ -64,10 +68,37 @@ const CardGenerate = () => {
     setCpf(cpfFormatted)
   }
 
+  // copy to clipboard
   const handleCopy = () => {
     navigator.clipboard.writeText(cpf)
     setCopy(true)
     setTimeout(() => setCopy(false), 2000)
+  }
+
+  // change uf and save in local storage
+  const changeUf = (e: string) => {
+    setUf(e)
+    const tempUf = {
+      ...storage,
+      generateCpf: {
+        ...storage.generateCpf,
+        uf: e,
+      },
+    }
+    localStorage.setItem('@help2dev', JSON.stringify(tempUf))
+  }
+
+  // change generate point and save in local storage
+  const changeGeneratePoint = (value: string) => {
+    const tempGeneratePoint = {
+      ...storage,
+      generateCpf: {
+        ...storage.generateCpf,
+        generatePoint: value,
+      },
+    }
+    localStorage.setItem('@help2dev', JSON.stringify(tempGeneratePoint))
+    setGeneratePoint(value)
   }
 
   return (
@@ -76,8 +107,8 @@ const CardGenerate = () => {
       <CardContent>
         <div className="flex gap-4">
           <RadioGroup
-            defaultValue="true"
-            onValueChange={(value: string) => setGeneratePoint(value)}
+            defaultValue={generatePoint}
+            onValueChange={(value: string) => changeGeneratePoint(value)}
           >
             <label className="text-xs mt-[6px] opacity-40">
               {' '}
@@ -96,7 +127,7 @@ const CardGenerate = () => {
           </RadioGroup>
           <div className="space-y-1">
             <Label className="text-xs opacity-40">State of origin?</Label>
-            <Select value={uf} onValueChange={(e) => setUf(e)}>
+            <Select value={uf} onValueChange={(e) => changeUf(e)}>
               <SelectTrigger className="w-[180px]">
                 <SelectValue />
               </SelectTrigger>

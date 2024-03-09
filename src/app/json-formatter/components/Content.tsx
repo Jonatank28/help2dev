@@ -12,7 +12,6 @@ import { useEditor } from '@/context/editorContext'
 
 const Content = () => {
   const { theme: themeRoot } = useTheme()
-
   const {
     themeSelected,
     formattedJson,
@@ -23,11 +22,14 @@ const Content = () => {
   const defaultThemes = themeRoot === 'dark' ? aceDarkThemes : aceLightThemes
   const editorRef = useRef<AceEditor | null>(null)
 
+  const handleChange = (value: string) => {
+    setJsonInput(value)
+  }
+  // At the beginning it focuses on the textare, when it changes it formats the json code
   useEffect(() => {
     if (editorRef.current && editorRef.current.editor) {
       editorRef.current.editor.focus()
     }
-
     try {
       const parsedJson = JSON.parse(jsonInput)
       if (typeof parsedJson === 'object' && parsedJson !== null) {
@@ -39,10 +41,6 @@ const Content = () => {
       setFormattedJson('')
     }
   }, [jsonInput, setFormattedJson])
-
-  const handleChange = (value: string) => {
-    setJsonInput(value)
-  }
 
   return (
     defaultThemes && (
