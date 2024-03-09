@@ -15,7 +15,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head />
+      <head>
+        <title>Jason Editor</title>
+        <link rel="icon" href="/logo.svg" type="image/svg" sizes="38x38" />
+      </head>
       <body
         className={cn(
           'min-h-screen font-sans antialiased scroll-smooth',
