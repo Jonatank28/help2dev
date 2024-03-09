@@ -8,6 +8,14 @@ const fontSans = FontSans({
   variable: '--font-sans',
 })
 
+export const metadata = {
+  title: 'Help2Dev',
+  description: 'Help2Dev',
+  icons: {
+    icon: '/logo.svg',
+  },
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -15,10 +23,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <title>Jason Editor</title>
-        <link rel="icon" href="/logo.svg" type="image/svg" sizes="38x38" />
-      </head>
       <body
         className={cn(
           'min-h-screen font-sans antialiased scroll-smooth',
