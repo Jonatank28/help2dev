@@ -16,7 +16,7 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
     >
       <EditorProvider>
         <Toaster />
-        {/* <FeedBack /> */}
+        <FeedBack />
         <NavBar />
         {children}
       </EditorProvider>
