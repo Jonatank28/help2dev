@@ -27,11 +27,11 @@ const EditorProvider = ({ children }: { children: React.ReactNode }) => {
 
   const onChangeThemeEditor = (value: string) => {
     if (defaultThemes.includes(value)) {
-      const temp = JSON.parse(localStorage.getItem('@help2dev') || '{}') || {}
-      temp.theme = {
-        ...temp.theme,
-        [theme === 'dark' ? 'dark' : 'light']: value,
-      }
+      let temp = JSON.parse(localStorage.getItem('@help2dev') || '{}') || {}
+      // Garante que jsonFormatter e theme existam antes de tentar acessá-los
+      temp.jsonFormatter = temp.jsonFormatter || {}
+      temp.jsonFormatter.theme = temp.jsonFormatter.theme || {}
+      temp.jsonFormatter.theme[theme === 'dark' ? 'dark' : 'light'] = value
       localStorage.setItem('@help2dev', JSON.stringify(temp))
       setThemeSelected(value)
     }
@@ -41,7 +41,8 @@ const EditorProvider = ({ children }: { children: React.ReactNode }) => {
     const getStorage =
       JSON.parse(localStorage.getItem('@help2dev') || '{}') || {}
     const defaultTheme =
-      getStorage.theme?.[theme === 'dark' ? 'dark' : 'light'] ?? null
+      getStorage.jsonFormatter?.theme?.[theme === 'dark' ? 'dark' : 'light'] ??
+      null
     if (!defaultTheme) {
       setThemeSelected(theme === 'dark' ? 'dracula' : 'chrome')
     } else {
