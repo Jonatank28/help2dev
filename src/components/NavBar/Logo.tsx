@@ -23,11 +23,6 @@ const Logo = () => {
           <Link href="/" className="font-bold">
             <div className="flex items-center gap-2">
               <Image
-                // src={
-                //   theme === 'dark'
-                //     ? 'https://raw.githubusercontent.com/Jonatank28/help2dev/3ae4877e30548f23899fe475454cf0122ba53ec5/public/help2dev-logo.svg'
-                //     : 'https://raw.githubusercontent.com/Jonatank28/help2dev/3ae4877e30548f23899fe475454cf0122ba53ec5/public/help2dev-logo-blackvariant.svg'
-                // }
                 src={
                   theme === 'dark'
                     ? 'https://raw.githubusercontent.com/Jonatank28/help2dev/3ae4877e30548f23899fe475454cf0122ba53ec5/public/help2dev-logo.svg'

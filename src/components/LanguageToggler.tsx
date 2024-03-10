@@ -17,8 +17,19 @@ const LanguageToggler = () => {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className=" cursor-pointer bg-transparent border border-background-foreground hover:bg-secondary transition-colors p-1 px-2 rounded-md">
-        <Image src="/pt.png" alt="logo" width={26} height={26} />
+      <DropdownMenuTrigger className="opacity-70 cursor-pointer bg-transparent border border-background-foreground hover:bg-secondary transition-colors p-1 px-2 rounded-md">
+        <Image
+          src={
+            locale === 'pt'
+              ? '/pt.png'
+              : locale === 'es'
+              ? '/es.png'
+              : '/en.png'
+          }
+          alt="logo"
+          width={26}
+          height={26}
+        />
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuItem
@@ -31,7 +42,7 @@ const LanguageToggler = () => {
           className="cursor-pointer"
           onClick={() => router.push(pathName, { locale: 'en' })}
         >
-          US
+          EN
         </DropdownMenuItem>
         <DropdownMenuItem
           className="cursor-pointer"

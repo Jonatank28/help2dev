@@ -61,6 +61,17 @@
     "description": "A página que esta procurando não existe.",
     "link": "Voltar para o início"
   },
+  "ModalFeedBack": {
+    "title": "Escreva sua sugestão",
+    "name": "Nome",
+    "type": "Tipo de sugestão",
+    "message": "Digite sua mensagem aqui...",
+    "cancel": "Cancelar",
+    "send": "Enviar",
+    "sending": "Enviando...",
+    "toastErr": "Erro, tente novamente",
+    "toastSuccess": "Obrigado pelo seu feedback!"
+  },
   "Footer": {
     "title": "Todos os direitos reservados"
   }

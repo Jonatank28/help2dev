@@ -23,6 +23,8 @@ import emailjs from 'emailjs-com'
 import { toast } from 'sonner'
 import useLoading from '@/hooks/useLoading'
 import { isValidEmail } from '@/lib/utils'
+import { AbstractIntlMessages, useMessages } from 'next-intl'
+import { useLocale } from 'use-intl'
 
 interface Props {
   open: boolean
@@ -35,6 +37,9 @@ const FormFeedBack = ({ open, onClose }: Props) => {
   const [email, setEmail] = useState<null | string>(null)
   const [type, setType] = useState<null | string>(null)
   const [message, setMessage] = useState<null | string>(null)
+  const messages = useMessages()
+  const a: AbstractIntlMessages | any = messages['ModalFeedBack']
+  const locale = useLocale()
 
   const resetForm = () => {
     setName(null)
@@ -69,10 +74,10 @@ const FormFeedBack = ({ open, onClose }: Props) => {
     e.preventDefault()
     const send = await sendEmail()
     if (!send) {
-      toast.error('Error, please try again')
+      toast.error(a['toastErr'])
     } else {
       onClose()
-      toast.success('Thank you for your feedback!')
+      toast.success(a['toastSuccess'])
       resetForm()
     }
   }
@@ -80,15 +85,29 @@ const FormFeedBack = ({ open, onClose }: Props) => {
   const typeFeedBack = [
     {
       id: 1,
-      name: 'Doubt',
+      name: locale === 'en' ? 'Doubt' : locale === 'es' ? 'Duda' : 'Duvida',
     },
     {
       id: 2,
-      name: 'Error',
+      name:
+        locale === 'en'
+          ? 'Suggestion'
+          : locale === 'es'
+          ? 'Sugerencia'
+          : 'Sugestão',
     },
     {
       id: 3,
-      name: 'Suggestion',
+      name: locale === 'en' ? 'Err' : locale === 'es' ? 'Error' : 'Erro',
+    },
+    {
+      id: 4,
+      name:
+        locale === 'en'
+          ? 'Feedback'
+          : locale === 'es'
+          ? 'Comentario'
+          : 'Comentário',
     },
   ]
 
@@ -100,11 +119,11 @@ const FormFeedBack = ({ open, onClose }: Props) => {
     <AlertDialog open={open} onOpenChange={onClose}>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>Tell me your experience</AlertDialogTitle>
+          <AlertDialogTitle>{a['title']}</AlertDialogTitle>
           <AlertDialogDescription>
             <div className="mt-4 space-y-2">
               <Input
-                placeholder="Name"
+                placeholder={a['name']}
                 onChange={(e) => setName(e.target.value)}
               />
               <Input
@@ -114,7 +133,7 @@ const FormFeedBack = ({ open, onClose }: Props) => {
               />
               <Select onValueChange={(e) => setType(e)}>
                 <SelectTrigger className="w-full">
-                  <SelectValue placeholder="Type feedback" />
+                  <SelectValue placeholder={a['type']} />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectGroup>
@@ -130,7 +149,7 @@ const FormFeedBack = ({ open, onClose }: Props) => {
               </Select>
               <Textarea
                 onChange={(e) => setMessage(e.target.value)}
-                placeholder="Type your message here."
+                placeholder={a['message']}
                 className="border border-background-foreground resize-none"
                 rows={6}
               />
@@ -138,7 +157,7 @@ const FormFeedBack = ({ open, onClose }: Props) => {
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel>Cancel</AlertDialogCancel>
+          <AlertDialogCancel>{a['cancel']}</AlertDialogCancel>
           <AlertDialogAction
             onClick={handleFormSubmit}
             className="text-white"
@@ -150,7 +169,7 @@ const FormFeedBack = ({ open, onClose }: Props) => {
               isLoading
             }
           >
-            {isLoading ? 'Sending...' : 'Send'}
+            {isLoading ? a['sending'] : a['send']}
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>

@@ -11,17 +11,14 @@ import { usePathname } from '@/navigation'
 import { AbstractIntlMessages, useMessages } from 'next-intl'
 
 const ButtonsActions = () => {
-  const { formattedJson, setFormattedJson, setJsonInput } = useEditor()
   const pathName = usePathname()
+  const { formattedJson, setFormattedJson, setJsonInput } = useEditor()
   const messages = useMessages()
+  if (!pathName.includes('/json-formatter')) return null
   const jsonFormatterMessages: AbstractIntlMessages | any =
     messages['jsonFormatter']
   const { buttonsAction, toastMessage } = jsonFormatterMessages
 
-  if (!pathName.includes('/json-formatter')) return null
-
-  598
-  4
   // copy code
   const handleCopyCode = () => {
     try {

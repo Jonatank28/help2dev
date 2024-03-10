@@ -16,6 +16,7 @@ const NavBar = () => {
       <CardContent className="p-2 flex justify-between items-center">
         <Logo />
         <div className="flex items-center gap-2">
+          {/* Actions page /json-formatter */}
           <ButtonsActions />
           <LanguageToggler />
           <ToggleTheme />
