@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { MdFeedback } from 'react-icons/md'
-import { usePathname } from 'next/navigation'
+import { routesFeedBack } from '@/routes'
 import {
   Tooltip,
   TooltipContent,
@@ -10,6 +10,7 @@ import {
 } from '@/components/ui/tooltip'
 import FormFeedBack from './FormFeedBack'
 import { useLocale } from 'next-intl'
+import { usePathname } from '@/navigation'
 
 const FeedBack = () => {
   const [showFeedback, setShowFeedback] = useState(false)
@@ -27,7 +28,7 @@ const FeedBack = () => {
     return () => clearTimeout(timer)
   }, [pathName])
 
-  if (pathName == `/${locale}`) return null
+  if (!routesFeedBack.includes(pathName)) return null
 
   return (
     <>

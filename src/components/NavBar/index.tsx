@@ -8,7 +8,6 @@ import { routesAplication } from '@/routes'
 
 const NavBar = () => {
   const pathName = usePathname()
-  console.log(pathName)
 
   if (!routesAplication.includes(pathName)) return null
 
@@ -17,7 +16,7 @@ const NavBar = () => {
       <CardContent className="p-2 flex justify-between items-center">
         <Logo />
         <div className="flex items-center gap-2">
-          {pathName === '/json-formatter' && <ButtonsActions />}
+          <ButtonsActions />
           <LanguageToggler />
           <ToggleTheme />
         </div>

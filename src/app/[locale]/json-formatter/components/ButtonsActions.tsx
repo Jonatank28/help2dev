@@ -7,9 +7,13 @@ import { FiTrash } from 'react-icons/fi'
 import { MdCompress } from 'react-icons/md'
 import { BsStars } from 'react-icons/bs'
 import { toast } from 'sonner'
+import { usePathname } from '@/navigation'
 
 const ButtonsActions = () => {
   const { formattedJson, setFormattedJson, setJsonInput } = useEditor()
+  const pathName = usePathname()
+
+  if (!pathName.includes('/json-formatter')) return null
 
   // copy code
   const handleCopyCode = () => {
@@ -41,7 +45,7 @@ const ButtonsActions = () => {
   }
 
   return (
-    <>
+    <div className="hidden md:flex items-center gap-2">
       <Button
         variant="outline"
         onClick={handleCopyCode}
@@ -76,7 +80,7 @@ const ButtonsActions = () => {
         Clear
       </Button>
       <SelectedThemeEditor />
-    </>
+    </div>
   )
 }
 
