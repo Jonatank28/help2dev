@@ -74,8 +74,8 @@ const EditorProvider = ({ children }: { children: React.ReactNode }) => {
       const response = await fetch('/api/hello')
       const res = await response.json()
       console.log('🚀 ~ getData ~ res', res)
-    } catch (error) {
-      console.log(err)
+    } catch (error: any) {
+      console.log(error)
     }
   }
 
