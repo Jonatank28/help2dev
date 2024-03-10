@@ -1,10 +1,29 @@
 {
-  "Index": {
-    "title": "Olá mundo!"
+  "/": {
+    "title": "Simples. Rápido. Confiável.",
+    "title_description": "A maneira mais fácil de acessar nossos serviços poderosos. A apenas alguns cliques de distância.",
+    "subtitle": "Serviços Disponíveis",
+    "subtitle_description": "Escolha entre uma variedade de serviços projetados para facilitar sua vida.",
+    "JsonFormatter": {
+      "title": "Formatador JSON",
+      "description": "Formate seus dados JSON em um formato mais legível."
+    },
+    "GenerateCpf": {
+      "title": "Gerador de CPF",
+      "description": "Gerador de CPF aleatório."
+    },
+    "GenerateCnpj": {
+      "title": "Gerador de CNPJ",
+      "description": "Gerador de CNPJ aleatório."
+    },
+    "LoremIpsum": {
+      "title": "Lorem Ipsum",
+      "description": "Gerador Lorem Ipsum"
+    }
   },
   "NotFoundPage": {
-    "title": "Página não encontrada",
-    "description": "A página que esta procurando não existe.",
-    "link": "Voltar para o início"
+    "title": "Página não encontrada",
+    "description": "A página que esta procurando não existe.",
+    "link": "Voltar para o início"
   }
 }

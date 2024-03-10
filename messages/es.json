@@ -1,6 +1,25 @@
 {
-  "Index": {
-    "title": "Hola mundo!"
+  "/": {
+    "title": "Simple. Rápido. Confiable.",
+    "title_description": "La forma más fácil de acceder a nuestros potentes servicios. A solo unos clics de distancia.",
+    "subtitle": "Servicios Disponibles",
+    "subtitle_description": "Elija entre una variedad de servicios diseñados para facilitarle la vida.",
+    "JsonFormatter": {
+      "title": "Formatador JSON",
+      "description": "Formate sus datos JSON en un formato más legible."
+    },
+    "GenerateCpf": {
+      "title": "Generador de CPF",
+      "description": "Generador aleatorio de CPF."
+    },
+    "GenerateCnpj": {
+      "title": "Generador de CNPJ",
+      "description": "Generador aleatorio de CNPJ."
+    },
+    "LoremIpsum": {
+      "title": "Lorem Ipsum",
+      "description": "Generador de Lorem Ipsum"
+    }
   },
   "NotFoundPage": {
     "title": "Página no encontrada",

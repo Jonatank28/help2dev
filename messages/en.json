@@ -1,6 +1,25 @@
 {
-  "Index": {
-    "title": "Hello world!"
+  "/": {
+    "title": "Simple. Fast. Reliable.",
+    "title_description": "The easiest way to access our powerful services. Just a few clicks away.",
+    "subtitle": "Available Services",
+    "subtitle_description": "Choose from a variety of services designed to make your life easier.",
+    "JsonFormatter": {
+      "title": "JSON Formatter",
+      "description": "Format your JSON data into a more readable format."
+    },
+    "GenerateCpf": {
+      "title": "CPF Generator",
+      "description": "Random CPF generator."
+    },
+    "GenerateCnpj": {
+      "title": "CNPJ Generator",
+      "description": "Random CNPJ generator."
+    },
+    "LoremIpsum": {
+      "title": "Lorem Ipsum",
+      "description": "Lorem Ipsum generator"
+    }
   },
   "NotFoundPage": {
     "title": "Page not found",

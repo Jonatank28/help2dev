@@ -18,7 +18,7 @@ const NavBar = () => {
         <Logo />
         <div className="flex items-center gap-2">
           {pathName === '/json-formatter' && <ButtonsActions />}
-          {/* <LanguageToggler /> */}
+          <LanguageToggler />
           <ToggleTheme />
         </div>
       </CardContent>
