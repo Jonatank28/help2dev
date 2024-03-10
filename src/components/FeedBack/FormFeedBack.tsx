@@ -117,7 +117,7 @@ const FormFeedBack = ({ open, onClose }: Props) => {
 
   return (
     <AlertDialog open={open} onOpenChange={onClose}>
-      <AlertDialogContent>
+      <AlertDialogContent className="w-[96vw] rounded-md max-w-md space-y-6">
         <AlertDialogHeader>
           <AlertDialogTitle>{a['title']}</AlertDialogTitle>
           <AlertDialogDescription>

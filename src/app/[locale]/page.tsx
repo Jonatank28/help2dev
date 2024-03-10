@@ -43,7 +43,7 @@ export default async function Component() {
       </main>
       <footer className="flex gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
         <nav className="flex gap-4 sm:gap-6">
-          <p className="text-xs">
+          <p className="text-[10px] md:text-xs">
             © {new Date().getFullYear()}{' '}
             <span className="font-bold text-sm">Help2dev</span>{' '}
             {footer('title')}.
@@ -52,14 +52,14 @@ export default async function Component() {
 
         <div className="ml-auto flex gap-4 sm:gap-6">
           <a
-            className="text-xs hover:underline underline-offset-4"
+            className="text-[10px] md:text-xs hover:underline underline-offset-4"
             href="https://github.com/Jonatank28"
             target="_blank"
           >
             Github
           </a>
           <a
-            className="text-xs hover:underline underline-offset-4"
+            className="text-[10px] md:text-xs hover:underline underline-offset-4"
             href="https://www.linkedin.com/in/jonatan-s-almeida-4b817b226/"
             target="_blank"
           >

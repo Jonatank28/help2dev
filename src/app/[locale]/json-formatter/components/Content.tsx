@@ -45,7 +45,7 @@ const Content = () => {
   return (
     defaultThemes && (
       <main>
-        <div className="grid grid-cols-1 md:grid-cols-2 mx-2 h-[calc(100vh-52px)]">
+        <div className="grid grid-cols-1 md:grid-cols-2 h-[calc(100vh-52px)]">
           <Card className="rounded-none flex overflow-auto relative flex-col">
             <AceEditor
               mode="json"
