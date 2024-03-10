@@ -2,6 +2,7 @@ import React, { createContext, useContext, useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
 import { aceLightThemes, aceDarkThemes } from '../data/themes'
 import { usePathname } from 'next/navigation'
+import { useLocale } from 'next-intl'
 
 interface ThemeContextType {
   themeSelected: string
@@ -16,6 +17,7 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
 const EditorProvider = ({ children }: { children: React.ReactNode }) => {
+  const locale = useLocale()
   const { theme } = useTheme()
   const pathName = usePathname()
   const defaultThemes = theme === 'dark' ? aceDarkThemes : aceLightThemes
@@ -55,6 +57,17 @@ const EditorProvider = ({ children }: { children: React.ReactNode }) => {
       setJsonInput('')
     }
   }, [pathName])
+
+  useEffect(() => {
+    const getStorage =
+      JSON.parse(localStorage.getItem('@help2dev') || '{}') || {}
+    const localeCurrent = getStorage.locale || 'en'
+    if (locale !== localeCurrent) {
+      let temp = JSON.parse(localStorage.getItem('@help2dev') || '{}') || {}
+      temp.locale = locale
+      localStorage.setItem('@help2dev', JSON.stringify(temp))
+    }
+  }, [locale])
 
   const values: ThemeContextType = {
     themeSelected,
