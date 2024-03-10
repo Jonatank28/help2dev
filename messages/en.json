@@ -21,9 +21,26 @@
       "description": "Lorem Ipsum generator"
     }
   },
+  "jsonFormatter": {
+    "buttonsAction": {
+      "copy": "Copy",
+      "prettify": "Prettify",
+      "minify": "Minify",
+      "clear": "Clear"
+    },
+    "toastMessage": {
+      "copy": "Copied to clipboard",
+      "errorCopy": "Error copying",
+      "errorPrettify": "Error formatting",
+      "errorMinify": "Error minifying"
+    }
+  },
   "NotFoundPage": {
     "title": "Page not found",
     "description": "The page you are looking for does not exist.",
     "link": "Go back to home"
+  },
+  "Footer": {
+    "title": "All rights reserved"
   }
 }

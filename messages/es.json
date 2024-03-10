@@ -21,9 +21,26 @@
       "description": "Generador de Lorem Ipsum"
     }
   },
+  "jsonFormatter": {
+    "buttonsAction": {
+      "copy": "Copiar",
+      "prettify": "Formatear",
+      "minify": "Minimizar",
+      "clear": "Limpiar"
+    },
+    "toastMessage": {
+      "copy": "Copiado al portapapeles",
+      "errorCopy": "Error al copiar",
+      "errorPrettify": "Error al formatear",
+      "errorMinify": "Error al minimizar"
+    }
+  },
   "NotFoundPage": {
     "title": "Página no encontrada",
     "description": "La página que esta buscando no existe.",
     "link": "Volver al inicio"
+  },
+  "Footer": {
+    "title": "Todos los derechos reservados"
   }
 }

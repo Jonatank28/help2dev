@@ -8,20 +8,27 @@ import { MdCompress } from 'react-icons/md'
 import { BsStars } from 'react-icons/bs'
 import { toast } from 'sonner'
 import { usePathname } from '@/navigation'
+import { AbstractIntlMessages, useMessages } from 'next-intl'
 
 const ButtonsActions = () => {
   const { formattedJson, setFormattedJson, setJsonInput } = useEditor()
   const pathName = usePathname()
+  const messages = useMessages()
+  const jsonFormatterMessages: AbstractIntlMessages | any =
+    messages['jsonFormatter']
+  const { buttonsAction, toastMessage } = jsonFormatterMessages
 
   if (!pathName.includes('/json-formatter')) return null
 
+  598
+  4
   // copy code
   const handleCopyCode = () => {
     try {
       navigator.clipboard.writeText(formattedJson)
-      toast.success('Copied to clipboard')
+      toast.success(toastMessage['copy'])
     } catch (error) {
-      toast.error('Error copying')
+      toast.error(toastMessage('errorCopy'))
     }
   }
   // beautifies the code
@@ -31,7 +38,7 @@ const ButtonsActions = () => {
       const res = JSON.stringify(parsedJson, null, 2)
       setFormattedJson(res)
     } catch (error) {
-      toast.error('Error formatting')
+      toast.error(toastMessage('errorPrettify'))
     }
   }
 
@@ -40,7 +47,7 @@ const ButtonsActions = () => {
     try {
       setFormattedJson(JSON.stringify(JSON.parse(formattedJson)))
     } catch (error) {
-      toast.error('Error minifying')
+      toast.error(toastMessage('errorMinify'))
     }
   }
 
@@ -52,7 +59,7 @@ const ButtonsActions = () => {
         disabled={!formattedJson}
       >
         <LuCopy className="mr-2 h-4 w-4" />
-        Copy
+        {buttonsAction['copy']}
       </Button>{' '}
       <Button
         variant="outline"
@@ -60,7 +67,7 @@ const ButtonsActions = () => {
         disabled={!formattedJson}
       >
         <BsStars className="mr-2 h-4 w-4" />
-        Prettify
+        {buttonsAction['prettify']}
       </Button>
       <Button
         variant="outline"
@@ -68,7 +75,7 @@ const ButtonsActions = () => {
         disabled={!formattedJson}
       >
         <MdCompress className="mr-2 h-4 w-4" />
-        Minify
+        {buttonsAction['minify']}
       </Button>
       <Button
         disabled={!formattedJson}
@@ -77,7 +84,7 @@ const ButtonsActions = () => {
         onClick={() => setJsonInput('')}
       >
         <FiTrash className="mr-2 h-4 w-4" />
-        Clear
+        {buttonsAction['clear']}
       </Button>
       <SelectedThemeEditor />
     </div>

@@ -4,7 +4,8 @@ import { getTranslations } from 'next-intl/server'
 
 export default async function Component() {
   const services = await Services()
-  const t = await getTranslations('/')
+  const a = await getTranslations('/')
+  const footer = await getTranslations('Footer')
 
   return (
     <div className="flex flex-col min-h-[100dvh]">
@@ -13,10 +14,10 @@ export default async function Component() {
           <div className="container flex flex-col items-center justify-center gap-4 px-4 md:px-6 text-center lg:gap-10">
             <div className="space-y-2">
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
-                {t('title')}
+                {a('title')}
               </h1>
               <p className="max-w-[600px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed ">
-                {t('title_description')}
+                {a('title_description')}
               </p>
             </div>
           </div>
@@ -25,10 +26,10 @@ export default async function Component() {
           <div className="container grid items-center gap-6 px-4 md:px-6  lg:gap-12">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                {t('subtitle')}
+                {a('subtitle')}
               </h2>
               <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                {t('subtitle_description')}
+                {a('subtitle_description')}
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-12">
                 {services &&
@@ -44,8 +45,8 @@ export default async function Component() {
         <nav className="flex gap-4 sm:gap-6">
           <p className="text-xs">
             © {new Date().getFullYear()}{' '}
-            <span className="font-bold text-sm">Help2dev</span> All rights
-            reserved.
+            <span className="font-bold text-sm">Help2dev</span>{' '}
+            {footer('title')}.
           </p>
         </nav>
 
