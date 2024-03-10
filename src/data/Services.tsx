@@ -4,17 +4,11 @@ import { getTranslations } from 'next-intl/server'
 
 const Services = async () => {
   const t = await getTranslations('/')
-  const key = [
-    'JsonFormatter',
-    'GenerateCpf',
-    'GenerateCnpj',
-    'LoremIpsum',
-  ] as const
+  const key = ['JsonFormatter', 'GenerateCpf', 'GenerateCnpj', 'Apis'] as const
 
   const data = [
     {
       id: 1,
-      // name: 'JSON Formatter',
       name: t(key[0] + '.title'),
       description: t(key[0] + '.description'),
       href: '/json-formatter',
@@ -35,7 +29,7 @@ const Services = async () => {
       id: 4,
       name: t(key[3] + '.title'),
       description: t(key[3] + '.description'),
-      href: '/lorem-ipsum',
+      href: '/apis',
     },
   ]
   return data

@@ -16,9 +16,9 @@
       "title": "CNPJ Generator",
       "description": "Random CNPJ generator."
     },
-    "LoremIpsum": {
-      "title": "Lorem Ipsum",
-      "description": "Lorem Ipsum generator"
+    "Apis": {
+      "title": "APIs",
+      "description": "Get free APIs"
     }
   },
   "jsonFormatter": {

@@ -16,9 +16,9 @@
       "title": "Generador de CNPJ",
       "description": "Generador aleatorio de CNPJ."
     },
-    "LoremIpsum": {
-      "title": "Lorem Ipsum",
-      "description": "Generador de Lorem Ipsum"
+    "Apis": {
+      "title": "APIs",
+      "description": "Consumir APIs gratuitas"
     }
   },
   "jsonFormatter": {

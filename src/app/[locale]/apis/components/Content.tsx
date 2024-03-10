@@ -3,7 +3,7 @@ import React from 'react'
 const Content = () => {
   return (
     <div>
-      <h1>Lorem Ipsum </h1>
+      <h1>Em desenvolvimento</h1>
     </div>
   )
 }
