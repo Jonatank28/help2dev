@@ -1,14 +1,14 @@
 import React from 'react'
 import { Card, CardContent } from '../ui/card'
-import Link from 'next/link'
+import { Link } from '@/navigation'
 
-const ServiceCard = ({ service, locale }: any) => {
+const ServiceCard = ({ service }: any) => {
   return (
     <Card
       key={service.name}
       className="p-12 hover:bg-secondary transition-colors cursor-pointer"
     >
-      <Link href={locale + '' + service.href}>
+      <Link href={service.href}>
         <CardContent className="flex flex-col justify-center items-center gap-4">
           <div className="flex flex-col justify-center items-center gap-2">
             <h1 className="text-2xl font-bold tracking-tighter">

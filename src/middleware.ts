@@ -1,13 +1,11 @@
 import createMiddleware from 'next-intl/middleware';
  
 export default createMiddleware({
-  locales: ['pt', 'en', 'es'],
- 
-  defaultLocale: 'pt',
+  locales: ['en', 'pt', 'es'],
+  defaultLocale: 'en',
   localeDetection: true,
 });
-
  
 export const config = {
-  matcher: ['/', '/(pt|en|es)/:path*']
+  matcher: ['/','/(pt|en|es)/:path*', '/unknown.txt']
 };

@@ -3,6 +3,7 @@ import { cn } from '@/lib/utils'
 import '@/styles/globals.css'
 import { Inter as FontSans } from 'next/font/google'
 import { NextIntlClientProvider, useMessages } from 'next-intl'
+import { unstable_setRequestLocale } from 'next-intl/server'
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -25,6 +26,7 @@ export default function RootLayout({
   params: { locale: string }
 }) {
   const messages = useMessages()
+  unstable_setRequestLocale(locale)
   return (
     <html lang={locale} suppressHydrationWarning>
       <body

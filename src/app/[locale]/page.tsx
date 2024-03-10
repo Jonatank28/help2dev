@@ -1,11 +1,8 @@
 import Services from '@/data/Services'
 import ServiceCard from '@/components/home/ServiceCard'
-import { Card, CardContent } from '@/components/ui/card'
-import { getLocale } from 'next-intl/server'
 
 export default async function Component() {
   const services = await Services()
-  const locale = await getLocale()
 
   return (
     <div className="flex flex-col min-h-[100dvh]">
@@ -36,11 +33,7 @@ export default async function Component() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-12">
                 {services &&
                   services.map((service) => (
-                    <ServiceCard
-                      key={service.id}
-                      service={service}
-                      locale={locale}
-                    />
+                    <ServiceCard key={service.id} service={service} />
                   ))}
               </div>
             </div>

@@ -25,13 +25,12 @@ const Logo = () => {
               <Image
                 src={
                   theme === 'dark'
-                    ? 'help2dev-logo.svg'
-                    : 'help2dev-logo-blackvariant.svg'
+                    ? 'https://raw.githubusercontent.com/Jonatank28/help2dev/3ae4877e30548f23899fe475454cf0122ba53ec5/public/help2dev-logo.svg'
+                    : 'https://raw.githubusercontent.com/Jonatank28/help2dev/3ae4877e30548f23899fe475454cf0122ba53ec5/public/help2dev-logo-blackvariant.svg'
                 }
                 alt="logo"
-                width={50}
-                height={50}
-                className="w-32"
+                width={120}
+                height={120}
               />
             </div>
           </Link>
