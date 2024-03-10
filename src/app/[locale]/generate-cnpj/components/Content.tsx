@@ -8,11 +8,16 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { Button } from '@/components/ui/button'
 import { LuCopy } from 'react-icons/lu'
 import { FaCheck } from 'react-icons/fa6'
+import { AbstractIntlMessages, useMessages } from 'next-intl'
 
 const Content = () => {
   const [cnpj, setCnpj] = useState('')
   const [copy, setCopy] = useState(false)
   const [generatePoint, setGeneratePoint] = useState('')
+  const messages = useMessages()
+  const generateCPFMessages: AbstractIntlMessages | any =
+    messages['generateCnpj']
+  const { card } = generateCPFMessages
 
   const generateCnpj = () => {
     setCopy(false)
@@ -70,7 +75,7 @@ const Content = () => {
   return (
     generatePoint && (
       <Card className="mb-[200px] w-[400px]">
-        <CardHeader>Generate CNPJ</CardHeader>
+        <CardHeader>{card['title']}</CardHeader>
         <CardContent>
           <div className="flex gap-4">
             <RadioGroup
@@ -78,17 +83,16 @@ const Content = () => {
               onValueChange={(value: string) => changeGeneratePoint(value)}
             >
               <label className="text-xs mt-[6px] opacity-40">
-                {' '}
-                Generate point?
+                {card['radioPointTitle']}
               </label>
               <div className="flex items-center gap-6">
                 <div className="flex items-center gap-1">
                   <RadioGroupItem value="true" id="true" />
-                  <label htmlFor="true">Sim</label>
+                  <label htmlFor="true">{card['radioPointTrue']}</label>
                 </div>
                 <div className="flex items-center gap-1">
                   <RadioGroupItem value="false" id="false" />
-                  <label htmlFor="false">Não</label>
+                  <label htmlFor="false">{card['radioPointFalse']}</label>
                 </div>
               </div>
             </RadioGroup>
@@ -99,10 +103,12 @@ const Content = () => {
               onClick={generateCnpj}
             >
               <FaRedoAlt />
-              Generate CNPJ
+              {card['button']}
             </Button>
             {!cnpj ? (
-              <p className="text-xs mt-4 opacity-40">No generated CPF yet.</p>
+              <p className="text-xs mt-4 opacity-40">
+                {card['messageNoGeneration']}.
+              </p>
             ) : (
               <div className="bg-secondary p-4 mt-4 rounded-[2px] relative ">
                 <div

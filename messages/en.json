@@ -35,6 +35,27 @@
       "errorMinify": "Error minifying"
     }
   },
+  "generateCpf": {
+    "card": {
+      "title": "CPF Generator",
+      "button": "Generate",
+      "radioPointTitle": "Generate point",
+      "radioPointTrue": "Yes",
+      "radioPointFalse": "No",
+      "labelUf": "Origin state",
+      "messageNoGeneration": "No generation yet"
+    }
+  },
+  "generateCnpj": {
+    "card": {
+      "title": "CNPJ Generator",
+      "button": "Generate",
+      "radioPointTitle": "Generate point",
+      "radioPointTrue": "Yes",
+      "radioPointFalse": "No",
+      "messageNoGeneration": "No generation yet"
+    }
+  },
   "NotFoundPage": {
     "title": "Page not found",
     "description": "The page you are looking for does not exist.",

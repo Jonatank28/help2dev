@@ -35,6 +35,27 @@
       "errorMinify": "Error al minimizar"
     }
   },
+  "generateCpf": {
+    "card": {
+      "title": "Generador de CPF",
+      "button": "Generar",
+      "radioPointTitle": "Generar pontuação",
+      "radioPointTrue": "Si",
+      "radioPointFalse": "No",
+      "labelUf": "Estado de origen",
+      "messageNoGeneration": "Aún no hay CPF generado"
+    }
+  },
+  "generateCnpj": {
+    "card": {
+      "title": "Generador de CNPJ",
+      "button": "Generar",
+      "radioPointTitle": "Generar pontuação",
+      "radioPointTrue": "Si",
+      "radioPointFalse": "No",
+      "messageNoGeneration": "Aún no hay CNPJ generado"
+    }
+  },
   "NotFoundPage": {
     "title": "Página no encontrada",
     "description": "La página que esta buscando no existe.",

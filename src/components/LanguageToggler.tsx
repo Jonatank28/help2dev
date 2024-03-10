@@ -8,6 +8,7 @@ import {
 } from '@/components/ui/dropdown-menu'
 import { usePathname, useRouter } from '@/navigation'
 import { useLocale } from 'next-intl'
+import Image from 'next/image'
 
 const LanguageToggler = () => {
   const pathName = usePathname()
@@ -16,8 +17,8 @@ const LanguageToggler = () => {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="cursor-pointer bg-transparent border border-background-foreground hover:bg-secondary transition-colors p-1 px-2 rounded-md">
-        {locale}
+      <DropdownMenuTrigger className=" cursor-pointer bg-transparent border border-background-foreground hover:bg-secondary transition-colors p-1 px-2 rounded-md">
+        <Image src="/pt.png" alt="logo" width={26} height={26} />
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuItem
