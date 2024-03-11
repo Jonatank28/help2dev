@@ -4,9 +4,6 @@ import Content from './components/Content'
 export const metadata = {
   title: 'Generate CPF',
   description: 'Generate a valid and random CPF',
-  icons: {
-    icon: '/logo.svg',
-  },
 }
 
 const PageGenerateCPF = () => {

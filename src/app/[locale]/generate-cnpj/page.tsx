@@ -4,9 +4,6 @@ import Content from './components/Content'
 export const metadata = {
   title: 'Generate CNPJ',
   description: 'Generate a valid and random CNPJ',
-  icons: {
-    icon: '/logo.svg',
-  },
 }
 
 const PageGenerateCNPJ = () => {
