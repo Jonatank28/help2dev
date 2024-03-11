@@ -14,7 +14,7 @@ export const metadata = {
   title: 'Help2Dev',
   description: 'Help2Dev',
   icons: {
-    icon: '/logo.svg',
+    icon: '/icon.png',
   },
 }
 
