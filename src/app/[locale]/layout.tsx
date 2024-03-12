@@ -32,7 +32,10 @@ export default function RootLayout({
     <html lang={locale} suppressHydrationWarning>
       {/* <Head> */}
       <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6708395486232861" crossOrigin="anonymous"></Script>
+      {/* Adicionar google analitics */}
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-2E2WYW2QJ7" />
 
+      <script>  window.dataLayer = window.dataLayer </script>
       {/* </Head> */}
       <body
         className={cn(
