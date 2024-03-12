@@ -58,7 +58,7 @@
   },
   "apis": {
     "movies": {
-      "title": "APIs",
+      "title": "API of movies",
       "descriptionTitle": "Service that provides a selected list of the 50 highest-grossing films of all time. Our API provides detailed information about each film, including title, release year, director and box office. Whether you're a movie enthusiast, a developer looking for data for your popular app, or simply curious about the highest-grossing movies in history, our API has you covered. Explore the world of cinema with our Movies API!",
       "description": "Description",
       "method": "Method",
