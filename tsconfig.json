@@ -33,7 +33,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/data/aceEditorImports.js",
-    "src/pages/api/hello.js"
+    "src/pages/api/movies/route.js"
   ],
   "exclude": [
     "node_modules"
