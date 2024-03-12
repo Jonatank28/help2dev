@@ -31,6 +31,7 @@ export default function RootLayout({
     <html lang={locale} suppressHydrationWarning>
       <Head>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6708395486232861" crossOrigin="anonymous"></script>
+        <meta name="google-adsense-account" content="ca-pub-6708395486232861"></meta>
       </Head>
       <body
         className={cn(
