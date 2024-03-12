@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "title": "Avatar",
+    "year": 2009,
+    "director": "James Cameron",
+    "gross": "$2,923,706,026"
+  },
+  {
+    "id": 2,
+    "title": "Avengers: Endgame",
+    "year": 2019,
+    "director": "Joe Russo / Anthony Russo",
+    "gross": "$2,799,439,100"
+  }
+]

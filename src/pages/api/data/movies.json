@@ -1,352 +1,352 @@
 [
   {
     "id": 1,
-    "title": "Avengers: Endgame",
-    "year": 2019,
-    "director": "Anthony Russo, Joe Russo",
-    "gross": "$2,798,000,000"
-  },
-  {
-    "id": 2,
     "title": "Avatar",
     "year": 2009,
     "director": "James Cameron",
-    "gross": "$2,790,439,000"
+    "gross": "$2,923,706,026"
+  },
+  {
+    "id": 2,
+    "title": "Avengers: Endgame",
+    "year": 2019,
+    "director": "Joe Russo / Anthony Russo",
+    "gross": "$2,799,439,100"
   },
   {
     "id": 3,
-    "title": "Titanic",
-    "year": 1997,
+    "title": "Avatar: The Way of Water",
+    "year": 2022,
     "director": "James Cameron",
-    "gross": "$2,194,439,542"
+    "gross": "$2,320,250,281"
   },
   {
     "id": 4,
-    "title": "Star Wars: The Force Awakens",
-    "year": 2015,
-    "director": "J.J. Abrams",
-    "gross": "$2,068,223,624"
+    "title": "Titanic",
+    "year": 1997,
+    "director": "James Cameron",
+    "gross": "$2,264,743,305"
   },
   {
     "id": 5,
-    "title": "Avengers: Infinity War",
-    "year": 2018,
-    "director": "Anthony Russo, Joe Russo",
-    "gross": "$2,048,359,754"
+    "title": "Star Wars: Episode VII - The Force Awakens",
+    "year": 2015,
+    "director": "J.J. Abrams",
+    "gross": "$2,071,310,218"
   },
   {
     "id": 6,
-    "title": "Jurassic World",
-    "year": 2015,
-    "director": "Colin Trevorrow",
-    "gross": "$1,670,400,637"
+    "title": "Avengers: Infinity War",
+    "year": 2018,
+    "director": "Joe Russo / Anthony Russo",
+    "gross": "$2,052,415,039"
   },
   {
     "id": 7,
-    "title": "The Lion King",
-    "year": 2019,
-    "director": "Jon Favreau",
-    "gross": "$1,656,943,394"
+    "title": "Spider-Man: No Way Home",
+    "year": 2021,
+    "director": "Jon Watts",
+    "gross": "$1,921,847,111"
   },
   {
     "id": 8,
-    "title": "The Avengers",
-    "year": 2012,
-    "director": "Joss Whedon",
-    "gross": "$1,518,812,988"
+    "title": "Jurassic World",
+    "year": 2015,
+    "director": "Colin Trevorrow",
+    "gross": "$1,671,537,444"
   },
   {
     "id": 9,
-    "title": "Furious 7",
-    "year": 2015,
-    "director": "James Wan",
-    "gross": "$1,515,100,000"
+    "title": "The Lion King",
+    "year": 2019,
+    "director": "Jon Favreau",
+    "gross": "$1,663,075,401"
   },
   {
     "id": 10,
-    "title": "Avengers: Age of Ultron",
-    "year": 2015,
+    "title": "The Avengers",
+    "year": 2012,
     "director": "Joss Whedon",
-    "gross": "$1,402,809,540"
+    "gross": "$1,520,538,536"
   },
   {
     "id": 11,
-    "title": "Black Panther",
-    "year": 2018,
-    "director": "Ryan Coogler",
-    "gross": "$1,346,913,171"
+    "title": "Furious 7",
+    "year": 2015,
+    "director": "James Wan",
+    "gross": "$1,515,341,399"
   },
   {
     "id": 12,
-    "title": "Harry Potter and the Deathly Hallows – Part 2",
-    "year": 2011,
-    "director": "David Yates",
-    "gross": "$1,342,000,000"
+    "title": "Top Gun: Maverick",
+    "year": 2022,
+    "director": "Joseph Kosinski",
+    "gross": "$1,495,696,292"
   },
   {
     "id": 13,
-    "title": "Fast & Furious 8",
-    "year": 2017,
-    "director": "F. Gary Gray",
-    "gross": "$1,236,005,118"
+    "title": "Frozen II",
+    "year": 2019,
+    "director": "Chris Buck / Jennifer Lee",
+    "gross": "$1,453,683,476"
   },
   {
     "id": 14,
-    "title": "Frozen",
-    "year": 2013,
-    "director": "Chris Buck, Jennifer Lee",
-    "gross": "$1,281,430,000"
+    "title": "Barbie",
+    "year": 2023,
+    "director": "Greta Gerwig",
+    "gross": "$1,445,638,421"
   },
   {
     "id": 15,
-    "title": "Jurassic World: Fallen Kingdom",
-    "year": 2018,
-    "director": "J.A. Bayona",
-    "gross": "$1,308,467,944"
+    "title": "Avengers: Age of Ultron",
+    "year": 2015,
+    "director": "Joss Whedon",
+    "gross": "$1,405,018,048"
   },
   {
     "id": 16,
-    "title": "The Lion King",
-    "year": 1994,
-    "director": "Roger Allers, Rob Minkoff",
-    "gross": "$986,214,868"
+    "title": "Frozen",
+    "year": 2013,
+    "director": "Chris Buck / Jennifer Lee",
+    "gross": "$1,284,540,518"
   },
   {
     "id": 17,
-    "title": "The Lord of the Rings: The Return of the King",
-    "year": 2003,
-    "director": "Peter Jackson",
-    "gross": "$1,142,219,401"
+    "title": "The Super Mario Bros. Movie",
+    "year": 2023,
+    "director": "Michael Jelenic / Aaron Horvath",
+    "gross": "$1,360,325,400"
   },
   {
     "id": 18,
-    "title": "Aquaman",
-    "year": 2018,
-    "director": "James Wan",
-    "gross": "$1,148,461,807"
+    "title": "Harry Potter and the Deathly Hallows: Part 2",
+    "year": 2011,
+    "director": "David Yates",
+    "gross": "$1,342,359,942"
   },
   {
     "id": 19,
-    "title": "The Hobbit: An Unexpected Journey",
-    "year": 2012,
-    "director": "Peter Jackson",
-    "gross": "$1,021,103,568"
+    "title": "Black Panther",
+    "year": 2018,
+    "director": "Ryan Coogler",
+    "gross": "$1,349,926,083"
   },
   {
     "id": 20,
-    "title": "The Hobbit: The Desolation of Smaug",
-    "year": 2013,
-    "director": "Peter Jackson",
-    "gross": "$958,366,855"
+    "title": "Star Wars: Episode VIII - The Last Jedi",
+    "year": 2017,
+    "director": "Rian Johnson",
+    "gross": "$1,334,407,706"
   },
   {
     "id": 21,
-    "title": "The Hobbit: The Battle of the Five Armies",
-    "year": 2014,
-    "director": "Peter Jackson",
-    "gross": "$956,019,788"
+    "title": "Jurassic World: Fallen Kingdom",
+    "year": 2018,
+    "director": "J.A. Bayona",
+    "gross": "$1,310,466,296"
   },
   {
     "id": 22,
-    "title": "Harry Potter and the Deathly Hallows – Part 1",
-    "year": 2010,
-    "director": "David Yates",
-    "gross": "$976,900,000"
+    "title": "Beauty and the Beast",
+    "year": 2017,
+    "director": "Bill Condon",
+    "gross": "$1,266,115,964"
   },
   {
     "id": 23,
     "title": "Incredibles 2",
     "year": 2018,
     "director": "Brad Bird",
-    "gross": "$1,243,144,248"
+    "gross": "$1,243,225,667"
   },
   {
     "id": 24,
-    "title": "Beauty and the Beast",
+    "title": "The Fate of the Furious",
     "year": 2017,
-    "director": "Bill Condon",
-    "gross": "$1,264,064,386"
+    "director": "F. Gary Gray",
+    "gross": "$1,236,005,118"
   },
   {
     "id": 25,
-    "title": "National Treasure",
-    "year": 2004,
-    "director": "Jon Turteltaub",
-    "gross": "$872,300,000"
-  },
-  {
-    "id": 26,
     "title": "Iron Man 3",
     "year": 2013,
     "director": "Shane Black",
-    "gross": "$1,214,811,252"
+    "gross": "$1,215,577,205"
+  },
+  {
+    "id": 26,
+    "title": "Minions",
+    "year": 2015,
+    "director": "Kyle Balda / Pierre Coffin",
+    "gross": "$1,159,444,662"
   },
   {
     "id": 27,
-    "title": "Spider-Man: Homecoming",
-    "year": 2017,
-    "director": "Jon Watts",
-    "gross": "$880,166,924"
+    "title": "The Lord of the Rings: The Return of the King",
+    "year": 2003,
+    "director": "Peter Jackson",
+    "gross": "$1,147,633,833"
   },
   {
     "id": 28,
-    "title": "Pirates of the Caribbean: Dead Man's Chest",
-    "year": 2006,
-    "director": "Gore Verbinski",
-    "gross": "$1,066,179,725"
+    "title": "Captain America: Civil War",
+    "year": 2016,
+    "director": "Joe Russo / Anthony Russo",
+    "gross": "$1,155,046,416"
   },
   {
     "id": 29,
-    "title": "Toy Story 4",
-    "year": 2019,
-    "director": "Josh Cooley",
-    "gross": "$1,073,394,593"
+    "title": "Aquaman",
+    "year": 2018,
+    "director": "James Wan",
+    "gross": "$1,148,528,393"
   },
   {
     "id": 30,
+    "title": "Skyfall",
+    "year": 2012,
+    "director": "Sam Mendes",
+    "gross": "$1,142,471,295"
+  },
+  {
+    "id": 31,
+    "title": "Spider-Man: Far from Home",
+    "year": 2019,
+    "director": "Jon Watts",
+    "gross": "$1,131,927,996"
+  },
+  {
+    "id": 32,
+    "title": "Captain Marvel",
+    "year": 2019,
+    "director": "Ryan Fleck / Anna Boden",
+    "gross": "$1,131,416,446"
+  },
+  {
+    "id": 33,
     "title": "Transformers: Dark of the Moon",
     "year": 2011,
     "director": "Michael Bay",
     "gross": "$1,123,794,079"
   },
   {
-    "id": 31,
-    "title": "Skyfall",
-    "year": 2012,
-    "director": "Sam Mendes",
-    "gross": "$1,108,561,013"
-  },
-  {
-    "id": 32,
-    "title": "Transformers: Revenge of the Fallen",
-    "year": 2009,
-    "director": "Michael Bay",
-    "gross": "$836,303,693"
-  },
-  {
-    "id": 33,
-    "title": "Toy Story 3",
-    "year": 2010,
-    "director": "Lee Unkrich",
-    "gross": "$1,066,969,703"
-  },
-  {
     "id": 34,
-    "title": "Pirates of the Caribbean: On Stranger Tides",
-    "year": 2011,
-    "director": "Rob Marshall",
-    "gross": "$1,045,713,802"
-  },
-  {
-    "id": 35,
-    "title": "Star Wars: The Last Jedi",
-    "year": 2017,
-    "director": "Rian Johnson",
-    "gross": "$1,332,539,889"
-  },
-  {
-    "id": 36,
-    "title": "Rogue One: A Star Wars Story",
-    "year": 2016,
-    "director": "Gareth Edwards",
-    "gross": "$1,056,057,273"
-  },
-  {
-    "id": 37,
-    "title": "The Dark Knight",
-    "year": 2008,
-    "director": "Christopher Nolan",
-    "gross": "$1,136,954,427"
-  },
-  {
-    "id": 38,
-    "title": "The Dark Knight Rises",
-    "year": 2012,
-    "director": "Christopher Nolan",
-    "gross": "$1,081,041,287"
-  },
-  {
-    "id": 39,
-    "title": "The Simpsons Movie",
-    "year": 2007,
-    "director": "David Silverman",
-    "gross": "$536,414,527"
-  },
-  {
-    "id": 40,
-    "title": "Minions",
-    "year": 2015,
-    "director": "Kyle Balda, Pierre Coffin",
-    "gross": "$1,159,398,397"
-  },
-  {
-    "id": 41,
-    "title": "Captain Marvel",
-    "year": 2019,
-    "director": "Anna Boden, Ryan Fleck",
-    "gross": "$1,128,274,794"
-  },
-  {
-    "id": 42,
-    "title": "Transformers",
-    "year": 2007,
-    "director": "Michael Bay",
-    "gross": "$709,709,780"
-  },
-  {
-    "id": 43,
-    "title": "The Lion King II: Simba's Pride",
-    "year": 1998,
-    "director": "Darrell Rooney, Rob LaDuca",
-    "gross": "$986,214,868"
-  },
-  {
-    "id": 44,
-    "title": "Spider-Man: Far From Home",
-    "year": 2019,
-    "director": "Jon Watts",
-    "gross": "$1,131,927,996"
-  },
-  {
-    "id": 45,
     "title": "Jurassic Park",
     "year": 1993,
     "director": "Steven Spielberg",
-    "gross": "$1,033,900,000"
+    "gross": "$1,109,802,321"
+  },
+  {
+    "id": 35,
+    "title": "The Dark Knight Rises",
+    "year": 2012,
+    "director": "Christopher Nolan",
+    "gross": "$1,084,939,099"
+  },
+  {
+    "id": 36,
+    "title": "Transformers: Age of Extinction",
+    "year": 2014,
+    "director": "Michael Bay",
+    "gross": "$1,104,054,072"
+  },
+  {
+    "id": 37,
+    "title": "Joker",
+    "year": 2019,
+    "director": "Todd Phillips",
+    "gross": "$1,074,458,282"
+  },
+  {
+    "id": 38,
+    "title": "Star Wars: Episode IX - The Rise of Skywalker",
+    "year": 2019,
+    "director": "J.J. Abrams",
+    "gross": "$1,077,022,372"
+  },
+  {
+    "id": 39,
+    "title": "Toy Story 4",
+    "year": 2019,
+    "director": "Josh Cooley",
+    "gross": "$1,073,841,394"
+  },
+  {
+    "id": 40,
+    "title": "Toy Story 3",
+    "year": 2010,
+    "director": "Lee Unkrich",
+    "gross": "$1,067,316,101"
+  },
+  {
+    "id": 41,
+    "title": "Pirates of the Caribbean: Dead Man's Chest",
+    "year": 2006,
+    "director": "Gore Verbinski",
+    "gross": "$1,066,179,747"
+  },
+  {
+    "id": 42,
+    "title": "Rogue One: A Star Wars Story",
+    "year": 2016,
+    "director": "Gareth Edwards",
+    "gross": "$1,058,682,142"
+  },
+  {
+    "id": 43,
+    "title": "Aladdin",
+    "year": 2019,
+    "director": "Guy Ritchie",
+    "gross": "$1,054,304,000"
+  },
+  {
+    "id": 44,
+    "title": "Pirates of the Caribbean: On Stranger Tides",
+    "year": 2011,
+    "director": "Rob Marshall",
+    "gross": "$1,046,721,266"
+  },
+  {
+    "id": 45,
+    "title": "Despicable Me 3",
+    "year": 2017,
+    "director": "Pierre Coffin / Kyle Balda",
+    "gross": "$1,034,800,131"
   },
   {
     "id": 46,
-    "title": "Alice in Wonderland",
-    "year": 2010,
-    "director": "Tim Burton",
-    "gross": "$1,025,467,110"
+    "title": "Finding Dory",
+    "year": 2016,
+    "director": "Andrew Stanton / Angus MacLane",
+    "gross": "$1,029,266,989"
   },
   {
     "id": 47,
-    "title": "Finding Dory",
-    "year": 2016,
-    "director": "Andrew Stanton, Angus MacLane",
-    "gross": "$1,028,570,889"
+    "title": "The Dark Knight",
+    "year": 2008,
+    "director": "Christopher Nolan",
+    "gross": "$1,004,558,444"
   },
   {
     "id": 48,
-    "title": "Zootopia",
-    "year": 2016,
-    "director": "Byron Howard, Rich Moore",
-    "gross": "$1,023,784,195"
+    "title": "Star Wars: Episode I - The Phantom Menace",
+    "year": 1999,
+    "director": "George Lucas",
+    "gross": "$1,027,082,707"
   },
   {
     "id": 49,
-    "title": "The Hobbit: The Battle of the Five Armies",
-    "year": 2014,
-    "director": "Peter Jackson",
-    "gross": "$956,019,788"
+    "title": "Zootopia",
+    "year": 2016,
+    "director": "Byron Howard / Rich Moore / Jared Bush",
+    "gross": "$1,025,521,689"
   },
   {
     "id": 50,
-    "title": "The Hunger Games: Catching Fire",
-    "year": 2013,
-    "director": "Francis Lawrence",
-    "gross": "$865,011,746"
+    "title": "Alice in Wonderland",
+    "year": 2010,
+    "director": "Tim Burton",
+    "gross": "$1,025,468,216"
   }
 ]
