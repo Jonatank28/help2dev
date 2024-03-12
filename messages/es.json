@@ -56,6 +56,19 @@
       "messageNoGeneration": "Aún no hay CNPJ generado"
     }
   },
+  "apis": {
+    "movies": {
+      "title": "APIs",
+      "descriptionTitle": "Servicio que proporciona una lista seleccionada de las 50 películas más taquilleras de todos los tiempos. Nuestra API proporciona información detallada sobre cada película, incluido el título, el año de estreno, el director y la taquilla. Si eres un entusiasta de las películas, un desarrollador que busca datos para tu aplicación popular o simplemente sientes curiosidad por las películas más taquilleras de la historia, nuestra API lo tiene cubierto. ¡Explora el mundo del cine con nuestra API de películas!",
+      "description": "Descripción",
+      "method": "Método",
+      "return": "Retorno",
+      "titlec1": "Buscando todos los filmes",
+      "descriptionc1": "Un array de 50 objetos",
+      "titlec2": "Buscando película por ID",
+      "descriptionc2": "Un objeto"
+    }
+  },
   "NotFoundPage": {
     "title": "Página no encontrada",
     "description": "La página que esta buscando no existe.",

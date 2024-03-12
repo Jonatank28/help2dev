@@ -56,6 +56,19 @@
       "messageNoGeneration": "Ainda não há CNPJ gerado"
     }
   },
+  "apis": {
+    "movies": {
+      "title": "APIs",
+      "descriptionTitle": "Serviço que fornece uma lista selecionada dos 50 filmes com maior arrecadação de todos os tempos. Nossa API oferece informações detalhadas sobre cada filme, incluindo título, ano de lançamento, diretor e bilheteria. Se você é um entusiasta de cinema, um desenvolvedor em busca de dados para popular seu aplicativo ou simplesmente curioso sobre os filmes com maior arrecadação da história, nossa API tem tudo o que você precisa. Explore o mundo do cinema com a nossa API de Filmes!",
+      "description": "Descrição",
+      "method": "Método",
+      "return": "Retorno",
+      "titlec1": "Buscando todos os filmes",
+      "descriptionc1": "Um array de 50 objetos",
+      "titlec2": "Buscando todos os filmes",
+      "descriptionc2": "Um objeto"
+    }
+  },
   "NotFoundPage": {
     "title": "Página não encontrada",
     "description": "A página que esta procurando não existe.",

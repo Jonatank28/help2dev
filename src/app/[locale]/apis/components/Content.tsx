@@ -8,11 +8,9 @@ import findAll from '../data/findAllExample.json'
 import findOne from '../data/findOneExample.json'
 import 'ace-builds/src-noconflict/theme-dracula'
 import 'ace-builds/src-noconflict/mode-json'
-import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
 
 const Content = () => {
-  const { theme } = useTheme()
   const [client, setClient] = useState(false)
 
   useEffect(() => {
@@ -62,7 +60,7 @@ const Content = () => {
                     <AceEditor
                       style={{ borderRadius: '8px' }}
                       mode="json"
-                      theme={theme === 'dark' ? 'dracula' : 'github'}
+                      theme='dracula'
                       value={JSON.stringify(findAll, null, 2)}
                       name="rightEditor"
                       className="!h-full !w-full"
@@ -110,7 +108,7 @@ const Content = () => {
                     <AceEditor
                       style={{ borderRadius: '8px' }}
                       mode="json"
-                      theme={theme === 'dark' ? 'dracula' : 'github'}
+                      theme='dracula'
                       value={JSON.stringify(findOne, null, 2)}
                       name="rightEditor"
                       className="!h-full !w-full"
