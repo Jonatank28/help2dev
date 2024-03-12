@@ -5,6 +5,7 @@ import { Inter as FontSans } from 'next/font/google'
 import { NextIntlClientProvider, useMessages } from 'next-intl'
 import { unstable_setRequestLocale } from 'next-intl/server'
 import Head from 'next/head'
+import Script from 'next/script'
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -29,10 +30,10 @@ export default function RootLayout({
   const messages = useMessages()
   return (
     <html lang={locale} suppressHydrationWarning>
-      <Head>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6708395486232861" crossOrigin="anonymous"></script>
-        <meta name="google-adsense-account" content="ca-pub-6708395486232861"></meta>
-      </Head>
+      {/* <Head> */}
+      <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6708395486232861" crossOrigin="anonymous"></Script>
+
+      {/* </Head> */}
       <body
         className={cn(
           'min-h-screen font-sans antialiased scroll-smooth',
