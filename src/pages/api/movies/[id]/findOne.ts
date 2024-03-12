@@ -5,7 +5,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const { id } = req.query;
 
   try {
-    const movie = data.movies.find((movie) => movie.id === parseInt(id as string));
+    const movie = data.find((movie) => movie.id === parseInt(id as string));
     if (movie) {
       res.status(200).json(movie);
     } else {
