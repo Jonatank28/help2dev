@@ -44,18 +44,18 @@ const Content = () => {
               <div className="grid grid-cols-[80px_1fr] md:grid-cols-[150px_1fr] border-t p-2">
                 <p>URL</p>
                 <Link
-                  className="text-blue-500 underline"
+                  className="text-blue-500 underline text-xs md:text-base"
                   href={`${api}movies/findAll`}
                   target="_blank"
                 >
                   {`${api}movies/findAll`}
                 </Link>
               </div>
-              <div className="grid grid-cols-[80px_1fr] md:grid-cols-[150px_1fr]  border-t p-2">
+              <div className="grid grid-cols-[80px_1fr] md:grid-cols-[150px_1fr] border-t p-2">
                 <p>Descrição</p>
                 <p>Um array de 50 objetos</p>
               </div>
-              <div className="grid grid-cols-[80px_1fr] md:grid-cols-[150px_1fr]  border-t p-2 h-[320px] md:h-[310px]">
+              <div className="grid grid-cols-[80px_1fr] md:grid-cols-[150px_1fr] border-t p-2 h-[320px] md:h-[310px]">
                 <p>Retorno</p>
                 {client && (
                   <Card className="p-2 bg-[#282A36]">
@@ -92,7 +92,7 @@ const Content = () => {
               <div className="grid grid-cols-[80px_1fr] md:grid-cols-[150px_1fr] border-t p-2">
                 <p>URL</p>
                 <Link
-                  className="text-blue-500 underline"
+                  className="text-blue-500 underline text-xs md:text-base"
                   href={`${api}movies/1/findOne`}
                   target="_blank"
                 >
