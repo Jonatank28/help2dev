@@ -30,25 +30,24 @@ export default function RootLayout({
   const messages = useMessages()
   return (
     <html lang={locale} suppressHydrationWarning>
-      {/* <Head> */}
-      <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6708395486232861" crossOrigin="anonymous"></Script>
-      {/* <!-- Google tag (gtag.js) --> */}
-      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-WMJRWD34KG"></Script>
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-  
-      gtag('config', 'G-WMJRWD34KG');
-    `,
-        }}
-      ></script>
+      {/* <Head> 
+     <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6708395486232861" crossOrigin="anonymous"></Script>
+     <Script async src="https://www.googletagmanager.com/gtag/js?id=G-WMJRWD34KG"></Script>
+     <script
+       dangerouslySetInnerHTML={{
+         __html: `
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+ 
+     gtag('config', 'G-WMJRWD34KG');
+   `,
+       }}
+     ></script>
 
 
-      <script>  window.dataLayer = window.dataLayer </script>
-      {/* </Head> */}
+     <script>  window.dataLayer = window.dataLayer </script>
+      </Head>  */}
       <body
         className={cn(
           'min-h-screen font-sans antialiased scroll-smooth',
@@ -62,3 +61,5 @@ export default function RootLayout({
     </html>
   )
 }
+
+

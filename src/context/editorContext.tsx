@@ -69,20 +69,6 @@ const EditorProvider = ({ children }: { children: React.ReactNode }) => {
     }
   }, [locale])
 
-  const getData = async () => {
-    try {
-      const response = await fetch('/api/hello')
-      const res = await response.json()
-      console.log('🚀 ~ getData ~ res', res)
-    } catch (error: any) {
-      console.log(error)
-    }
-  }
-
-  useEffect(() => {
-    getData()
-  }, [])
-
   const values: ThemeContextType = {
     themeSelected,
     setThemeSelected,
