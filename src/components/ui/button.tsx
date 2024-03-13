@@ -38,25 +38,17 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
   VariantProps<typeof buttonVariants> {
   asChild?: boolean
-  label?: string
-  id?: string // Adicionando a propriedade id
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, label, id, disabled, children, ...props }, ref) => {
+  ({ className, variant, size, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button"
     return (
       <Comp
         className={cn(buttonVariants({ variant, size, className }))}
         ref={ref}
-        id={id} // Passando o id para o componente
-        disabled={disabled}
-        aria-disabled={disabled}
-        aria-label={label}
         {...props}
-      >
-        {label || children}
-      </Comp>
+      />
     )
   }
 )
