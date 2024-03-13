@@ -8,7 +8,7 @@ export default async function Component() {
   const footer = await getTranslations('Footer')
 
   return (
-    <div className="flex flex-col min-h-[100dvh]">
+    <div className="flex flex-col min-h-[100vh]">
       <main className="flex-1">
         <section className="w-full py-8 lg:py-16">
           <div className="container flex flex-col items-center justify-center gap-4 px-4 md:px-6 text-center lg:gap-10">
