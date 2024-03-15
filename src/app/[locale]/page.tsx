@@ -22,7 +22,7 @@ export default async function Component() {
         </section>
         {/* Services */}
         <ServicesSection />
-        <Newsletter />
+        {/* <Newsletter /> */}
         <Footer />
       </div>
     </main>
