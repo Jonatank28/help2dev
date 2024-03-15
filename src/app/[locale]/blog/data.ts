@@ -1,8 +1,8 @@
 export const highlights = [
   {
     id: 1,
-    title: 'HTML',
-    description: 'Como Adicionar Sombras em Elementos com CSS box-shadow e HTML ?',
+    title: 'React',
+    description: 'Oque é React?',
     image: 'https://images.unsplash.com/photo-1662642969047-11ca70bfe99b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2MzYxNzUzNA&ixlib=rb-1.2.1&q=80&w=1080',
     date: '2024-03-10T00:00:00.000Z'
   },
