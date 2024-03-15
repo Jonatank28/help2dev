@@ -12,8 +12,8 @@ const NavBar = () => {
   if (!routesAplication.includes(pathName)) return null
 
   return (
-    <Card className="rounded-none bg-background border-none shadow-none z-10">
-      <CardContent className="p-2 flex justify-between items-center">
+    <Card className="rounded-none bg-background border-none shadow-none z-10 ">
+      <CardContent className="widthDefault flex justify-between items-center py-2">
         <Logo />
         <div className="flex items-center gap-2">
           {/* Actions page /json-formatter */}

@@ -4,17 +4,23 @@ import '@/styles/globals.css'
 import { Inter as FontSans } from 'next/font/google'
 import { NextIntlClientProvider, useMessages } from 'next-intl'
 import { unstable_setRequestLocale } from 'next-intl/server'
-import Head from 'next/head'
-import Script from 'next/script'
 
 const fontSans = FontSans({
   subsets: ['latin'],
   variable: '--font-sans',
 })
 
+
 export const metadata = {
   title: 'Help2Dev',
-  description: 'Help2Dev',
+  description: 'Help2Dev, making life easier for developers.',
+  url: 'https://help2dev.com',
+  siteName: 'Help2Dev',
+  viewport: 'width=device-width, initial-scale=1',
+  creator: 'Jonatan dos Santos de Almeida',
+  AudioContext: 'Help2Dev, making life easier for developers.',
+  HTMLHeadingElement: 'Help2Dev, making life easier for developers.',
+  keywords: ['CNPJ', 'CPF', 'API', 'APIREST', 'JSON', 'HELP', 'DEV', 'JASON', 'EDITOR', 'GET', 'HELP2DEV', 'Help2Dev'],
   icons: {
     icon: '/icon.png',
   },
