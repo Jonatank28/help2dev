@@ -122,22 +122,22 @@ const Content = () => {
               defaultValue={generatePoint}
               onValueChange={(value: string) => changeGeneratePoint(value)}
             >
-              <label className="text-xs mt-[6px] opacity-40">
+              <label className="text-xs mt-[6px] opacity-60">
                 {card['radioPointTitle']}
               </label>
               <div className="flex items-center gap-6">
                 <div className="flex items-center gap-1">
-                  <RadioGroupItem value="true" id="true" />
+                  <RadioGroupItem value="true" id="true" role="radio" aria-checked="true" data-state="checked" />
                   <label htmlFor="true">{card['radioPointTrue']}</label>
                 </div>
                 <div className="flex items-center gap-1">
-                  <RadioGroupItem value="false" id="false" />
+                  <RadioGroupItem value="false" id="false" role="radio" aria-checked="false" data-state="unchecked" />
                   <label htmlFor="false">{card['radioPointFalse']}</label>
                 </div>
               </div>
             </RadioGroup>
             <div className="space-y-1">
-              <Label className="text-xs opacity-40">{card['labelUf']}</Label>
+              <Label className="text-xs opacity-60">{card['labelUf']}</Label>
               <Select value={uf} onValueChange={(e) => changeUf(e)}>
                 <SelectTrigger className="w-[180px]">
                   <SelectValue />
@@ -156,6 +156,7 @@ const Content = () => {
           </div>
           <div>
             <Button
+              aria-label='GenerateCpf'
               className="mt-6 w-full text-white active:animate-out flex items-center justify-center gap-2"
               onClick={generateCpf}
             >
@@ -163,7 +164,7 @@ const Content = () => {
               <p>{card['button']}</p>
             </Button>
             {!cpf ? (
-              <p className="text-xs mt-4 opacity-40">
+              <p className="text-xs mt-4 opacity-60">
                 {card['messageNoGeneration']}.
               </p>
             ) : (

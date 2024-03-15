@@ -6,8 +6,13 @@ import { getTranslations } from "next-intl/server";
 export default async function Component() {
   const a = await getTranslations('/')
   return (
+<<<<<<< HEAD
     <main className="min-h-screen ">
       <div className="space-y-6">
+=======
+    <div className="flex flex-col min-h-[100vh]">
+      <main className="flex-1">
+>>>>>>> be0cb2666c9aaa6b5ee3c19e72a2f6fdc4ef75c6
         <section className="w-full py-8 lg:py-16">
           <div className="container flex flex-col items-center justify-center gap-4 px-4 md:px-6 text-center lg:gap-10">
             <div className="space-y-2">

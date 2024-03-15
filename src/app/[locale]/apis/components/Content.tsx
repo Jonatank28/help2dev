@@ -116,13 +116,13 @@ const Content = () => {
                   <div className='flex items-center gap-3 md:gap-4'>
                     <Link
                       className="text-blue-500 underline text-xs md:text-base"
-                      href={`${api}movies/findOne`}
+                      href={`${api}movies/1/findOne`}
                       target="_blank"
                     >
-                      {`${api}movies/findOne`}
+                      {`${api}movies/{id}findOne`}
                     </Link>
-                    <Button variant="outline" size="icon" onClick={() => handleCopy(`${api}movies/findOne`)}>
-                      {copy.status && copy.link === `${api}movies/findOne` ? (
+                    <Button variant="outline" size="icon" onClick={() => handleCopy(`${api}movies/{id}findOne`)}>
+                      {copy.status && copy.link === `${api}movies/{id}findOne` ? (
                         <FaCheck className="z-10 text-green-600" />
                       ) : (
                         <LuCopy className="z-10 active:animate-out" />
