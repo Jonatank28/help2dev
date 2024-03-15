@@ -7,6 +7,7 @@ import { Toaster } from '@/components/ui/sonner'
 import FeedBack from './FeedBack'
 import Script from 'next/script'
 import Head from 'next/head'
+import Footer from './Footer'
 
 const Providers = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -36,8 +37,11 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
         <EditorProvider>
           <Toaster />
           <FeedBack />
-          <NavBar />
-          {children}
+          <div className='min-h-screen grid grid-rows-[auto_1fr_auto]'>
+            <NavBar />
+            {children}
+            <Footer />
+          </div>
         </EditorProvider>
       </NextThemesProvider>
     </>

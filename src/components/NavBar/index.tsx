@@ -1,3 +1,5 @@
+'use client'
+
 import { ToggleTheme } from '../ToggleTheme'
 import { Card, CardContent } from '../ui/card'
 import Logo from './Logo'

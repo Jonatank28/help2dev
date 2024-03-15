@@ -1,7 +1,18 @@
-import { getTranslations } from "next-intl/server"
+'use client'
 
-const Footer = async () => {
-  const footer = await getTranslations('Footer')
+import { usePathname } from "@/navigation"
+import { routeFooter } from "@/routes"
+import { AbstractIntlMessages, useMessages } from "next-intl"
+import Link from "next/link"
+
+const Footer = () => {
+  const messages = useMessages()
+  const footer: AbstractIntlMessages | any =
+    messages['Footer']
+
+  const pathName = usePathname()
+
+  if (!routeFooter.includes(pathName)) return null
 
   return (
     <footer className="border-t">
@@ -10,25 +21,31 @@ const Footer = async () => {
           <p className="text-[10px] md:text-xs">
             © {new Date().getFullYear()}{' '}
             <span className="font-bold text-sm">Help2dev</span>{' '}
-            {footer('title')}.
+            {footer['title']}.
           </p>
         </nav>
 
         <div className="ml-auto flex gap-4 sm:gap-6">
-          <a
+          <Link
+            className="text-[10px] md:text-xs hover:underline underline-offset-4"
+            href="/blog"
+          >
+            Blog
+          </Link>
+          <Link
             className="text-[10px] md:text-xs hover:underline underline-offset-4"
             href="https://github.com/Jonatank28"
             target="_blank"
           >
             Github
-          </a>
-          <a
+          </Link>
+          <Link
             className="text-[10px] md:text-xs hover:underline underline-offset-4"
             href="https://www.linkedin.com/in/jonatan-s-almeida-4b817b226/"
             target="_blank"
           >
             Linkedin
-          </a>
+          </Link>
         </div>
       </div>
     </footer>
