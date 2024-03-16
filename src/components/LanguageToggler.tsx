@@ -9,6 +9,10 @@ import {
 import { usePathname, useRouter } from '@/navigation'
 import { useLocale } from 'next-intl'
 import Image from 'next/image'
+//Photos
+import pt from '@/assets/language/pt.png'
+import es from '@/assets/language/es.png'
+import en from '@/assets/language/en.png'
 
 const LanguageToggler = () => {
   const pathName = usePathname()
@@ -21,12 +25,13 @@ const LanguageToggler = () => {
         <Image
           src={
             locale === 'pt'
-              ? '/pt.png'
+              ? pt
               : locale === 'es'
-              ? '/es.png'
-              : '/en.png'
+                ? es
+                : en
           }
-          alt="logo"
+          alt="logo language selection"
+          aria-label='Change language'
           width={26}
           height={26}
         />

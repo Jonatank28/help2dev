@@ -1,5 +1,3 @@
-'use server'
-
 import { getTranslations } from 'next-intl/server'
 
 const Services = async () => {

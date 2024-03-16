@@ -26,12 +26,12 @@ const Footer = () => {
         </nav>
 
         <div className="ml-auto flex gap-4 sm:gap-6">
-          <Link
+          {/* <Link
             className="text-[10px] md:text-xs hover:underline underline-offset-4"
             href="/blog"
           >
             Blog
-          </Link>
+          </Link> */}
           <Link
             className="text-[10px] md:text-xs hover:underline underline-offset-4"
             href="https://github.com/Jonatank28"

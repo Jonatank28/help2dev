@@ -6,7 +6,6 @@ import { EditorProvider } from '@/context/editorContext'
 import { Toaster } from '@/components/ui/sonner'
 import FeedBack from './FeedBack'
 import Script from 'next/script'
-import Head from 'next/head'
 import Footer from './Footer'
 
 const Providers = ({ children }: { children: React.ReactNode }) => {

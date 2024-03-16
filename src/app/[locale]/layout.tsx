@@ -3,7 +3,6 @@ import { cn } from '@/lib/utils'
 import '@/styles/globals.css'
 import { Inter as FontSans } from 'next/font/google'
 import { NextIntlClientProvider, useMessages } from 'next-intl'
-import { unstable_setRequestLocale } from 'next-intl/server'
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -13,17 +12,14 @@ const fontSans = FontSans({
 
 export const metadata = {
   title: 'Help2Dev',
-  description: 'Help2Dev, making life easier for developers.',
+  description: 'Help2Dev, json formatter, free api.',
   url: 'https://help2dev.com',
   siteName: 'Help2Dev',
   viewport: 'width=device-width, initial-scale=1',
   creator: 'Jonatan dos Santos de Almeida',
-  AudioContext: 'Help2Dev, making life easier for developers.',
-  HTMLHeadingElement: 'Help2Dev, making life easier for developers.',
+  AudioContext: 'Help2Dev, json formatter.',
+  HTMLHeadingElement: 'Help2Dev, json formatter, free api.',
   keywords: ['CNPJ', 'CPF', 'API', 'APIREST', 'JSON', 'HELP', 'DEV', 'JASON', 'EDITOR', 'GET', 'HELP2DEV', 'Help2Dev'],
-  icons: {
-    icon: '/icon.png',
-  },
 }
 
 export default function RootLayout({

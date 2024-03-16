@@ -1,5 +1,5 @@
 import Services from '@/data/Services'
-import ServiceCard from '@/components/home/ServiceCard'
+import ServiceCard from '@/ServiceCard'
 import { getTranslations } from 'next-intl/server'
 
 

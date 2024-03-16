@@ -1,9 +1,9 @@
 import { Card } from '@/components/ui/card'
 import { Link } from '@/navigation'
-import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 
-export default function NotFoundPage() {
-  const t = useTranslations('NotFoundPage')
+export default async function NotFoundPage() {
+  const t = await getTranslations('NotFoundPage')
 
   return (
     <main className="min-h-screen w-screen bg-background flex items-center justify-center">
