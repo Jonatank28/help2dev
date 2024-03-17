@@ -1,5 +1,4 @@
 import Footer from "@/components/Footer";
-import Newsletter from "@/components/Newsletter";
 import ServicesSection from "@/components/Services";
 import { getTranslations } from "next-intl/server";
 
@@ -22,7 +21,6 @@ export default async function Component() {
         </section>
         {/* Services */}
         <ServicesSection />
-        {/* <Newsletter /> */}
       </div>
     </main>
   )
