@@ -12,7 +12,7 @@ const Footer = () => {
 
   const pathName = usePathname()
 
-  if (!routeFooter.includes(pathName) && !pathName.includes('/blog')) return null
+  if (!routeFooter.includes(pathName)) return null
 
   return (
     <footer className="border-t">
