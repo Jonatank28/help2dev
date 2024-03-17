@@ -119,6 +119,7 @@ const Content = () => {
         <CardContent>
           <div className="flex gap-4">
             <RadioGroup
+              aria-label='Generate Point'
               defaultValue={generatePoint}
               onValueChange={(value: string) => changeGeneratePoint(value)}
             >
@@ -138,7 +139,7 @@ const Content = () => {
             </RadioGroup>
             <div className="space-y-1">
               <Label className="text-xs opacity-60">{card['labelUf']}</Label>
-              <Select value={uf} onValueChange={(e) => changeUf(e)}>
+              <Select value={uf} onValueChange={(e) => changeUf(e)} aria-label="Select uf">
                 <SelectTrigger className="w-[180px]">
                   <SelectValue />
                 </SelectTrigger>

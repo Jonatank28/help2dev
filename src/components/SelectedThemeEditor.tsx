@@ -14,7 +14,7 @@ const SelectedThemeEditor = () => {
   const { onChangeThemeEditor, themeSelected } = useEditor()
 
   return (
-    <Select value={themeSelected} onValueChange={(e) => onChangeThemeEditor(e)}>
+    <Select value={themeSelected} onValueChange={(e) => onChangeThemeEditor(e)} aria-label="Select theme">
       <SelectTrigger className="w-[180px]">
         <SelectValue placeholder="Theme" />
       </SelectTrigger>
@@ -24,7 +24,7 @@ const SelectedThemeEditor = () => {
           : Object.values(aceDarkThemes)
         ).map((theme) => {
           return (
-            <SelectItem key={theme} value={theme} defaultValue={themeSelected}>
+            <SelectItem key={theme} value={theme} defaultValue={themeSelected} aria-label='Select theme'>
               {theme}
             </SelectItem>
           )
