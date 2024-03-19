@@ -121,7 +121,7 @@ const Content = () => {
                     >
                       {`${api}movies/{id}findOne`}
                     </Link>
-                    <Button variant="outline" size="icon" onClick={() => handleCopy(`${api}movies/{id}findOne`)}>
+                    <Button variant="outline" size="icon" onClick={() => handleCopy(`${api}movies/1/findOne`)}>
                       {copy.status && copy.link === `${api}movies/{id}findOne` ? (
                         <FaCheck className="z-10 text-green-600" />
                       ) : (
