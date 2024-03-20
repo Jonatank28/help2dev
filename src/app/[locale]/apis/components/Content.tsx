@@ -122,7 +122,7 @@ const Content = () => {
                       {`${api}movies/{id}findOne`}
                     </Link>
                     <Button variant="outline" size="icon" onClick={() => handleCopy(`${api}movies/1/findOne`)}>
-                      {copy.status && copy.link === `${api}movies/{id}findOne` ? (
+                      {copy.status && copy.link === `${api}movies/1/findOne` ? (
                         <FaCheck className="z-10 text-green-600" />
                       ) : (
                         <LuCopy className="z-10 active:animate-out" />
