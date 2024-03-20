@@ -32,6 +32,9 @@ export default function RootLayout({
   const messages = useMessages()
   return (
     <html lang={locale} suppressHydrationWarning>
+      <head>
+        <meta name="google-site-verification" content="BRHtJ_L3WjGrv787YLoa7pYMiksXMx3rJHbosbBJwis" />
+      </head>
       {/* <Head> 
      <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6708395486232861" crossOrigin="anonymous"></Script>
      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-WMJRWD34KG"></Script>

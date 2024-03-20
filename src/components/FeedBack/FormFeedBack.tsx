@@ -93,8 +93,8 @@ const FormFeedBack = ({ open, onClose }: Props) => {
         locale === 'en'
           ? 'Suggestion'
           : locale === 'es'
-          ? 'Sugerencia'
-          : 'Sugestão',
+            ? 'Sugerencia'
+            : 'Sugestão',
     },
     {
       id: 3,
@@ -106,8 +106,8 @@ const FormFeedBack = ({ open, onClose }: Props) => {
         locale === 'en'
           ? 'Feedback'
           : locale === 'es'
-          ? 'Comentario'
-          : 'Comentário',
+            ? 'Comentario'
+            : 'Comentário',
     },
   ]
 
