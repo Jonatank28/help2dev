@@ -29,6 +29,12 @@ const Services = async () => {
       description: t(key[3] + '.description'),
       href: '/apis',
     },
+    // {
+    //   id: 5,
+    //   name: 'Projetos',
+    //   description: 'Conheça alguns projetos que fizemos',
+    //   href: '/projects',
+    // }
   ]
   return data
 }

@@ -32,7 +32,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/data/aceEditorImports.js",
+    "src/constants/aceEditorImports.js",
     "src/pages/api/movies/route.js"
   ],
   "exclude": [

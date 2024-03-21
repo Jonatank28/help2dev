@@ -1,7 +1,5 @@
 'use client'
 
-import { usePathname } from "@/navigation"
-import { routeFooter } from "@/routes"
 import { AbstractIntlMessages, useMessages } from "next-intl"
 import Link from "next/link"
 
@@ -10,17 +8,13 @@ const Footer = () => {
   const footer: AbstractIntlMessages | any =
     messages['Footer']
 
-  const pathName = usePathname()
-
-  if (!routeFooter.includes(pathName)) return null
-
   return (
     <footer className="border-t">
       <div className="widthDefault flex gap-2 sm:flex-row py-6 w-full shrink-0 items-center ">
         <nav className="flex gap-4 sm:gap-6">
           <p className="text-[10px] md:text-xs">
             © {new Date().getFullYear()}{' '}
-            <span className="font-bold text-sm">Help2dev</span>{' '}
+            <Link href="/" className="font-bold text-sm" >Help2dev</Link>{' '}
             {footer['title']}.
           </p>
         </nav>

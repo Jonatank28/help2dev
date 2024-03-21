@@ -7,8 +7,10 @@ export const metadata = {
 
 const PageGenerateCPF = () => {
   return (
-    <main className="h-[calc(100vh-52px)] flex justify-center items-center">
-      <Content />
+    <main>
+      <div className='h-[calc(100vh-121px)] flex justify-center items-center'>
+        <Content />
+      </div>
     </main>
   )
 }

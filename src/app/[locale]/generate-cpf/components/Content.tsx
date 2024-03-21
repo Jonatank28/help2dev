@@ -11,7 +11,7 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 
-import { ufs } from '@/data/ufs'
+import { ufs } from '@/constants/ufs'
 import { useEffect, useState } from 'react'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { Button } from '@/components/ui/button'

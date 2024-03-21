@@ -9,7 +9,11 @@ export const metadata = {
 }
 
 const PageJsonFormatter = () => {
-  return <Content />
+  return (
+    <main>
+      <Content />
+    </main>
+  )
 }
 
 export default PageJsonFormatter

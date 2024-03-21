@@ -6,7 +6,7 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 import { useEditor } from '@/context/editorContext'
-import { aceDarkThemes, aceLightThemes } from '@/data/themes'
+import { aceDarkThemes, aceLightThemes } from '@/constants/themes'
 import { useTheme } from 'next-themes'
 
 const SelectedThemeEditor = () => {

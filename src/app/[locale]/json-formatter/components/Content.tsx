@@ -6,9 +6,9 @@ import { useTheme } from 'next-themes'
 import AceEditor from 'react-ace'
 import 'ace-builds/src-noconflict/mode-json'
 import 'ace-builds/src-noconflict/ext-language_tools'
-import '../../../../data/aceEditorImports'
+import '../../../../constants/aceEditorImports'
 import { useEditor } from '@/context/editorContext'
-import { aceDarkThemes, aceLightThemes } from '@/data/themes'
+import { aceDarkThemes, aceLightThemes } from '@/constants/themes'
 
 const Content = () => {
   const { theme: themeRoot } = useTheme()
@@ -44,49 +44,47 @@ const Content = () => {
 
   return (
     defaultThemes && (
-      <main>
-        <div className="grid grid-cols-1 md:grid-cols-2 h-[calc(100vh-52px)]">
-          <Card className="rounded-none flex overflow-auto relative flex-col">
-            <AceEditor
-              mode="json"
-              ref={editorRef}
-              value={jsonInput}
-              onChange={handleChange}
-              theme={themeSelected}
-              name="leftEditor"
-              className="!h-full !w-full text-justify"
-              fontSize={14}
-              tabSize={2}
-              enableBasicAutocompletion={true}
-              enableLiveAutocompletion={true}
-              showPrintMargin={false}
-              showGutter={true}
-              highlightActiveLine={true}
-              wrapEnabled={true}
-              editorProps={{ $blockScrolling: Infinity }}
-            />
-          </Card>
-          <Card className="rounded-none overflow-auto relative">
-            <AceEditor
-              mode="json"
-              theme={themeSelected}
-              name="rightEditor"
-              className="!h-full !w-full"
-              fontSize={14}
-              tabSize={2}
-              showPrintMargin={false}
-              enableBasicAutocompletion={true}
-              enableLiveAutocompletion={true}
-              showGutter={true}
-              highlightActiveLine={true}
-              value={formattedJson}
-              readOnly={true}
-              wrapEnabled={true}
-              editorProps={{ $blockScrolling: Infinity }}
-            />
-          </Card>
-        </div>
-      </main>
+      <div className="grid grid-cols-1 md:grid-cols-2 h-[calc(100vh-52px)]">
+        <Card className="rounded-none flex overflow-auto relative flex-col">
+          <AceEditor
+            mode="json"
+            ref={editorRef}
+            value={jsonInput}
+            onChange={handleChange}
+            theme={themeSelected}
+            name="leftEditor"
+            className="!h-full !w-full text-justify"
+            fontSize={14}
+            tabSize={2}
+            enableBasicAutocompletion={true}
+            enableLiveAutocompletion={true}
+            showPrintMargin={false}
+            showGutter={true}
+            highlightActiveLine={true}
+            wrapEnabled={true}
+            editorProps={{ $blockScrolling: Infinity }}
+          />
+        </Card>
+        <Card className="rounded-none overflow-auto relative">
+          <AceEditor
+            mode="json"
+            theme={themeSelected}
+            name="rightEditor"
+            className="!h-full !w-full"
+            fontSize={14}
+            tabSize={2}
+            showPrintMargin={false}
+            enableBasicAutocompletion={true}
+            enableLiveAutocompletion={true}
+            showGutter={true}
+            highlightActiveLine={true}
+            value={formattedJson}
+            readOnly={true}
+            wrapEnabled={true}
+            editorProps={{ $blockScrolling: Infinity }}
+          />
+        </Card>
+      </div>
     )
   )
 }

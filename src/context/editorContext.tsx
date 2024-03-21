@@ -1,8 +1,8 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
-import { aceLightThemes, aceDarkThemes } from '../data/themes'
 import { usePathname } from 'next/navigation'
 import { useLocale } from 'next-intl'
+import { aceDarkThemes, aceLightThemes } from '@/constants/themes'
 
 interface ThemeContextType {
   themeSelected: string

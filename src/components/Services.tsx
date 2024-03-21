@@ -1,4 +1,4 @@
-import Services from '@/data/Services'
+import Services from '@/constants/Services'
 import ServiceCard from '@/ServiceCard'
 import { getTranslations } from 'next-intl/server'
 
