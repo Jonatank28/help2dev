@@ -11,7 +11,11 @@ const fontSans = FontSans({
 
 
 export const metadata = {
-  title: 'Help2Dev',
+
+  title: {
+    default: 'Help2Dev',
+    template: 'Help2Dev | %s',
+  },
   description: 'Help2Dev, json formatter, free api.',
   url: 'https://help2dev.com',
   siteName: 'Help2Dev',
