@@ -4,6 +4,7 @@ import { getTranslations } from "next-intl/server";
 
 export default async function Component() {
   const a = await getTranslations('/')
+
   return (
     <main>
       <div className="space-y-6">

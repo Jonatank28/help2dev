@@ -2,6 +2,7 @@
 
 import { AbstractIntlMessages, useMessages } from "next-intl"
 import Link from "next/link"
+import { useEffect } from "react"
 
 const Footer = () => {
   const messages = useMessages()

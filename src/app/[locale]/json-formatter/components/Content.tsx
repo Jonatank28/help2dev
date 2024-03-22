@@ -1,46 +1,57 @@
 'use client'
 
-import React, { useEffect, useRef } from 'react'
-import { Card } from '@/components/ui/card'
-import { useTheme } from 'next-themes'
-import AceEditor from 'react-ace'
-import 'ace-builds/src-noconflict/mode-json'
-import 'ace-builds/src-noconflict/ext-language_tools'
-import '../../../../constants/aceEditorImports'
-import { useEditor } from '@/context/editorContext'
-import { aceDarkThemes, aceLightThemes } from '@/constants/themes'
+import React, { useEffect, useRef } from 'react';
+import { Card } from '@/components/ui/card';
+import { useTheme } from 'next-themes';
+import AceEditor from 'react-ace';
+import 'ace-builds/src-noconflict/mode-json';
+import 'ace-builds/src-noconflict/ext-language_tools';
+import '../../../../constants/aceEditorImports';
+import { useEditor } from '@/context/editorContext';
+import { aceDarkThemes, aceLightThemes } from '@/constants/themes';
 
 const Content = () => {
-  const { theme: themeRoot } = useTheme()
+  const { theme: themeRoot } = useTheme();
   const {
     themeSelected,
     formattedJson,
     setFormattedJson,
     jsonInput,
     setJsonInput,
-  } = useEditor()
-  const defaultThemes = themeRoot === 'dark' ? aceDarkThemes : aceLightThemes
-  const editorRef = useRef<AceEditor | null>(null)
+  } = useEditor();
+  const defaultThemes = themeRoot === 'dark' ? aceDarkThemes : aceLightThemes;
+  const editorRef = useRef<AceEditor | null>(null);
 
   const handleChange = (value: string) => {
-    setJsonInput(value)
-  }
-  // At the beginning it focuses on the textare, when it changes it formats the json code
+    setJsonInput(value);
+  };
+
   useEffect(() => {
-    if (editorRef.current && editorRef.current.editor) {
-      editorRef.current.editor.focus()
-    }
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && editorRef.current && editorRef.current.editor) {
+        editorRef.current.editor.blur();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
+  useEffect(() => {
     try {
-      const parsedJson = JSON.parse(jsonInput)
+      const parsedJson = JSON.parse(jsonInput);
       if (typeof parsedJson === 'object' && parsedJson !== null) {
-        setFormattedJson(JSON.stringify(parsedJson, null, 2))
+        setFormattedJson(JSON.stringify(parsedJson, null, 2));
       } else {
-        setFormattedJson('')
+        setFormattedJson('');
       }
     } catch (error) {
-      setFormattedJson('')
+      setFormattedJson('');
     }
-  }, [jsonInput, setFormattedJson])
+  }, [jsonInput, setFormattedJson]);
 
   return (
     defaultThemes && (
@@ -86,7 +97,8 @@ const Content = () => {
         </Card>
       </div>
     )
-  )
-}
+  );
+};
 
-export default Content
+export default Content;
+
