@@ -1,5 +1,6 @@
 'use client'
 
+import { usePathname } from "@/navigation"
 import { AbstractIntlMessages, useMessages } from "next-intl"
 import Link from "next/link"
 import { useEffect } from "react"
@@ -8,6 +9,10 @@ const Footer = () => {
   const messages = useMessages()
   const footer: AbstractIntlMessages | any =
     messages['Footer']
+  const pathName = usePathname()
+  console.log("🚀 ~ Footer ~ pathName", pathName)
+
+  if (pathName.includes('/json-formatter')) return null
 
   return (
     <footer className="border-t">
