@@ -10,8 +10,6 @@ const Footer = () => {
   const footer: AbstractIntlMessages | any =
     messages['Footer']
   const pathName = usePathname()
-  console.log("🚀 ~ Footer ~ pathName", pathName)
-
   if (pathName.includes('/json-formatter')) return null
 
   return (
