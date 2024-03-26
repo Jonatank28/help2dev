@@ -10,7 +10,7 @@ export const isValidEmail = (email: string) => {
   return regex.test(email)
 }
 
-export   const  limitedText = (texto: string, limite: number) => {
+export const limitedText = (texto: string, limite: number) => {
   if (texto.length > limite) {
     return texto.substring(0, limite) + '...';
   }
