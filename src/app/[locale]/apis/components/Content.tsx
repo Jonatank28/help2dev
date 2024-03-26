@@ -40,6 +40,10 @@ const Content = () => {
     setClient(true)
   }, [])
 
+  const generateRandomNumber = () => {
+    return Math.floor(Math.random() * (50 - 1 + 1)) + 1
+  }
+
   return (
     <main className="md:mx-2">
       <div className="w-[min(1200px,95vw)] mx-auto">
@@ -116,7 +120,7 @@ const Content = () => {
                   <div className='flex items-center gap-3 md:gap-4'>
                     <Link
                       className="text-blue-500 underline text-xs md:text-base"
-                      href={`${api}movies/1/findOne`}
+                      href={`${api}movies/${generateRandomNumber()}/findOne`}
                       target="_blank"
                     >
                       {`${api}movies/{id}findOne`}
