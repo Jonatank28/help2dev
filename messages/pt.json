@@ -18,7 +18,11 @@
     },
     "Apis": {
       "title": "APIs",
-      "description": "consumir APIs gratuitas"
+      "description": "Consumir APIs gratuitas"
+    },
+    "Projects": {
+      "title": "Projetos",
+      "description": "Projetos para você usar"
     }
   },
   "jsonFormatter": {

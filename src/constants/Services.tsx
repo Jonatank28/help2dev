@@ -2,7 +2,7 @@ import { getTranslations } from 'next-intl/server'
 
 const Services = async () => {
   const t = await getTranslations('/')
-  const key = ['JsonFormatter', 'GenerateCpf', 'GenerateCnpj', 'Apis'] as const
+  const key = ['JsonFormatter', 'GenerateCpf', 'GenerateCnpj', 'Apis', 'Projects'] as const
 
   const data = [
     {
@@ -31,8 +31,8 @@ const Services = async () => {
     },
     {
       id: 5,
-      name: 'Projetos',
-      description: 'Conheça alguns projetos que fizemos',
+      name: t(key[4] + '.title'),
+      description: t(key[4] + '.description'),
       href: '/projects',
     }
   ]

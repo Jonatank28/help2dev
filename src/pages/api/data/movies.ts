@@ -1,24 +1,32 @@
-[
+import avatar from '../../../assets/movies/avatar.jpg'
+import avengers_endgame from '../../../assets/movies/avengers_endgame.jpg'
+import avatar2 from '../../../assets/movies/avatarThe_Way_o_Water.jpg'
+import { apiMovies } from '@/lib/api'
+
+export const movies =[
   {
     "id": 1,
     "title": "Avatar",
     "year": 2009,
     "director": "James Cameron",
-    "gross": "$2,923,706,026"
+    "gross": "$2,923,706,026",
+    "image": apiMovies + avatar.src
   },
   {
     "id": 2,
     "title": "Avengers: Endgame",
     "year": 2019,
     "director": "Joe Russo / Anthony Russo",
-    "gross": "$2,799,439,100"
+    "gross": "$2,799,439,100",
+    "image":  apiMovies + avengers_endgame.src
   },
   {
     "id": 3,
     "title": "Avatar: The Way of Water",
     "year": 2022,
     "director": "James Cameron",
-    "gross": "$2,320,250,281"
+    "gross": "$2,320,250,281",
+    "image": apiMovies + avatar2.src
   },
   {
     "id": 4,

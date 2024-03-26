@@ -10,6 +10,7 @@ interface Props {
   data: {
     id: number
     title: string
+    titlePath: string
     description: {
       [key: string]: string
     }

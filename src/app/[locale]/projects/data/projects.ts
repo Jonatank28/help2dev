@@ -7,6 +7,7 @@ export const projects = [
   {
     "id": 1946,
     "title": "Next Auth",
+    "titlePath": "next-auth",
     "description": {
       ["pt"]: "Projeto desenvolvido com Next.js 14, Tailwind CSS, Next UI e NextAuth.js representa a integração de tecnologias modernas para a criação de aplicações web robustas e visualmente atraentes. O Next.js 14 fornece uma estrutura sólida para o desenvolvimento de aplicações React, enquanto o Tailwind CSS facilita a estilização com uma abordagem baseada em classes. Com o Next UI, o desenvolvimento é agilizado através de componentes UI prontos para uso. Além disso, o NextAuth.js simplifica a autenticação do usuário, permitindo o login através de provedores populares como Google, GitHub e credenciais próprias. Essas tecnologias combinadas oferecem uma experiência de desenvolvimento moderna e eficiente.",
       ["en"]: "Project developed with Next.js 14, Tailwind CSS, Next UI, and NextAuth.js represents the integration of modern technologies for the creation of robust and visually appealing web applications. Next.js 14 provides a solid structure for developing React applications, while Tailwind CSS facilitates styling with a class-based approach. With Next UI, development is streamlined through ready-to-use UI components. Additionally, NextAuth.js simplifies user authentication, allowing login through popular providers such as Google, GitHub, and custom credentials. These combined technologies offer a modern and efficient development experience.",
@@ -28,5 +29,5 @@ export const projects = [
       "github": "https://github.com/Jonatank28/fr_next_auth_google_github-credentials",
       "build": "https://fr-next-auth.vercel.app"
     }
-  }
+  },
 ]

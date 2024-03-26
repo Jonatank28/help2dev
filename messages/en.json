@@ -19,6 +19,10 @@
     "Apis": {
       "title": "APIs",
       "description": "Get free APIs"
+    },
+    "Projects": {
+      "title": "Projects",
+      "description": "Projects for you to use"
     }
   },
   "jsonFormatter": {

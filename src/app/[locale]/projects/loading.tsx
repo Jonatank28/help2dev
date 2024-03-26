@@ -1,14 +1,15 @@
 import { Skeleton } from "@/components/ui/skeleton";
+import { projects } from './data/projects';
 
 const Loading = () => {
   const style = 'h-[196px] md:h-[252px] w-full md:w-[268px] bg-secondary';
 
-  const skeletons = Array.from({ length: 18 }, (_, index) => (
+  const skeletons = Array.from({ length: projects.length }, (_, index) => (
     <Skeleton key={index} className={style} />
   ));
 
   return (
-    <main className="h-[calc(100vh-52px)] widthDefault mt-8 overflow-hidden">
+    <main className="widthDefault mt-12">
       <div className="grid grid-cols-1 md:grid-cols-6 gap-4">
         {skeletons}
       </div>
