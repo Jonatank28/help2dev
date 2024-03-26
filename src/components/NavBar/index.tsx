@@ -11,7 +11,7 @@ import { routesAplication } from '@/routes'
 const NavBar = () => {
   const pathName = usePathname()
 
-  if (!routesAplication.includes(pathName)) return null
+  if (!routesAplication.includes(pathName) && !pathName.includes('/projects')) return null
 
   return (
     <Card className="rounded-none bg-background border-none shadow-none z-10 ">

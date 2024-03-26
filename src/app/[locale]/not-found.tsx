@@ -2,8 +2,14 @@ import { Card } from '@/components/ui/card'
 import { Link } from '@/navigation'
 import { getTranslations } from 'next-intl/server'
 
+export const metadata = {
+  title: 'Not Found',
+  description: 'Page not found',
+}
+
 export default async function NotFoundPage() {
   const t = await getTranslations('NotFoundPage')
+
 
   return (
     <main className="min-h-screen w-screen bg-background flex items-center justify-center">

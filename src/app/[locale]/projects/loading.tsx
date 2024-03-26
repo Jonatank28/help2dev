@@ -3,9 +3,26 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 const loading = () => {
   return (
-    <main className="w-screen h-[calc(100vh-52px)] flex justify-center items-center">
-      <div className="mb-[200px]">
-        <Skeleton className="h-[252px] w-[400px] bg-secondary" />
+    <main className="h-[calc(100vh-52px)] widthDefault mt-8 overflow-hidden">
+      <div className="grid grid-cols-1 md:grid-cols-6 gap-4">
+        <Skeleton className="h-[252px] w-[268px] bg-secondary" />
+        <Skeleton className="h-[252px] w-[268px] bg-secondary" />
+        <Skeleton className="h-[252px] w-[268px] bg-secondary" />
+        <Skeleton className="h-[252px] w-[268px] bg-secondary" />
+        <Skeleton className="h-[252px] w-[268px] bg-secondary" />
+        <Skeleton className="h-[252px] w-[268px] bg-secondary" />
+        <Skeleton className="h-[252px] w-[268px] bg-secondary" />
+        <Skeleton className="h-[252px] w-[268px] bg-secondary" />
+        <Skeleton className="h-[252px] w-[268px] bg-secondary" />
+        <Skeleton className="h-[252px] w-[268px] bg-secondary" />
+        <Skeleton className="h-[252px] w-[268px] bg-secondary" />
+        <Skeleton className="h-[252px] w-[268px] bg-secondary" />
+        <Skeleton className="h-[252px] w-[268px] bg-secondary" />
+        <Skeleton className="h-[252px] w-[268px] bg-secondary" />
+        <Skeleton className="h-[252px] w-[268px] bg-secondary" />
+        <Skeleton className="h-[252px] w-[268px] bg-secondary" />
+        <Skeleton className="h-[252px] w-[268px] bg-secondary" />
+        <Skeleton className="h-[252px] w-[268px] bg-secondary" />
       </div>
     </main>
   )

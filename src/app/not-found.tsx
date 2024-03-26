@@ -3,6 +3,11 @@
 import { usePathname, useRouter } from 'next/navigation'
 import { useEffect } from 'react'
 
+export const metadata = {
+  title: 'Not Found',
+  description: 'Page not found',
+}
+
 export default function NotFound() {
   const router = useRouter()
   const pathName = usePathname()

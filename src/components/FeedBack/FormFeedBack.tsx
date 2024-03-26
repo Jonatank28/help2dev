@@ -85,7 +85,7 @@ const FormFeedBack = ({ open, onClose }: Props) => {
   const typeFeedBack = [
     {
       id: 1,
-      name: locale === 'en' ? 'Doubt' : locale === 'es' ? 'Duda' : 'Duvida',
+      name: locale === 'en' ? 'Doubt' : locale === 'es' ? 'Duda' : 'Dúvida',
     },
     {
       id: 2,

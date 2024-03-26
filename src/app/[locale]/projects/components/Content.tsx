@@ -1,22 +1,34 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Link } from "@/navigation"
+import { getLocale } from 'next-intl/server'
+import { projects } from "../data/projects"
+import { limitedText } from "@/lib/utils"
 
 
-const Content = () => {
+const Content = async () => {
+  const locale = await getLocale()
+
   return (
-    <div className="widthDefault">
-      <h1 className="text-3xl font-bold mb-4">Projetos</h1>
+    <div className="widthDefault mt-8">
+      <h1 className="text-3xl font-bold mb-4">{locale === 'en' ? 'Projects' : locale === 'es' ? 'Proyectos' : 'Projetos'}</h1>
       <div className="grid grid-cols-1 md:grid-cols-6">
-        <Card className="bg-secondary">
-          <Link href="/projects/next-auth/login">
-            <CardHeader>
-              <h1 className="text-xl font-medium">Next auth</h1>
-            </CardHeader>
-            <CardContent>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nihil veniam, excepturi eos, reprehenderit adipisci unde molestiae distinctio voluptatum iure odio tempore et! Ipsum autem maxime sequi voluptas. Quos, incidunt.</p>
-            </CardContent>
-          </Link>
-        </Card>
+        {
+          projects.map((project, index) => (
+            <Card key={index} className="bg-secondary/90 transition-all hover:bg-secondary/100">
+              <Link href={`/projects/${project.id}/${project.title}`}>
+                <CardHeader>
+                  <h1 className="text-xl font-medium">{project.title}</h1>
+                </CardHeader>
+                <CardContent>
+                  {locale && project.description.hasOwnProperty(locale) && (
+                    <p>{limitedText(project.description[locale as keyof typeof project.description], 140)}</p>
+                  )}
+
+                </CardContent>
+              </Link>
+            </Card>
+          ))
+        }
       </div>
     </div>
   )
