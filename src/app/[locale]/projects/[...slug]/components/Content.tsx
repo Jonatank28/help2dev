@@ -26,7 +26,7 @@ const Content = async ({ data }: Props) => {
     <section className="widthDefault">
       <h1 className="text-3xl pt-8">{data.title}</h1>
       <p className='text-sm opacity-80 pt-2'>{data.description[locale]}</p>
-      <div className='h-[calc(100vh-225px)] w-full grid grid-cols-1 md:grid-cols-2 gap-8 pt-4 md:pt-14'>
+      <div className='h-auto md:h-[calc(100vh-225px)] w-full grid grid-cols-1 md:grid-cols-2 gap-8 pt-4 md:pt-14'>
         <CustomCarousel data={data} />
         <div className='space-y-8'>
           <div className='space-y-2'>

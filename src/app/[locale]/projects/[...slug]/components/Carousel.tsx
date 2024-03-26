@@ -25,7 +25,6 @@ const Carousel = ({ data }: Props) => {
         style={{
           //@ts-ignore
           '--swiper-pagination-color': theme === 'dark' ? '#fff' : '#000',
-          height: 'calc(100vh - 290px)',
           width: '100%',
           objectFit: 'cover',
           objectPosition: 'center',
