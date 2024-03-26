@@ -41,7 +41,7 @@ const Content = async ({ data }: Props) => {
           </div>
           <div className='space-y-2'>
             <h1 className='text-xl font-medium'>Links</h1>
-            <div className='flex gap-2'>
+            <div className='flex gap-2 pb-4'>
               <Button variant='secondary'><Link href={data.links.github} target='_blank'>Github</Link></Button>
               <Button variant='secondary'><Link href={data.links.build} target='_blank'>Build</Link></Button>
             </div>
