@@ -29,7 +29,7 @@ import captain_America_Civil_War from '../../../assets/movies/Captain_America_Ci
 import aquaman from '../../../assets/movies/Aquaman.jpg'
 import skyfall from '../../../assets/movies/Skyfall.webp'
 import spider_Man_Far_from_Home from '../../../assets/movies/spider-Man_Far_from_Home.jpg'
-// import captain_Marvel from '../../../assets/movies/captain_Marvel.jpg'
+import captain_Marvel from '../../../assets/movies/captain_Marvel.jpg'
 import transformers_Dark_of_the_Moon from '../../../assets/movies/Transformers_Dark_of_the_Moon.jpg'
 import jurassic_Park from '../../../assets/movies/Jurassic_Park.webp'
 import the_Dark_Knight_Rises from '../../../assets/movies/The_Dark_Knight_Rises.jpg'
@@ -305,7 +305,7 @@ export const movies =[
     "year": 2019,
     "director": "Ryan Fleck / Anna Boden",
     "gross": "$1,131,416,446",
-    // "image": apiMovies + captain_Marvel.src
+    "image": apiMovies + captain_Marvel.src
   },
   {
     "id": 33,
