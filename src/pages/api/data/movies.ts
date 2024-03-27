@@ -33,13 +33,13 @@ import captain_Marvel from '../../../assets/movies/captain_Marvel.jpg'
 import transformers_Dark_of_the_Moon from '../../../assets/movies/Transformers_Dark_of_the_Moon.jpg'
 import jurassic_Park from '../../../assets/movies/Jurassic_Park.webp'
 import the_Dark_Knight_Rises from '../../../assets/movies/The_Dark_Knight_Rises.jpg'
-// import transformers_Age_of_Extinction from '../../../assets/movies/transformers_Age_of_Extinction.jpg'
+import transformers_Age_of_Extinction from '../../../assets/movies/transformers_Age_of_Extinction.jpg'
 import joker from '../../../assets/movies/Joker.jpg'
 import star_Wars_IX from '../../../assets/movies/Star_Wars_Episode_IX-The_Rise_Skywalker.jpg'
 import toy_Story_4 from '../../../assets/movies/Toy_Story_4.webp'
 import toy_Story_3 from '../../../assets/movies/Toy_Story_3.webp'
 import pirates_of_the_Caribbean_Dead_Mans_Chest from '../../../assets/movies/Pirates_of_the_Caribbean_Dead_Mans_Chest.jpg'
-// import rogue_One_A_Star_Wars_Story from '../../../assets/movies/Rogue_One_A_Star_Wars_Story.jpg'
+import rogue_One_A_Star_Wars_Story from '../../../assets/movies/Rogue_One_A_Star_Wars_Story.jpg'
 import aladdin from '../../../assets/movies/Aladdin.webp'
 import pirates_of_the_Caribbean_On_Stranger_Tides from '../../../assets/movies/Pirates_of_the_Caribbean_On_Stranger_Tides.jpg'
 import despicable_Me_3 from '../../../assets/movies/Despicable_Me_3.jpg'
@@ -337,7 +337,7 @@ export const movies =[
     "year": 2014,
     "director": "Michael Bay",
     "gross": "$1,104,054,072",
-    // "image": apiMovies + transformers_Age_of_Extinction.src
+    "image": apiMovies + transformers_Age_of_Extinction.src
   },
   {
     "id": 37,
@@ -385,7 +385,7 @@ export const movies =[
     "year": 2016,
     "director": "Gareth Edwards",
     "gross": "$1,058,682,142",
-    // "image": apiMovies + rogue_One_A_Star_Wars_Story.src
+    "image": apiMovies + rogue_One_A_Star_Wars_Story.src
   },
   {
     "id": 43,
