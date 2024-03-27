@@ -39,7 +39,7 @@ import star_Wars_IX from '../../../assets/movies/Star_Wars_Episode_IX-The_Rise_S
 import toy_Story_4 from '../../../assets/movies/Toy_Story_4.webp'
 import toy_Story_3 from '../../../assets/movies/Toy_Story_3.webp'
 import pirates_of_the_Caribbean_Dead_Mans_Chest from '../../../assets/movies/Pirates_of_the_Caribbean_Dead_Mans_Chest.jpg'
-import rogue_One_A_Star_Wars_Story from '../../../assets/movies/Rogue_One_A_Star_Wars_Story.jpg'
+import rogue_One from '../../../assets/movies/rogue_One_A_Star_Wars_Story.jpg'
 import aladdin from '../../../assets/movies/Aladdin.webp'
 import pirates_of_the_Caribbean_On_Stranger_Tides from '../../../assets/movies/Pirates_of_the_Caribbean_On_Stranger_Tides.jpg'
 import despicable_Me_3 from '../../../assets/movies/Despicable_Me_3.jpg'
@@ -385,7 +385,7 @@ export const movies =[
     "year": 2016,
     "director": "Gareth Edwards",
     "gross": "$1,058,682,142",
-    "image": apiMovies + rogue_One_A_Star_Wars_Story.src
+    "image": apiMovies + rogue_One.src
   },
   {
     "id": 43,
