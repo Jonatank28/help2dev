@@ -20,10 +20,12 @@
     "next": "15.0.0-rc.0",
     "next-themes": "^0.3.0",
     "react": "19.0.0-rc-100dfd7dab-20240701",
+    "react-ace": "^12.0.0",
     "react-dom": "19.0.0-rc-100dfd7dab-20240701",
     "sonner": "^1.5.0",
     "tailwind-merge": "^2.3.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "zustand": "^4.5.4"
   },
   "devDependencies": {
     "@types/node": "^20",

@@ -2,6 +2,7 @@
 
 import { ThemeProvider as NextThemesProvider } from "next-themes"
 import ThemeToggle from "./ThemeToggle"
+import Header from "./Header"
 
 const Providers = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -10,10 +11,10 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
       defaultTheme="system"
       enableSystem={false}
     >
-      <div className="fixed top-4 right-4">
-        <ThemeToggle />
+      <div className='min-h-screen grid grid-rows-[auto_1fr_auto]'>
+        <Header />
+        {children}
       </div>
-      {children}
     </NextThemesProvider >
   )
 }
