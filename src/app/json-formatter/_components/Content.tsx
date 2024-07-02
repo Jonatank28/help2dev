@@ -10,11 +10,18 @@ import "ace-builds/src-noconflict/ext-language_tools";
 import "ace-builds/src-noconflict/ext-searchbox";
 import 'ace-builds/src-noconflict/theme-dracula';
 import 'ace-builds/src-noconflict/theme-chrome';
+import { useEffect, useState } from 'react';
+import { Skeleton } from '@/components/ui/skeleton';
 
 const Content = () => {
   const { formatJson, formattedJsonValue, jsonValue } = useEditorJson();
+  const [client, setClient] = useState(false);
   const { theme } = useTheme();
   const themeSelected = theme === 'dark' ? 'dracula' : 'chrome';
+
+  useEffect(() => {
+    setClient(true);
+  }, []);
 
 
   const renderAceEditor = (value: string, onChange?: (value: string) => void, readOnly = false) => (
@@ -47,11 +54,13 @@ const Content = () => {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 h-full">
-      <Card>
-        {renderAceEditor(jsonValue, formatJson)}
+      <Card className='rounded-none'>
+        {client && renderAceEditor(jsonValue, formatJson)}
+        {!client && <Skeleton className='h-full w-full rounded-none' />}
       </Card>
-      <Card>
-        {renderAceEditor(formattedJsonValue, undefined, true)}
+      <Card className='rounded-none'>
+        {client && renderAceEditor(formattedJsonValue, undefined, true)}
+        {!client && <Skeleton className='h-full w-full rounded-none' />}
       </Card>
     </div>
   );
