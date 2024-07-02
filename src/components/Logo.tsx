@@ -14,15 +14,15 @@ const Logo = () => {
         <Image
           src={logoDark}
           alt="logo"
-          width={100}
-          height={100}
+          width={110}
+          height={110}
           className="transition-all block dark:hidden"
         />
         <Image
           src={logo}
           alt="logo"
-          width={100}
-          height={100}
+          width={110}
+          height={110}
           className="transition-all hidden dark:block"
         />
       </Link>

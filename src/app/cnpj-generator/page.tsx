@@ -1,10 +1,16 @@
-import React from 'react'
+import Content from "./_components/Content"
+
+
+export const metadata = {
+  title: 'CNPJ Generator',
+  description: 'CNPJ Generator',
+}
 
 const page = () => {
   return (
-    <div>
-      <h1>cnpj generator</h1>
-    </div>
+    <main>
+      <Content />
+    </main>
   )
 }
 
