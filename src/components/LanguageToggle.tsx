@@ -11,7 +11,6 @@ import pt from "@/assets/language/pt.png"
 import en from "@/assets/language/en.png"
 import es from "@/assets/language/es.png"
 import { useEffect, useState } from "react"
-import { LoaderCircle } from "lucide-react"
 import { Skeleton } from "./ui/skeleton"
 
 const LanguageToggle = () => {
