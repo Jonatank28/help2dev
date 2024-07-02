@@ -7,7 +7,7 @@ import ButtonsJsonFormatter from "./ButtonsJsonFormatter"
 const Header = () => {
   return (
     <Card className="rounded-none border-none shadow-xl">
-      <CardContent className="flex items-center justify-between p-2">
+      <CardContent className="flex items-center justify-between py-2 defaultWidth">
         <Logo />
         <div className="flex items-center gap-4">
           <ButtonsJsonFormatter />

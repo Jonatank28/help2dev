@@ -3,7 +3,7 @@ import Link from "next/link"
 
 const page = () => {
   return (
-    <div>
+    <div className="defaultWidth">
       <h1>Serviços Disponíveis</h1>
       <p>Escolha entre uma variedade de serviços projetados para facilitar sua vida.</p>
       <div className="grid grid-cols-2 gap-2">
@@ -17,7 +17,7 @@ const page = () => {
             </CardContent>
           </Card>
         </Link>
-        <Link href="/cpf-generator">
+        <Link href="/cpf-generator" prefetch={true}>
           <Card>
             <CardContent className="flex items-center justify-center p-6">
               <div className="space-y-2 text-center">
@@ -27,7 +27,7 @@ const page = () => {
             </CardContent>
           </Card>
         </Link>
-        <Link href="/cnpj-generator">
+        <Link href="/cnpj-generator" prefetch={true}>
           <Card>
             <CardContent className="flex items-center justify-center p-6">
               <div className="space-y-2 text-center">
@@ -37,7 +37,7 @@ const page = () => {
             </CardContent>
           </Card>
         </Link>
-        <Link href="/apis">
+        <Link href="/apis" prefetch={true}>
           <Card>
             <CardContent className="flex items-center justify-center p-6">
               <div className="space-y-2 text-center">

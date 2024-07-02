@@ -9,8 +9,9 @@ const ButtonsJsonFormatter = () => {
   const verifyExist = formattedJsonValue !== 'Invalid JSON' && formattedJsonValue !== ''
 
   if (pathName !== "/json-formatter") return null
+
   return (
-    <div className="flex items-center gap-2">
+    <div className="hidden md:flex items-center gap-2">
       <Button
         variant='secondary'
         className="gap-1"
