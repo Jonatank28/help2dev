@@ -76,35 +76,33 @@
   }
 }
 
-/* Styles for the editor */
-.ace_search,
-.ace_searchbtn_close,
-.prev,
-.next,
-.ace_searchbtn {
+.dark .ace_search,
+.dark .ace_searchbtn_close,
+.dark .prev,
+.dark .next,
+.dark .ace_searchbtn {
   background-color: #232323 !important;
   border: 1px solid #404040 !important;
 }
 
-.ace_search_counter,
-.ace_button {
+.dark .ace_search_counter,
+.dark .ace_button {
   color: #f1f1f1 !important;
 }
 
-.ace_button {
+.dark .ace_button {
   background-color: #232323 !important;
 }
 
-.ace_search_field {
+.dark .ace_search_field {
   background-color: #404040 !important;
   color: #f1f1f1 !important;
   border: 1px solid #404040 !important;
 }
 
-div.ace_editor .ace_marker-layer .ace_selectionaaa {
+.dark div.ace_editor .ace_marker-layer .ace_selectionaaa {
   background-color: red !important;
 }
-
 
 /* Estilização básica da barra de rolagem */
 ::-webkit-scrollbar {
