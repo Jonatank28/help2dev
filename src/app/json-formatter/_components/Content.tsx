@@ -1,10 +1,9 @@
-'use client'
+'use client';
 
 import { useEditorJson } from '@/hooks/useEditorJson';
 import { useTheme } from 'next-themes';
 import AceEditor from "react-ace";
 import { Card } from '@/components/ui/card';
-
 import "ace-builds/src-noconflict/mode-json";
 import "ace-builds/src-noconflict/ext-language_tools";
 import "ace-builds/src-noconflict/ext-searchbox";
@@ -21,10 +20,9 @@ const Content = () => {
 
   useEffect(() => {
     setClient(true);
-    setFormattedJsonValue('')
-    setJsonValue('')
-  }, []);
-
+    setFormattedJsonValue('');
+    setJsonValue('');
+  }, [setFormattedJsonValue, setJsonValue]);
 
   const renderAceEditor = (value: string, onChange?: (value: string) => void, readOnly = false) => (
     <AceEditor
