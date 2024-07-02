@@ -22,7 +22,7 @@ const LanguageToggle = () => {
     <Skeleton className="w-[48px] h-[36px]" />
   )
   return (
-    <DropdownMenu className="relative">
+    <DropdownMenu>
       <DropdownMenuTrigger>
         <Button variant="secondary" className="p-3">
           <Image src={pt} alt="pt" width={24} height={24} />
