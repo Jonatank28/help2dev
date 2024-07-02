@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-// import toast from 'react-hot-toast'
+import { toast } from "sonner"
 
 interface IEditorJson {
   formattedJsonValue: string
@@ -8,7 +8,7 @@ interface IEditorJson {
   setFormattedJsonValue: (value: string) => void
   formatJson: (value: string) => void
   clearEditors: () => void
-  copyToClipboard: (value: string) => void
+  copyToClipboard: () => void
   compactJson: () => void
   reformatJson: () => void
 }
@@ -29,10 +29,10 @@ export const useEditorJson = create<IEditorJson>((set, get) => ({
     }
   },
   clearEditors: () => set({ formattedJsonValue: '', jsonValue: '' }),
-  copyToClipboard: (message: string) => {
+  copyToClipboard: () => {
     const formattedJsonValue = get().formattedJsonValue;
     navigator.clipboard.writeText(formattedJsonValue);
-    // toast.success(message);
+    toast("Copied to clipboard")
   },
   compactJson: () => {
     const jsonValue = get().jsonValue;
@@ -48,5 +48,5 @@ export const useEditorJson = create<IEditorJson>((set, get) => ({
     const jsonValue = get().jsonValue;
     const valueFormat = JSON.stringify(JSON.parse(jsonValue), null, 2);
     set({ formattedJsonValue: valueFormat });
-  }
+  },
 }));

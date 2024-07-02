@@ -14,13 +14,15 @@ import { useEffect, useState } from 'react';
 import { Skeleton } from '@/components/ui/skeleton';
 
 const Content = () => {
-  const { formatJson, formattedJsonValue, jsonValue } = useEditorJson();
+  const { formatJson, formattedJsonValue, jsonValue, setFormattedJsonValue, setJsonValue } = useEditorJson();
   const [client, setClient] = useState(false);
   const { theme } = useTheme();
   const themeSelected = theme === 'dark' ? 'dracula' : 'chrome';
 
   useEffect(() => {
     setClient(true);
+    setFormattedJsonValue('')
+    setJsonValue('')
   }, []);
 
 

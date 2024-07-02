@@ -1,7 +1,6 @@
 'use client'
 
 import { ThemeProvider as NextThemesProvider } from "next-themes"
-import ThemeToggle from "./ThemeToggle"
 import Header from "./Header"
 
 const Providers = ({ children }: { children: React.ReactNode }) => {
