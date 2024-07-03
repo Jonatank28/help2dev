@@ -7,8 +7,10 @@ import { Toaster } from "@/components/ui/sonner"
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Help2Dev IA",
-  description: "Help2Dev IA",
+  title: {
+    default: "Help2Dev",
+    template: "Help2Dev | %s",
+  }
 };
 
 export default function RootLayout({
