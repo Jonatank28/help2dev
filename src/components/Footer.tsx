@@ -24,7 +24,7 @@ const Footer = () => {
   const pathName = usePathname()
   if (pathName === "/json-formatter") return null
   return (
-    <div className="defaultWidth py-4 border-t">
+    <div className="defaultWidth py-5 border-t">
       <footer className="flex flex-col md:flex-row gap-1 justify-between items-center">
         <nav className="flex gap-4 sm:gap-6 order-2 sm:order-1">
           <p className="text-xs">

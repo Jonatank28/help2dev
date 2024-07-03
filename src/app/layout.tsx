@@ -1,31 +1,12 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "@/styles/globals.css";
-import Providers from "@/components/Providers";
-import { Toaster } from "@/components/ui/sonner"
+import { ReactNode } from 'react';
+import '../styles/globals.css';
 
-const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: {
-    default: "Help2Dev",
-    template: "Help2Dev | %s",
-  }
+type Props = {
+  children: ReactNode;
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="pt-br">
-      <body className={`${inter.className} antialiased`}>
-        <Providers>
-          {children}
-          <Toaster />
-        </Providers>
-      </body>
-    </html>
-  );
+// Since we have a `not-found.tsx` page on the root, a layout file
+// is required, even if it's just passing children through.
+export default function RootLayout({ children }: Props) {
+  return children;
 }
