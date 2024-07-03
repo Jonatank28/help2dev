@@ -9,10 +9,9 @@ import findAll from '@/data/findAllExample.json'
 import 'ace-builds/src-noconflict/theme-dracula'
 import 'ace-builds/src-noconflict/mode-json'
 import { api } from "@/lib/api"
-
-const Divider = () => {
-  return <div className="w-full h-[1px] bg-muted-foreground/30" />
-}
+import { Button } from "@/components/ui/button"
+import { LucideCheck, LucideCopy } from "lucide-react"
+import Divider from "@/components/ui/Divider"
 
 const Content = () => {
   const [client, setClient] = useState(false)
@@ -55,15 +54,24 @@ const Content = () => {
                 <p>GET</p>
               </div>
               <Divider />
-              <div className="grid grid-cols-[150px_1fr] py-2">
+              <div className="grid grid-cols-[150px_1fr] py-2 items-center">
                 <p>URL</p>
-                <Link
-                  className="underline text-blue-500 hover:text-blue-600 transition-all"
-                  href={`${api}movies/findAll`}
-                  target="_blank"
-                >
-                  https://help2dev.com/api/movies/findAll
-                </Link>
+                <div className="flex items-center gap-2">
+                  <Link
+                    className="underline text-blue-500 hover:text-blue-600 transition-all text-xs md:text-sm"
+                    href={`${api}movies/findAll`}
+                    target="_blank"
+                  >
+                    https://help2dev.com/api/movies/findAll
+                  </Link>
+                  <Button variant="ghost" size="icon" onClick={() => handleCopy(`${api}movies/findAll`)}>
+                    {copy.status && copy.link === `${api}movies/findAll` ? (
+                      <LucideCheck size={16} className="z-10 text-green-600" />
+                    ) : (
+                      <LucideCopy size={16} className="z-10 active:animate-out" />
+                    )}
+                  </Button>
+                </div>
               </div>
               <Divider />
               <div className="grid grid-cols-[150px_1fr] py-2">
@@ -71,7 +79,7 @@ const Content = () => {
                 <p>Um array de 50 objetos</p>
               </div>
               <Divider />
-              <div className="grid grid-cols-[80px_1fr] md:grid-cols-[150px_1fr] py-2 pl-2 h-[320px] md:h-[310px]">
+              <div className="grid grid-cols-[80px_1fr] md:grid-cols-[150px_1fr] py-2 h-[320px] md:h-[310px]">
                 <p>Retorno</p>
                 {client ? (
                   <Card className="p-2 bg-[#282A36]">
@@ -109,23 +117,33 @@ const Content = () => {
                 <p>GET</p>
               </div>
               <Divider />
-              <div className="grid grid-cols-[150px_1fr] py-2">
+              <div className="grid grid-cols-[150px_auto] py-2 items-center">
                 <p>URL</p>
-                <Link
-                  className="underline text-blue-500 hover:text-blue-600 transition-all"
-                  href={`${api}movies/${generateRandomNumber()}`}
-                  target="_blank"
-                >
-                  {`${api}movies/{id}`}
-                </Link>
+                <div className="flex items-center gap-2">
+                  <Link
+                    className="underline text-blue-500 hover:text-blue-600 transition-all text-xs md:text-sm"
+                    href={`${api}movies/${generateRandomNumber()}`}
+                    target="_blank"
+                  >
+                    {`${api}movies/{id}`}
+
+                  </Link>
+                  <Button variant="ghost" size="icon" onClick={() => handleCopy(`${api}movies/1`)}>
+                    {copy.status && copy.link === `${api}movies/1` ? (
+                      <LucideCheck size={16} className="z-10 text-green-600" />
+                    ) : (
+                      <LucideCopy size={16} className="z-10 active:animate-out" />
+                    )}
+                  </Button>
+                </div>
               </div>
               <Divider />
               <div className="grid grid-cols-[150px_1fr] py-2">
                 <p>Descrição</p>
-                <p>Um array de 50 objetos</p>
+                <p>Um objeto</p>
               </div>
               <Divider />
-              <div className="grid grid-cols-[80px_1fr] md:grid-cols-[150px_1fr] py-2 pl-2 h-[320px] md:h-[310px]">
+              <div className="grid grid-cols-[80px_1fr] md:grid-cols-[150px_1fr] py-2 h-[320px] md:h-[310px]">
                 <p>Retorno</p>
                 {client ? (
                   <Card className="p-2 bg-[#282A36]">
@@ -154,7 +172,7 @@ const Content = () => {
           </CardContent>
         </Card>
       </div>
-    </div>
+    </div >
   )
 }
 
