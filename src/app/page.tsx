@@ -6,7 +6,7 @@ const page = () => {
     <div className="defaultWidth">
       <h1>Serviços Disponíveis</h1>
       <p>Escolha entre uma variedade de serviços projetados para facilitar sua vida.</p>
-      <div className="grid grid-cols-2 gap-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
         <Link href="/json-formatter" prefetch={true}>
           <Card>
             <CardContent className="flex items-center justify-center p-6">

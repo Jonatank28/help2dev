@@ -61,7 +61,7 @@
   }
 
   .defaultWidth {
-    @apply px-0;
+    @apply !px-2;
   }
 }
 

@@ -1,13 +1,12 @@
 import LanguageToggle from "../LanguageToggle"
 import Logo from "../Logo"
 import ThemeToggle from "../ThemeToggle"
-import { Card, CardContent } from "../ui/card"
 import ButtonsJsonFormatter from "./ButtonsJsonFormatter"
 
 const Header = () => {
   return (
-    <Card className="rounded-none border-none shadow-xl">
-      <CardContent className="flex items-center justify-between py-2 defaultWidth">
+    <footer className="shadow-lg dark:shadow-white/[0.02]">
+      <div className="flex items-center justify-between py-2 defaultWidth">
         <Logo />
         <div className="flex items-center gap-4">
           <ButtonsJsonFormatter />
@@ -16,8 +15,8 @@ const Header = () => {
             <ThemeToggle />
           </div>
         </div>
-      </CardContent>
-    </Card>
+      </div>
+    </footer>
   )
 }
 

@@ -61,8 +61,8 @@ const Content = () => {
 
   return (
     <div className='h-full flex justify-center items-center'>
-      <Card className='min-w-[400px] mb-52'>
-        <CardContent className='p-6'>
+      <Card className='w-full mx-2 md:mx-0 md:w-auto md:min-w-[400px] mb-52'>
+        <CardContent className='p-4 md:p-6'>
           <h1 className='text-xl font-bold'>Gerador de CPF</h1>
           <div className='pt-4 space-y-1'>
             <Label className='text-muted-foreground'>Gerar pontuação</Label>
@@ -82,8 +82,8 @@ const Content = () => {
             </RadioGroup>
           </div>
           <div>
-            <Button className='mt-4 w-full' aria-label='GenerateCpf' onClick={generateCpf}>
-              <RotateCcw />
+            <Button className='mt-4 w-full gap-2' aria-label='GenerateCpf' onClick={generateCpf}>
+              <RotateCcw size={18} />
               <p>Gerar</p>
             </Button>
             {!cpf ? (
