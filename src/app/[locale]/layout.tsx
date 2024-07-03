@@ -7,8 +7,8 @@ import {
   unstable_setRequestLocale
 } from 'next-intl/server';
 import { ReactNode } from 'react';
-import Navigation from '@/components/Navigation';
 import { locales } from '@/config';
+import Providers from '@/components/Providers';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -38,16 +38,16 @@ export default async function LocaleLayout({
   // Enable static rendering
   unstable_setRequestLocale(locale);
 
-  // Providing all messages to the client
-  // side is the easiest way to get started
   const messages = await getMessages();
 
   return (
     <html className="h-full" lang={locale}>
       <body className={clsx(inter.className, 'flex h-full flex-col')}>
         <NextIntlClientProvider messages={messages}>
-          <Navigation />
-          {children}
+          {/* <Navigation /> */}
+          <Providers>
+            {children}
+          </Providers>
         </NextIntlClientProvider>
       </body>
     </html>
