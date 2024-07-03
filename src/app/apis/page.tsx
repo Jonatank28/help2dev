@@ -1,10 +1,16 @@
-import React from 'react'
+import Content from "./_components/Content"
+
+
+export const metadata = {
+  title: 'Apis',
+  description: 'Apis gratuitas',
+}
 
 const page = () => {
   return (
-    <div>
-      <h1>APISr</h1>
-    </div>
+    <main>
+      <Content />
+    </main>
   )
 }
 
