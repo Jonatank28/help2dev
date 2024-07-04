@@ -2,11 +2,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 
-export const metadata = {
-  title: 'JSON Formatter',
-  description: 'JSON Formatter',
-}
-
 export default function NotFoundPage() {
   const t = useTranslations('NotFoundPage');
   return (
