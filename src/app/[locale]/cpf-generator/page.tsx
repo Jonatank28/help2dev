@@ -1,6 +1,5 @@
 import Content from "./_components/Content"
 
-
 export const metadata = {
   title: 'CPF Generator',
   description: 'CPF Generator',

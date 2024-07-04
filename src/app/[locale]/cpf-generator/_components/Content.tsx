@@ -6,15 +6,13 @@ import { Label } from '@/components/ui/label'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { LucideCheck, LucideCopy, RotateCcw } from 'lucide-react'
 import { useTranslations } from 'next-intl'
-import { getTranslations } from 'next-intl/server'
 import React, { useEffect, useState } from 'react'
 
 const Content = () => {
   const [cpf, setCpf] = useState('')
   const [generatePoint, setGeneratePoint] = useState('')
   const [copy, setCopy] = useState(false)
-  // const t = useTranslations('CpfGenerator')
-  // const t = getTranslations('CpfGenerator')
+  const t = useTranslations('GenerateCpf')
 
   const randomize = (n: number) => Math.floor(Math.random() * n)
 
@@ -67,9 +65,9 @@ const Content = () => {
     <div className='h-full flex justify-center items-center'>
       <Card className='w-full mx-2 md:mx-0 md:w-auto md:min-w-[400px] mb-52'>
         <CardContent className='p-4 md:p-6'>
-          <h1 className='text-xl font-bold'>Gerador de CPF</h1>
+          <h1 className='text-xl font-bold'>{t('card.title')}</h1>
           <div className='pt-4 space-y-1'>
-            <Label className='text-muted-foreground'>Gerar pontuação</Label>
+            <Label className='text-muted-foreground'>{t('card.radioPointTitle')}</Label>
             <RadioGroup
               key={generatePoint}
               defaultValue={generatePoint}
@@ -77,21 +75,21 @@ const Content = () => {
             >
               <div className="flex items-center space-x-2 cursor-pointer" onClick={() => changeGeneratePoint('true')}>
                 <RadioGroupItem value="true" id="true" className='h-[20px] w-[20px]' />
-                <Label htmlFor="true" className='cursor-pointer py-2'>Sim</Label>
+                <Label htmlFor="true" className='cursor-pointer py-2'>{t('card.radioPointTrue')}</Label>
               </div>
               <div className="flex items-center space-x-2 cursor-pointer" onClick={() => changeGeneratePoint('false')}>
                 <RadioGroupItem value="false" id="false" className='h-[20px] w-[20px]' />
-                <Label htmlFor="false" className='cursor-pointer py-2'>Não</Label>
+                <Label htmlFor="false" className='cursor-pointer py-2'>{t('card.radioPointFalse')}</Label>
               </div>
             </RadioGroup>
           </div>
           <div>
             <Button className='mt-4 w-full gap-2' aria-label='GenerateCpf' onClick={generateCpf}>
               <RotateCcw size={18} />
-              <p>Gerar</p>
+              <p>{t('card.button')}</p>
             </Button>
             {!cpf ? (
-              <p className="text-xs mt-4 opacity-60">Clique no botão acima para gerar um novo CPF.</p>
+              <p className="text-xs mt-4 opacity-60">{t('card.messageNoGeneration')}</p>
             ) : (
               <div className="bg-accent p-4 mt-4 rounded-[2px] relative">
                 <div

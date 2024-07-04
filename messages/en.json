@@ -44,18 +44,17 @@
       "errorCopy": "Error copying"
     }
   },
-  "generateCpf": {
+  "GenerateCpf": {
     "card": {
       "title": "CPF Generator",
       "button": "Generate",
       "radioPointTitle": "Generate point",
       "radioPointTrue": "Yes",
       "radioPointFalse": "No",
-      "labelUf": "State",
-      "messageNoGeneration": "No generation yet"
+      "messageNoGeneration": "Click the button above to generate a new CPF."
     }
   },
-  "generateCnpj": {
+  "GenerateCnpj": {
     "card": {
       "title": "CNPJ Generator",
       "button": "Generate",

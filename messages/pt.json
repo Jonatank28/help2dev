@@ -44,7 +44,7 @@
       "errorCopy": "Erro ao copiar"
     }
   },
-  "generateCpf": {
+  "GenerateCpf": {
     "card": {
       "title": "Gerador de CPF",
       "button": "Gerar",
@@ -52,10 +52,10 @@
       "radioPointTrue": "Sim",
       "radioPointFalse": "Nao",
       "labelUf": "Estado",
-      "messageNoGeneration": "Ainda não há CPF gerado"
+      "messageNoGeneration": "Clique no botão acima para gerar um novo CPF."
     }
   },
-  "generateCnpj": {
+  "GenerateCnpj": {
     "card": {
       "title": "Gerador de CNPJ",
       "button": "Gerar",

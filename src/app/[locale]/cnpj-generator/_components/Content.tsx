@@ -5,9 +5,12 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { LucideCheck, LucideCopy, RotateCcw } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 import React, { useEffect, useState } from 'react'
 
 const generateRandomNumbers = (length: number) => {
+  const t = useTranslations('GenerateCnpj')
+
   const randomNumbers = []
   for (let i = 0; i < length; i++) {
     randomNumbers.push(Math.floor(Math.random() * 9))
