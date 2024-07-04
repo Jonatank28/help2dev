@@ -1,6 +1,5 @@
 'use client'
 
-import { useEffect } from "react";
 import { Languages } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from '@/navigation';
@@ -13,6 +12,7 @@ import {
 import pt from '@/assets/language/pt.png'
 import en from '@/assets/language/en.png'
 import Image from "next/image"
+import { useRouter } from "next/navigation";
 
 const links = [
   {
@@ -34,31 +34,13 @@ const links = [
 
 const Footer = () => {
   const pathname = usePathname()
+  const router = useRouter()
 
   function onSelectChange(value: string) {
     const newUrl = `/${value}/${pathname}`
     window.location.href = newUrl;
   }
 
-  useEffect(() => {
-    // Salvar a posição do scroll antes de recarregar a página
-    const saveScrollPosition = () => {
-      localStorage.setItem('scrollPosition', window.scrollY.toString());
-    }
-
-    window.addEventListener('beforeunload', saveScrollPosition);
-
-    // Restaurar a posição do scroll ao carregar a página
-    const scrollPosition = localStorage.getItem('scrollPosition');
-    if (scrollPosition) {
-      window.scrollTo(0, parseInt(scrollPosition, 10));
-    }
-
-    // Remover o event listener quando o componente for desmontado
-    return () => {
-      window.removeEventListener('beforeunload', saveScrollPosition);
-    }
-  }, []);
 
   if (pathname === "/json-formatter") return null
   return (
