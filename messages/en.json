@@ -61,7 +61,18 @@
       "radioPointTitle": "Generate point",
       "radioPointTrue": "Yes",
       "radioPointFalse": "No",
-      "messageNoGeneration": "No generation yet"
+      "messageNoGeneration": "Click the button above to generate a new CNPJ."
     }
+  },
+  "API": {
+    "title": "Movie API",
+    "description": "A service that provides a curated list of the top 50 highest-grossing movies of all time. Our API offers detailed information about each movie, including title, release year, director, and box office revenue. Whether you're a film enthusiast, a developer looking for data to populate your app, or simply curious about the highest-grossing movies in history, our API has everything you need. Explore the world of cinema with our Movie API!",
+    "titleCardMovieAll": "Fetching all movies",
+    "titleCardMovieOne": "Fetching by id",
+    "method": "Method",
+    "cardDescription": "Description",
+    "cardDescriptionAll": "An array of 50 objects",
+    "cardDescriptionOne": "A single object",
+    "return": "Return"
   }
 }

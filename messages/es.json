@@ -1,0 +1,78 @@
+{
+  "Manifest": {
+    "name": "Help2Dev"
+  },
+  "Footer": {
+    "copy": "Todos los derechos reservados"
+  },
+  "NotFoundPage": {
+    "description": "Por favor, verifique la barra de direcciones del navegador o use la navegación para ir a una página conocida.",
+    "title": "Página no encontrada",
+    "link": "Volver a Inicio"
+  },
+  "Home": {
+    "title": "Servicios Disponibles",
+    "description": "Elija entre una variedad de servicios diseñados para facilitar su vida.",
+    "cards": {
+      "json-formatter": {
+        "title": "Formateador de JSON",
+        "description": "Formatee sus datos JSON en un formato más legible."
+      },
+      "cpf-generator": {
+        "title": "Generador de CPF",
+        "description": "Generador de CPF aleatorio."
+      },
+      "cnpj-generator": {
+        "title": "Generador de CNPJ",
+        "description": "Generador de CNPJ aleatorio."
+      },
+      "apis": {
+        "title": "APIs",
+        "description": "Consuma las APIs disponibles."
+      }
+    }
+  },
+  "JsonFormatter": {
+    "buttonsAction": {
+      "copy": "Copiar",
+      "prettify": "Embellecer",
+      "minify": "Minimizar",
+      "clear": "Limpiar"
+    },
+    "toastMessage": {
+      "copy": "Copiado al portapapeles",
+      "errorCopy": "Error al copiar"
+    }
+  },
+  "GenerateCpf": {
+    "card": {
+      "title": "Generador de CPF",
+      "button": "Generar",
+      "radioPointTitle": "Generar con puntos",
+      "radioPointTrue": "Sí",
+      "radioPointFalse": "No",
+      "messageNoGeneration": "Haga clic en el botón de arriba para generar un nuevo CPF."
+    }
+  },
+  "GenerateCnpj": {
+    "card": {
+      "title": "Generador de CNPJ",
+      "button": "Generar",
+      "radioPointTitle": "Generar con puntos",
+      "radioPointTrue": "Sí",
+      "radioPointFalse": "No",
+      "messageNoGeneration": "Haga clic en el botón de arriba para generar un nuevo CNPJ."
+    }
+  },
+  "API": {
+    "title": "API de Películas",
+    "description": "Un servicio que proporciona una lista seleccionada de las 50 películas más taquilleras de todos los tiempos. Nuestra API ofrece información detallada sobre cada película, incluyendo título, año de lanzamiento, director y recaudación en taquilla. Ya sea que seas un entusiasta del cine, un desarrollador que busca datos para poblar tu aplicación o simplemente tengas curiosidad sobre las películas más taquilleras de la historia, ¡nuestra API tiene todo lo que necesitas! Explora el mundo del cine con nuestra API de Películas.",
+    "titleCardMovieAll": "Obteniendo todas las películas",
+    "titleCardMovieOne": "Obteniendo por id",
+    "method": "Método",
+    "cardDescription": "Descripción",
+    "cardDescriptionAll": "Un array de 50 objetos",
+    "cardDescriptionOne": "Un único objeto",
+    "return": "Retorno"
+  }
+}

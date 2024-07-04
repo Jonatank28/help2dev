@@ -12,15 +12,15 @@ import {
 import pt from '@/assets/language/pt.png'
 import en from '@/assets/language/en.png'
 import Image from "next/image"
-import { useRouter } from "next/navigation";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import LanguageToggle from "./LanguageToggle";
 
 const links = [
-  {
-    name: 'Blog',
-    href: '/blog',
-    blank: false
-  },
+  // {
+  //   name: 'Blog',
+  //   href: '/blog',
+  //   blank: false
+  // },
   {
     name: 'Github',
     href: 'https://github.com/Jonatank28',
@@ -33,14 +33,12 @@ const links = [
   },
 ]
 
+
+
 const Footer = () => {
   const pathname = usePathname()
   const t = useTranslations('Footer')
 
-  function onSelectChange(value: string) {
-    const newUrl = `/${value}/${pathname}`
-    window.location.href = newUrl;
-  }
 
 
   if (pathname === "/json-formatter") return null
@@ -56,28 +54,7 @@ const Footer = () => {
         </nav>
 
         <div className="flex items-center gap-4 sm:gap-6 order-1 sm:order-2">
-          <DropdownMenu>
-            <DropdownMenuTrigger>
-              <div className="p-2">
-                <Languages size={18} className="opacity-70 dark:opacity-100" />
-              </div>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              <DropdownMenuItem className="cursor-pointer" onClick={() => onSelectChange('en')}>
-                <div className="flex items-center gap-2">
-                  <Image src={en} alt="en" width={24} height={24} />
-                  <span>EN</span>
-                </div>
-              </DropdownMenuItem>
-              <DropdownMenuItem className="cursor-pointer" onClick={() => onSelectChange('pt')}>
-                <div className="flex items-center gap-2">
-                  <Image src={pt} alt="pt" width={24} height={24} />
-                  <span>PT</span>
-                </div>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-
+          <LanguageToggle />
           {links.map((link, index) => (
             <Link
               key={index}

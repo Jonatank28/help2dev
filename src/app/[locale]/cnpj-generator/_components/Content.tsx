@@ -8,34 +8,33 @@ import { LucideCheck, LucideCopy, RotateCcw } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import React, { useEffect, useState } from 'react'
 
-const generateRandomNumbers = (length: number) => {
-  const t = useTranslations('GenerateCnpj')
-
-  const randomNumbers = []
-  for (let i = 0; i < length; i++) {
-    randomNumbers.push(Math.floor(Math.random() * 9))
-  }
-  return randomNumbers
-}
-
-const calculateVerificationDigits = (numbers: number[], weights: number[]) => {
-  let sum = numbers.reduce((acc, num, i) => acc + num * weights[i], 0)
-  let rest = sum % 11
-  return rest < 2 ? 0 : 11 - rest
-}
-
-const formatCnpj = (cnpj: number[], addDots: boolean) => {
-  let formattedCnpj = cnpj.join('')
-  if (addDots) {
-    formattedCnpj = formattedCnpj.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, '$1.$2.$3/$4-$5')
-  }
-  return formattedCnpj
-}
-
 const Content = () => {
   const [cnpj, setCnpj] = useState('')
   const [copy, setCopy] = useState(false)
   const [generatePoint, setGeneratePoint] = useState('')
+  const t = useTranslations('GenerateCnpj')
+
+  const generateRandomNumbers = (length: number) => {
+    const randomNumbers = []
+    for (let i = 0; i < length; i++) {
+      randomNumbers.push(Math.floor(Math.random() * 9))
+    }
+    return randomNumbers
+  }
+
+  const calculateVerificationDigits = (numbers: number[], weights: number[]) => {
+    let sum = numbers.reduce((acc, num, i) => acc + num * weights[i], 0)
+    let rest = sum % 11
+    return rest < 2 ? 0 : 11 - rest
+  }
+
+  const formatCnpj = (cnpj: number[], addDots: boolean) => {
+    let formattedCnpj = cnpj.join('')
+    if (addDots) {
+      formattedCnpj = formattedCnpj.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, '$1.$2.$3/$4-$5')
+    }
+    return formattedCnpj
+  }
 
   const generateCnpj = () => {
     setCopy(false)
@@ -84,9 +83,9 @@ const Content = () => {
     <div className='h-full flex justify-center items-center'>
       <Card className='w-full mx-2 md:mx-0 md:w-auto md:min-w-[400px] mb-52'>
         <CardContent className='p-4 md:p-6'>
-          <h1 className='text-xl font-bold'>Gerador de CNPJ</h1>
+          <h1 className='text-xl font-bold'>{t('card.title')}</h1>
           <div className='pt-4 space-y-1'>
-            <Label className='text-muted-foreground'>Gerar pontuação</Label>
+            <Label className='text-muted-foreground'>{t('card.radioPointTitle')}</Label>
             <RadioGroup key={generatePoint} defaultValue={generatePoint} className='flex'>
               {['true', 'false'].map((value) => (
                 <div
@@ -95,18 +94,18 @@ const Content = () => {
                   onClick={() => changeGeneratePoint(value)}
                 >
                   <RadioGroupItem value={value} id={value} className='h-[20px] w-[20px]' />
-                  <Label htmlFor={value} className='cursor-pointer py-2'>{value === 'true' ? 'Sim' : 'Não'}</Label>
+                  <Label htmlFor={value} className='cursor-pointer py-2'>{value === 'true' ? t('card.radioPointTrue') : t('card.radioPointFalse')}</Label>
                 </div>
               ))}
             </RadioGroup>
           </div>
           <div>
-            <Button className='mt-4 w-full gap-2' aria-label='GenerateCpf' onClick={generateCnpj}>
+            <Button className='mt-4 w-full gap-2' aria-label='GenerateCnpj' onClick={generateCnpj}>
               <RotateCcw size={18} />
-              <p>Gerar</p>
+              <p>{t('card.button')}</p>
             </Button>
             {!cnpj ? (
-              <p className="text-xs mt-4 opacity-60">Clique no botão acima para gerar um novo CNPJ.</p>
+              <p className="text-xs mt-4 opacity-60">{t('card.messageNoGeneration')}</p>
             ) : (
               <div className="bg-accent p-4 mt-4 rounded-[2px] relative">
                 <div

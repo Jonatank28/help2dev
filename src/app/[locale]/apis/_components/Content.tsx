@@ -12,8 +12,10 @@ import { api } from "@/lib/api"
 import { Button } from "@/components/ui/button"
 import { LucideCheck, LucideCopy } from "lucide-react"
 import Divider from "@/components/ui/Divider"
+import { useTranslations } from "next-intl"
 
 const Content = () => {
+  const t = useTranslations('API')
   const [client, setClient] = useState(false)
   const [copy, setCopy] = useState({
     status: false,
@@ -41,16 +43,16 @@ const Content = () => {
 
   return (
     <div className='w-full px-2 mx-auto md:px-0 md:max-w-[1200px] py-4'>
-      <h1 className='text-4xl font-bold'>API de filmes</h1>
-      <p className="pt-4 opacity-70">Serviço que fornece uma lista selecionada dos 50 filmes com maior arrecadação de todos os tempos. Nossa API oferece informações detalhadas sobre cada filme, incluindo título, ano de lançamento, diretor e bilheteria. Se você é um entusiasta de cinema, um desenvolvedor em busca de dados para popular seu aplicativo ou simplesmente curioso sobre os filmes com maior arrecadação da história, nossa API tem tudo o que você precisa. Explore o mundo do cinema com a nossa API de Filmes!</p>
+      <h1 className='text-4xl font-bold'>{t('title')}</h1>
+      <p className="pt-4 opacity-70">{t('description')}</p>
       <div className="pt-4 space-y-4">
         <Card>
           <CardContent className="pt-4 pb-0">
-            <h1 className="text-xl font-bold">Buscando todos os filmes</h1>
+            <h1 className="text-xl font-bold">{t('titleCardMovieAll')}</h1>
             <div className="pt-6">
               <Divider />
               <div className="grid grid-cols-[150px_1fr] py-2">
-                <p>Método</p>
+                <p>{t('method')}</p>
                 <p>GET</p>
               </div>
               <Divider />
@@ -75,12 +77,12 @@ const Content = () => {
               </div>
               <Divider />
               <div className="grid grid-cols-[150px_1fr] py-2">
-                <p>Descrição</p>
-                <p>Um array de 50 objetos</p>
+                <p>{t('cardDescription')}</p>
+                <p>{t('cardDescriptionAll')}</p>
               </div>
               <Divider />
               <div className="grid grid-cols-[80px_1fr] md:grid-cols-[150px_1fr] py-2 h-[320px] md:h-[310px]">
-                <p>Retorno</p>
+                <p>{t('return')}</p>
                 {client ? (
                   <Card className="p-2 bg-[#282A36]">
                     <AceEditor
@@ -109,11 +111,11 @@ const Content = () => {
         </Card>
         <Card>
           <CardContent className="pt-4 pb-0">
-            <h1 className="text-xl font-bold">Buscando pelo id</h1>
+            <h1 className="text-xl font-bold">{t('titleCardMovieOne')}</h1>
             <div className="pt-6">
               <Divider />
               <div className="grid grid-cols-[150px_1fr] py-2">
-                <p>Método</p>
+                <p>{t('method')}</p>
                 <p>GET</p>
               </div>
               <Divider />
@@ -139,12 +141,12 @@ const Content = () => {
               </div>
               <Divider />
               <div className="grid grid-cols-[150px_1fr] py-2">
-                <p>Descrição</p>
-                <p>Um objeto</p>
+                <p>{t('cardDescription')}</p>
+                <p>{t('cardDescriptionOne')}</p>
               </div>
               <Divider />
               <div className="grid grid-cols-[80px_1fr] md:grid-cols-[150px_1fr] py-2 h-[320px] md:h-[310px]">
-                <p>Retorno</p>
+                <p>{t('return')}</p>
                 {client ? (
                   <Card className="p-2 bg-[#282A36]">
                     <AceEditor
