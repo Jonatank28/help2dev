@@ -2,8 +2,7 @@
 
 import { Languages } from "lucide-react"
 import Link from "next/link"
-import { useParams } from "next/navigation"
-import { useRouter, usePathname } from '@/navigation';
+import { usePathname } from '@/navigation';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,7 +12,6 @@ import {
 import pt from '@/assets/language/pt.png'
 import en from '@/assets/language/en.png'
 import Image from "next/image"
-import { useTransition } from 'react';
 
 const links = [
   {
@@ -34,20 +32,11 @@ const links = [
 ]
 
 const Footer = () => {
-  const router = useRouter();
-  const [isPending, startTransition] = useTransition();
   const pathname = usePathname()
-  const params = useParams();
 
   function onSelectChange(value: string) {
-    const nextLocale = value
-    startTransition(() => {
-      router.replace(
-        // @ts-ignore
-        { pathname, params },
-        { locale: nextLocale }
-      );
-    });
+    const newUrl = `/${value}/${pathname}`
+    window.location.href = newUrl;
   }
 
 
