@@ -2,9 +2,67 @@
   "Manifest": {
     "name": "Help2Dev"
   },
+  "Footer": {
+    "copy": "All rights reserved"
+  },
   "NotFoundPage": {
     "description": "Please double-check the browser address bar or use the navigation to go to a known page.",
     "title": "Page not found",
     "link": "Back to Home"
+  },
+  "Home": {
+    "title": "Available Services",
+    "description": "Choose from a variety of services designed to make your life easier.",
+    "cards": {
+      "json-formatter": {
+        "title": "JSON Formatter",
+        "description": "Format your JSON data into a more readable format."
+      },
+      "cpf-generator": {
+        "title": "CPF Generator",
+        "description": "Random CPF generator."
+      },
+      "cnpj-generator": {
+        "title": "CNPJ Generator",
+        "description": "Random CNPJ generator."
+      },
+      "apis": {
+        "title": "APIs",
+        "description": "Consume available APIs."
+      }
+    }
+  },
+  "JsonFormatter": {
+    "buttonsAction": {
+      "copy": "Copy",
+      "prettify": "Prettify",
+      "minify": "Minify",
+      "clear": "Clear"
+    },
+    "toastMessage": {
+      "copy": "Copied to clipboard",
+      "errorCopy": "Error copying"
+    }
+  },
+  "generateCpf": {
+    "card": {
+      "title": "CPF Generator",
+      "button": "Generate",
+      "radioPointTitle": "Generate point",
+      "radioPointTrue": "Yes",
+      "radioPointFalse": "No",
+      "labelUf": "State",
+      "messageNoGeneration": "No generation yet"
+    }
+  },
+  "generateCnpj": {
+    "card": {
+      "title": "CNPJ Generator",
+      "button": "Generate",
+      "radioPointTitle": "Generate point",
+      "radioPointTrue": "Yes",
+      "radioPointFalse": "No",
+      "messageNoGeneration": "No generation yet"
+    }
   }
 }

@@ -13,6 +13,7 @@ import pt from '@/assets/language/pt.png'
 import en from '@/assets/language/en.png'
 import Image from "next/image"
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 const links = [
   {
@@ -34,7 +35,7 @@ const links = [
 
 const Footer = () => {
   const pathname = usePathname()
-  const router = useRouter()
+  const t = useTranslations('Footer')
 
   function onSelectChange(value: string) {
     const newUrl = `/${value}/${pathname}`
@@ -50,7 +51,7 @@ const Footer = () => {
           <p className="text-xs">
             © {new Date().getFullYear()}{' '}
             <Link href="/" className="font-bold text-sm" >Help2dev</Link>{' '}
-            - Todos os direitos reservados
+            - {t('copy')}
           </p>
         </nav>
 

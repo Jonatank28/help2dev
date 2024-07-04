@@ -1,4 +1,3 @@
-import LanguageToggle from "../LanguageToggle"
 import Logo from "../Logo"
 import ThemeToggle from "../ThemeToggle"
 import ButtonsJsonFormatter from "./ButtonsJsonFormatter"
@@ -11,7 +10,6 @@ const Header = () => {
         <div className="flex items-center gap-4">
           <ButtonsJsonFormatter />
           <div className="flex items-center gap-2">
-            {/* <LanguageToggle /> */}
             <ThemeToggle />
           </div>
         </div>

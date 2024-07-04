@@ -8,7 +8,6 @@ interface IEditorJson {
   setFormattedJsonValue: (value: string) => void
   formatJson: (value: string) => void
   clearEditors: () => void
-  copyToClipboard: () => void
   compactJson: () => void
   reformatJson: () => void
 }
@@ -29,11 +28,6 @@ export const useEditorJson = create<IEditorJson>((set, get) => ({
     }
   },
   clearEditors: () => set({ formattedJsonValue: '', jsonValue: '' }),
-  copyToClipboard: () => {
-    const formattedJsonValue = get().formattedJsonValue;
-    navigator.clipboard.writeText(formattedJsonValue);
-    toast("Copied to clipboard")
-  },
   compactJson: () => {
     const jsonValue = get().jsonValue;
     try {

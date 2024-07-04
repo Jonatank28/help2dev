@@ -3,6 +3,7 @@
 import { ThemeProvider as NextThemesProvider } from "next-themes"
 import Header from "./Header"
 import Footer from "./Footer"
+import { Toaster } from "./ui/toaster"
 
 const Providers = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -11,6 +12,7 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
       defaultTheme="system"
       enableSystem={false}
     >
+      <Toaster />
       <div className='min-h-screen grid grid-rows-[auto_1fr_auto]'>
         <Header />
         {children}

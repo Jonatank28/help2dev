@@ -2,9 +2,67 @@
   "Manifest": {
     "name": "Help2Dev"
   },
+  "Footer": {
+    "copy": "Todos os direitos reservados"
+  },
   "NotFoundPage": {
     "description": "Por favor, verifique novamente a barra de endereço do navegador ou use a navegação para ir a uma página conhecida.",
     "title": "Página não encontrada",
     "link": "Voltar ao Início"
+  },
+  "Home": {
+    "title": "Serviços Disponíveis",
+    "description": "Escolha entre uma variedade de serviços projetados para facilitar sua vida.",
+    "cards": {
+      "json-formatter": {
+        "title": "JSON Formatter",
+        "description": "Formate seus dados JSON em um formato mais legível."
+      },
+      "cpf-generator": {
+        "title": "Gerador de CPF",
+        "description": "Gerador de CPF aleatório."
+      },
+      "cnpj-generator": {
+        "title": "Gerador de CNPJ",
+        "description": "Gerador de CNPJ aleatório."
+      },
+      "apis": {
+        "title": "APIs",
+        "description": "Consumir APIS disponíveis"
+      }
+    }
+  },
+  "JsonFormatter": {
+    "buttonsAction": {
+      "copy": "Copiar",
+      "prettify": "Formatar",
+      "minify": "Compactar",
+      "clear": "Limpar"
+    },
+    "toastMessage": {
+      "copy": "Copiado para a área de transferência",
+      "errorCopy": "Erro ao copiar"
+    }
+  },
+  "generateCpf": {
+    "card": {
+      "title": "Gerador de CPF",
+      "button": "Gerar",
+      "radioPointTitle": "Gerar pontuação",
+      "radioPointTrue": "Sim",
+      "radioPointFalse": "Nao",
+      "labelUf": "Estado",
+      "messageNoGeneration": "Ainda não há CPF gerado"
+    }
+  },
+  "generateCnpj": {
+    "card": {
+      "title": "Gerador de CNPJ",
+      "button": "Gerar",
+      "radioPointTitle": "Gerar pontuação",
+      "radioPointTrue": "Sim",
+      "radioPointFalse": "Nao",
+      "messageNoGeneration": "Ainda não há CNPJ gerado"
+    }
   }
 }

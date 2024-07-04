@@ -1,12 +1,29 @@
-import { usePathname } from "next/navigation"
 import { Button } from "../ui/button"
 import { Copy, FlipHorizontal, Sparkles, Trash2 } from "lucide-react"
 import { useEditorJson } from "@/hooks/useEditorJson"
+import { usePathname } from "@/navigation"
+import { useTranslations } from "next-intl"
+import { useToast } from "../ui/use-toast"
 
 const ButtonsJsonFormatter = () => {
   const pathName = usePathname()
-  const { clearEditors, copyToClipboard, compactJson, reformatJson, formattedJsonValue } = useEditorJson()
+  const { toast } = useToast()
+  const { clearEditors, compactJson, reformatJson, formattedJsonValue } = useEditorJson()
   const verifyExist = formattedJsonValue !== 'Invalid JSON' && formattedJsonValue !== ''
+  const t = useTranslations("JsonFormatter")
+
+  const copyToClipboard = () => {
+    try {
+      navigator.clipboard.writeText(formattedJsonValue);
+      toast({
+        description: t("toastMessage.copy"),
+      })
+    } catch (error) {
+      toast({
+        description: t("toastMessage.errorCopy"),
+      })
+    }
+  }
 
   if (pathName !== "/json-formatter") return null
 
@@ -19,7 +36,7 @@ const ButtonsJsonFormatter = () => {
         disabled={!verifyExist}
       >
         <Copy size={18} />
-        <span>Copiar</span>
+        <span>{t("buttonsAction.copy")}</span>
       </Button>
       <Button
         variant='secondary'
@@ -28,7 +45,7 @@ const ButtonsJsonFormatter = () => {
         disabled={!verifyExist}
       >
         <Sparkles size={18} />
-        <span>Formatar</span>
+        <span>{t("buttonsAction.prettify")}</span>
       </Button>
       <Button
         variant='secondary'
@@ -37,7 +54,7 @@ const ButtonsJsonFormatter = () => {
         disabled={!verifyExist}
       >
         <FlipHorizontal size={18} />
-        <span>Compactar</span>
+        <span>{t("buttonsAction.minify")}</span>
       </Button>
       <Button
         variant='secondary'
@@ -46,7 +63,7 @@ const ButtonsJsonFormatter = () => {
         disabled={!verifyExist}
       >
         <Trash2 size={18} />
-        <span>Limpar</span>
+        <span>{t("buttonsAction.clear")}</span>
       </Button>
     </div>
   )
