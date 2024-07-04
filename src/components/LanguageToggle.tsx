@@ -23,6 +23,7 @@ const LanguageToggle = () => {
   const pathname = usePathname();
 
   function onSelectChange(value: string) {
+    if (value === locale) return
     const newUrl = `/${value}/${pathname}`;
     window.location.href = newUrl;
   }

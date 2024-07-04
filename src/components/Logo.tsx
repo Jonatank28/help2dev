@@ -6,11 +6,11 @@ import Link from "next/link"
 
 const Logo = () => {
   return (
-    <Button
-      variant="ghost"
-      className="hover:bg-transparent dark:hover:bg-transparent p-0"
-    >
-      <Link href="/" >
+    <Link href="/" prefetch={true}>
+      <Button
+        variant="ghost"
+        className="hover:bg-transparent dark:hover:bg-transparent"
+      >
         <Image
           src={logoDark}
           alt="logo"
@@ -25,8 +25,8 @@ const Logo = () => {
           height={110}
           className="transition-all hidden dark:block"
         />
-      </Link>
-    </Button>
+      </Button>
+    </Link>
   )
 }
 
