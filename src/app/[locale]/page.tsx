@@ -1,9 +1,16 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { useTranslations } from "next-intl";
-import Link from "next/link"
+import { Card, CardContent } from "@/components/ui/card";
+import { Link } from "@/navigation";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
-const page = () => {
-  const t = useTranslations("Home");
+type Props = {
+  params: { locale: string };
+};
+
+const Homepage = async ({ params: { locale } }: Props) => {
+  const t = await getTranslations({ locale, namespace: 'Home' });
+  // Enable static rendering
+  unstable_setRequestLocale(locale);
+
   return (
     <div className="defaultWidth">
       <div className="h-full">
@@ -56,4 +63,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Homepage

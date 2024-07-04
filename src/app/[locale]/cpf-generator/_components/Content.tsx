@@ -5,12 +5,16 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { LucideCheck, LucideCopy, RotateCcw } from 'lucide-react'
+import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 import React, { useEffect, useState } from 'react'
 
 const Content = () => {
   const [cpf, setCpf] = useState('')
   const [generatePoint, setGeneratePoint] = useState('')
   const [copy, setCopy] = useState(false)
+  // const t = useTranslations('CpfGenerator')
+  // const t = getTranslations('CpfGenerator')
 
   const randomize = (n: number) => Math.floor(Math.random() * n)
 

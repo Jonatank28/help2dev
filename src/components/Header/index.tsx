@@ -8,7 +8,7 @@ const Header = () => {
       <div className="flex items-center justify-between py-2 defaultWidth">
         <Logo />
         <div className="flex items-center gap-4">
-          <ButtonsJsonFormatter />
+          {/* <ButtonsJsonFormatter /> */}
           <div className="flex items-center gap-2">
             <ThemeToggle />
           </div>
