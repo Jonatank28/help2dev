@@ -4,7 +4,6 @@ export const metadata = {
   title: 'JSON Formatter',
   description: 'JSON Formatter',
 }
-
 const page = () => {
   return (
     <main>

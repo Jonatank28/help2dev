@@ -1,37 +1,16 @@
 'use client';
 
-import PageLayout from '@/components/PageLayout';
-import { useTranslations } from 'next-intl';
 import { useEffect } from 'react';
+import NotFoundPage from './not-found';
 
-type Props = {
-  error: Error;
-  reset(): void;
-};
+export const metadata = {
+  title: 'JSON Formatter',
+  description: 'JSON Formatter',
+}
 
-export default function Error({ error, reset }: Props) {
-  const t = useTranslations('Error');
-
+export default function Error() {
   useEffect(() => {
-    console.error(error);
-  }, [error]);
-
-  return (
-    <PageLayout title={t('title')}>
-      <div>
-        {t.rich('description', {
-          p: (chunks) => <p className="mt-4">{chunks}</p>,
-          retry: (chunks) => (
-            <button
-              className="text-white underline underline-offset-2"
-              onClick={reset}
-              type="button"
-            >
-              {chunks}
-            </button>
-          )
-        })}
-      </div>
-    </PageLayout>
-  );
+    document.title = 'JSON Formatter - Erro'
+  }, [])
+  return <NotFoundPage />;
 }
