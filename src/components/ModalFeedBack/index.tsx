@@ -8,12 +8,17 @@ import { Cross2Icon } from "@radix-ui/react-icons"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod"
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form"
 
 const schema = z.object({
   name: z.string().min(1, { message: 'O nome é obrigatório' }),
-  email: z.string().email({ message: 'O email é inválido' }),
-  subject: z.string().min(1, { message: 'O assunto é obrigatório' }),
-  message: z.string().min(1, { message: 'A mensagem é obrigatória' }),
 })
 
 
@@ -22,11 +27,13 @@ export default function ModalFeedback({ open, onClose }: { open: boolean, onClos
     resolver: zodResolver(schema),
     defaultValues: {
       name: '',
-      email: '',
-      subject: '',
-      message: '',
-    }
+    },
+    mode: 'onChange',
   })
+
+  const onSubmit = (values: z.infer<typeof schema>) => {
+    console.log("🚀  values", values);
+  }
 
   return (
     <AlertDialog open={open} onOpenChange={onClose}>
@@ -42,41 +49,28 @@ export default function ModalFeedback({ open, onClose }: { open: boolean, onClos
           </AlertDialogDescription>
         </AlertDialogHeader>
         <div>
-          <form className="grid gap-4">
-            <div className="grid gap-2">
-              <Label htmlFor="name">Nome</Label>
-              <Input id="name" />
-            </div>
-            <div className="grid gap-2">
-              <Label htmlFor="email">Email</Label>
-              <Input id="email" type="email" />
-            </div>
-            <div className="grid gap-2">
-              <Label htmlFor="subject">Assunto</Label>
-              <Select>
-                <SelectTrigger>
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="feedback">Feedback</SelectItem>
-                  <SelectItem value="bug">Bug Report</SelectItem>
-                  <SelectItem value="feature">Feature Request</SelectItem>
-                  <SelectItem value="other">Other</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-            <div className="grid gap-2">
-              <Label htmlFor="message">Mensagem</Label>
-              <Textarea
-                className="min-h-[150px]"
+          <Form {...form}>
+            <form className="grid gap-4" onSubmit={form.handleSubmit(onSubmit)}>
+              <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Nome</FormLabel>
+                    <FormControl>
+                      <Input {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
               />
-            </div>
-          </form>
+              <AlertDialogFooter className="flex justify-end gap-2">
+                <Button variant='destructive' onClick={onClose} type="button" className="opacity-80">Cancelar</Button>
+                <Button type="submit" onClick={form.handleSubmit(onSubmit)}>Enviar</Button>
+              </AlertDialogFooter>
+            </form>
+          </Form>
         </div>
-        <AlertDialogFooter className="flex justify-end gap-2">
-          <Button variant='destructive' onClick={onClose} type="button" className="opacity-80">Cancelar</Button>
-          <Button type="submit">Enviar</Button>
-        </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
   )
