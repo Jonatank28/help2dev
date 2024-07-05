@@ -58,7 +58,7 @@ export default function ModalFeedback({ open, onClose }: { open: boolean, onClos
         </div>
         <AlertDialogFooter className="flex justify-end gap-2">
           <AlertDialogCancel asChild>
-            <Button variant="outline">Cancel</Button>
+            <Button variant="destructive">Cancel</Button>
           </AlertDialogCancel>
           <Button type="submit">Submit Feedback</Button>
         </AlertDialogFooter>
