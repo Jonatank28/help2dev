@@ -8,6 +8,7 @@ const IndexFooter = () => {
   if (pathname === "/json-formatter") return null
   return (
     <div className="defaultWidth py-5 border-t">
+
       <footer className="flex flex-col md:flex-row gap-1 justify-between items-center">
         <Copy />
         <LinksAction />

@@ -5,9 +5,28 @@ import { Input } from "@/components/ui/input"
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
 import { Cross2Icon } from "@radix-ui/react-icons"
+import { useForm } from "react-hook-form"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { z } from "zod"
+
+const schema = z.object({
+  name: z.string().min(1, { message: 'O nome é obrigatório' }),
+  email: z.string().email({ message: 'O email é inválido' }),
+  subject: z.string().min(1, { message: 'O assunto é obrigatório' }),
+  message: z.string().min(1, { message: 'A mensagem é obrigatória' }),
+})
+
 
 export default function ModalFeedback({ open, onClose }: { open: boolean, onClose: () => void }) {
-  // const form = usefor
+  const form = useForm({
+    resolver: zodResolver(schema),
+    defaultValues: {
+      name: '',
+      email: '',
+      subject: '',
+      message: '',
+    }
+  })
 
   return (
     <AlertDialog open={open} onOpenChange={onClose}>
@@ -17,26 +36,26 @@ export default function ModalFeedback({ open, onClose }: { open: boolean, onClos
           <span className="sr-only">Close</span>
         </div>
         <AlertDialogHeader>
-          <AlertDialogTitle>Send us your feedback</AlertDialogTitle>
+          <AlertDialogTitle>Envie-nos seu feedback</AlertDialogTitle>
           <AlertDialogDescription>
-            We appreciate you taking the time to share your thoughts with us.
+            Agradecemos por reservar um tempo para compartilhar suas idéias conosco.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <div>
           <form className="grid gap-4">
             <div className="grid gap-2">
-              <Label htmlFor="name">Name</Label>
-              <Input id="name" placeholder="Enter your name" />
+              <Label htmlFor="name">Nome</Label>
+              <Input id="name" />
             </div>
             <div className="grid gap-2">
               <Label htmlFor="email">Email</Label>
-              <Input id="email" type="email" placeholder="Enter your email" />
+              <Input id="email" type="email" />
             </div>
             <div className="grid gap-2">
-              <Label htmlFor="subject">Subject</Label>
+              <Label htmlFor="subject">Assunto</Label>
               <Select>
                 <SelectTrigger>
-                  <SelectValue placeholder="Select a subject" />
+                  <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="feedback">Feedback</SelectItem>
@@ -47,20 +66,16 @@ export default function ModalFeedback({ open, onClose }: { open: boolean, onClos
               </Select>
             </div>
             <div className="grid gap-2">
-              <Label htmlFor="message">Message</Label>
+              <Label htmlFor="message">Mensagem</Label>
               <Textarea
-                id="message"
-                placeholder="Provide your feedback or describe the issue"
                 className="min-h-[150px]"
               />
             </div>
           </form>
         </div>
         <AlertDialogFooter className="flex justify-end gap-2">
-          <AlertDialogCancel asChild>
-            <Button variant="destructive">Cancel</Button>
-          </AlertDialogCancel>
-          <Button type="submit">Submit Feedback</Button>
+          <Button variant='destructive' onClick={onClose} type="button" className="opacity-80">Cancelar</Button>
+          <Button type="submit">Enviar</Button>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
