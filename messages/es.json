@@ -34,6 +34,7 @@
   },
   "JsonFormatter": {
     "buttonsAction": {
+      "generateTypes": "Generar tipos",
       "copy": "Copiar",
       "prettify": "Embellecer",
       "minify": "Minimizar",

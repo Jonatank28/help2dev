@@ -37,11 +37,11 @@ interface Link {
 }
 
 export const links: Link[] = [
-  {
-    name: 'Blog',
-    href: '/blog',
-    blank: false
-  },
+  // {
+  //   name: 'Blog',
+  //   href: '/blog',
+  //   blank: false
+  // },
   {
     name: 'Github',
     href: 'https://github.com/Jonatank28',
