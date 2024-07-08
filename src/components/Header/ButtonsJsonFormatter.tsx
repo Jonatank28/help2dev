@@ -32,9 +32,9 @@ const ButtonsJsonFormatter = () => {
 
   return (
     <>
-      <ModalGenerateTypes open={openModalGenerateTypes} onClose={() => setOpenModalGenerateTypes(false)} />
+      {/* <ModalGenerateTypes open={openModalGenerateTypes} onClose={() => setOpenModalGenerateTypes(false)} /> */}
       <div className="hidden md:flex items-center gap-2">
-        <Button
+        {/* <Button
           variant='secondary'
           className="gap-1"
           disabled={!verifyExist}
@@ -42,7 +42,7 @@ const ButtonsJsonFormatter = () => {
         >
           <SquareCode size={18} />
           <span>{t("buttonsAction.generateTypes")}</span>
-        </Button>
+        </Button> */}
         <Button
           variant='secondary'
           className="gap-1"
